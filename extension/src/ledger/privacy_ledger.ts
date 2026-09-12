@@ -111,7 +111,7 @@ export class PrivacyLedger {
 
     const defaultBackend: MLBackendStatus = mlStatus || {
       backend: 'webgpu',
-      modelName: 'ONNX-ViT-MobileNetV4-OCR-WebGPU',
+      modelName: 'Local-WebGPU-Spatial-OCR-Engine',
       inferenceLatencyMs: Math.round(ocrMs),
       isFallback: false,
     };

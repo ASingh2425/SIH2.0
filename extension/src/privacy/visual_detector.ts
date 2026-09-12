@@ -23,7 +23,7 @@ export class LocalVisualDetector {
     if (typeof navigator !== 'undefined' && 'gpu' in navigator && (navigator as any).gpu) {
       return {
         backend: 'webgpu',
-        modelName: 'ONNX-ViT-MobileNetV4-OCR-WebGPU',
+        modelName: 'Local-WebGPU-Spatial-OCR-Engine',
         inferenceLatencyMs: 42,
         isFallback: false,
         gpuDeviceName: 'Browser WebGPU Hardware Accelerator',
