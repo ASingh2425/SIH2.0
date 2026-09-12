@@ -1,11 +1,6 @@
 import { DOMNodeDescriptor, PrivacyBoundaryReport } from '../types/context';
 import { DetectedEntity } from '../types/privacy';
 
-/**
- * Service Worker acting as Network Boundary Guard & Privacy Boundary Auditor.
- */
-
-// Independent regex patterns for secondary egress inspection
 const EGRESS_EMAIL_REGEX = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g;
 const EGRESS_CREDIT_CARD_REGEX = /\b(?:\d[ -]*?){13,16}\b/g;
 const EGRESS_PASSPORT_REGEX = /\b[A-PR-WYa-pr-wy]\d{7}\b/g;
@@ -114,7 +109,3 @@ export function validateNetworkEgress(
     validationDetails,
   };
 }
-
-chrome.runtime.onInstalled.addListener(() => {
-  console.log('[PrivacyGuard Service Worker] Extension installed and active.');
-});

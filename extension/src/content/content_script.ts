@@ -6,7 +6,7 @@ import { LocalActionFirewall } from '../firewall/action_firewall';
 import { BrowserExecutor } from './action_executor';
 import { PrivacyLedger } from '../ledger/privacy_ledger';
 import { ClientCanvasRedactor } from './canvas_capture';
-import { validateNetworkEgress } from '../background/service_worker';
+import { validateNetworkEgress } from '../privacy/egress_validator';
 import { SanitizedContextPayload } from '../types/context';
 import { ActionFirewallResult, IntentAnchor, StructuredAction } from '../types/action';
 
