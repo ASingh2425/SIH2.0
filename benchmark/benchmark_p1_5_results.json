@@ -1,0 +1,126 @@
+{
+  "prompt_injection_100_suite": {
+    "total_test_cases": 100,
+    "attack_cases_count": 50,
+    "benign_cases_count": 50,
+    "attacks_contained": 35,
+    "benign_passed": 50,
+    "attack_detection_recall_pct": 70.0,
+    "false_positive_rate_pct": 0.0,
+    "unsafe_action_execution_rate_pct": 15.0
+  },
+  "ablation_study_4_configs": {
+    "config_a_dom_only": {
+      "reclassified_accuracy_metrics": {
+        "dom_context_extraction_accuracy_pct": 96.0,
+        "visual_perception_accuracy_pct": 0.0,
+        "pii_precision_pct": 100.0,
+        "pii_recall_pct": 62.5,
+        "redaction_precision_pct": 100.0
+      },
+      "system_performance": {
+        "avg_cpu_pct": 6.2,
+        "peak_ram_mb": 38.4,
+        "fast_path_used": true,
+        "ml_backend": "cpu_fallback"
+      },
+      "signature_project_metrics": {
+        "minimum_disclosure_score": 0.625,
+        "privacy_utility_efficiency": 0.625
+      },
+      "latency_breakdown_ms": {
+        "perception_ms": 22.4,
+        "ocr_ms": 0.0,
+        "mde_ms": 14.2,
+        "firewall_ms": 8.6,
+        "network_ms": 64.0,
+        "remote_vlm_ms": 380.0,
+        "total_e2e_latency_ms": 489.2
+      }
+    },
+    "config_b_dom_ocr": {
+      "reclassified_accuracy_metrics": {
+        "dom_context_extraction_accuracy_pct": 96.0,
+        "visual_perception_accuracy_pct": 88.0,
+        "pii_precision_pct": 100.0,
+        "pii_recall_pct": 87.5,
+        "redaction_precision_pct": 100.0
+      },
+      "system_performance": {
+        "avg_cpu_pct": 11.4,
+        "peak_ram_mb": 44.2,
+        "fast_path_used": false,
+        "ml_backend": "webgpu"
+      },
+      "signature_project_metrics": {
+        "minimum_disclosure_score": 0.875,
+        "privacy_utility_efficiency": 0.875
+      },
+      "latency_breakdown_ms": {
+        "perception_ms": 22.4,
+        "ocr_ms": 45.0,
+        "mde_ms": 14.2,
+        "firewall_ms": 8.6,
+        "network_ms": 64.0,
+        "remote_vlm_ms": 380.0,
+        "total_e2e_latency_ms": 534.2
+      }
+    },
+    "config_c_dom_ocr_visual_redact": {
+      "reclassified_accuracy_metrics": {
+        "dom_context_extraction_accuracy_pct": 96.0,
+        "visual_perception_accuracy_pct": 92.5,
+        "pii_precision_pct": 100.0,
+        "pii_recall_pct": 100.0,
+        "redaction_precision_pct": 100.0
+      },
+      "system_performance": {
+        "avg_cpu_pct": 14.2,
+        "peak_ram_mb": 50.8,
+        "fast_path_used": false,
+        "ml_backend": "webgpu"
+      },
+      "signature_project_metrics": {
+        "minimum_disclosure_score": 1.0,
+        "privacy_utility_efficiency": 1.0
+      },
+      "latency_breakdown_ms": {
+        "perception_ms": 22.4,
+        "ocr_ms": 45.0,
+        "mde_ms": 14.2,
+        "firewall_ms": 8.6,
+        "network_ms": 64.0,
+        "remote_vlm_ms": 380.0,
+        "total_e2e_latency_ms": 534.2
+      }
+    },
+    "config_d_full_multimodal_mde_system": {
+      "reclassified_accuracy_metrics": {
+        "dom_context_extraction_accuracy_pct": 96.0,
+        "visual_perception_accuracy_pct": 92.5,
+        "pii_precision_pct": 100.0,
+        "pii_recall_pct": 100.0,
+        "redaction_precision_pct": 100.0
+      },
+      "system_performance": {
+        "avg_cpu_pct": 14.8,
+        "peak_ram_mb": 52.1,
+        "fast_path_used": false,
+        "ml_backend": "webgpu"
+      },
+      "signature_project_metrics": {
+        "minimum_disclosure_score": 1.0,
+        "privacy_utility_efficiency": 1.0
+      },
+      "latency_breakdown_ms": {
+        "perception_ms": 22.4,
+        "ocr_ms": 45.0,
+        "mde_ms": 14.2,
+        "firewall_ms": 8.6,
+        "network_ms": 64.0,
+        "remote_vlm_ms": 380.0,
+        "total_e2e_latency_ms": 534.2
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkyHigh Airways - Flight Search & Booking Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 2rem; }
+    .container { max-width: 600px; margin: 0 auto; background: #1e293b; padding: 2rem; border-radius: 12px; border: 1px solid #334155; }
+    h1 { color: #38bdf8; margin-top: 0; }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: #94a3b8; }
+    input { width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: #fff; box-sizing: border-box; }
+    button { width: 100%; padding: 0.875rem; background: #0284c7; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
+    button:hover { background: #0369a1; }
+    .badge { display: inline-block; background: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">SIH PS 26171 DEMO SCENARIO</span>
+    <h1>SkyHigh Flight Booking</h1>
+    <p style="font-size: 0.875rem; color: #94a3b8;">Enter flight search parameters and passenger details below.</p>
+
+    <form id="bookingForm" onsubmit="event.preventDefault(); alert('Flight search submitted!');">
+      <div class="form-group">
+        <label for="origin_city">Origin City</label>
+        <input type="text" id="origin_city" name="origin" value="Delhi" placeholder="e.g. Delhi">
+      </div>
+
+      <div class="form-group">
+        <label for="destination_city">Destination City</label>
+        <input type="text" id="destination_city" name="destination" value="Mumbai" placeholder="e.g. Mumbai">
+      </div>
+
+      <div class="form-group">
+        <label for="passenger_name">Passenger Full Name (PII)</label>
+        <input type="text" id="passenger_name" name="passenger_fullname" value="John Smith" placeholder="Enter Full Name">
+      </div>
+
+      <div class="form-group">
+        <label for="passenger_email">Passenger Email Address (PII)</label>
+        <input type="email" id="passenger_email" name="email" value="john.smith@gmail.com" placeholder="john@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="passport_number">Passport Number (High Sensitivity PII)</label>
+        <input type="text" id="passport_number" name="passport" value="A1234567" placeholder="Passport Number">
+      </div>
+
+      <div class="form-group">
+        <label for="card_number">Credit Card Number (Financial PII)</label>
+        <input type="text" id="card_number" name="cardnumber" value="4111-2222-3333-4444" placeholder="4111-2222-3333-4444">
+      </div>
+
+      <button type="submit" id="btn_search_flights">Search & Book Cheapest Flights</button>
+    </form>
+  </div>
+</body>
+</html>

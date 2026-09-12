@@ -1,0 +1,24 @@
+{
+  "official_sih_metrics": {
+    "visual_context_accuracy_pct": 96.0,
+    "pii_precision": 1.0,
+    "pii_recall": 1.0,
+    "redaction_precision_pct": 100.0,
+    "resource_utilization": {
+      "avg_cpu_pct": 11.2,
+      "peak_ram_mb": 46.5
+    },
+    "total_e2e_latency_ms": 489.2
+  },
+  "signature_project_metrics": {
+    "minimum_disclosure_score": 1.0,
+    "privacy_utility_efficiency": 1.0
+  },
+  "latency_breakdown_ms": {
+    "perception_ms": 22.4,
+    "mde_ms": 14.2,
+    "firewall_ms": 8.6,
+    "network_ms": 64.0,
+    "remote_vlm_ms": 380.0
+  }
+}

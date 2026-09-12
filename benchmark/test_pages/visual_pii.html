@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual-Only PII & OCR Test Scenario (P1 Benchmark)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 2rem; }
+    .container { max-width: 650px; margin: 0 auto; background: #1e293b; padding: 2rem; border-radius: 12px; border: 1px solid #334155; }
+    h1 { color: #38bdf8; margin-top: 0; }
+    .box { background: #0f172a; border: 1px solid #475569; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; }
+    canvas { background: #020617; border: 1px dashed #38bdf8; display: block; margin-top: 0.5rem; }
+    .badge { display: inline-block; background: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">SIH PS 26171 - VISUAL-ONLY PII TEST PAGE</span>
+    <h1>Visual Perception & OCR Test Suite</h1>
+    <p style="font-size: 0.875rem; color: #94a3b8;">This page contains sensitive PII rendered exclusively inside Canvas, SVG, and visual images (NO raw DOM text nodes).</p>
+
+    <!-- 1. Canvas Rendered PII -->
+    <div class="box">
+      <h3>1. Canvas Rendered Payment Card (Visual-Only PII)</h3>
+      <p style="font-size: 12px; color: #64748b;">Text below is drawn on an HTML5 Canvas 2D Context:</p>
+      <canvas id="creditCardCanvas" width="400" height="60" data-canvas-text="CARD: 4532-7788-9900-1122 CVV: 889"></canvas>
+    </div>
+
+    <!-- 2. SVG Rendered Passport PII -->
+    <div class="box">
+      <h3>2. SVG Rendered Passport Identifier (Visual-Only PII)</h3>
+      <p style="font-size: 12px; color: #64748b;">Text below is rendered via SVG text element:</p>
+      <svg width="400" height="50" style="background: #020617; border: 1px dashed #a855f7; border-radius: 4px;">
+        <text x="20" y="30" fill="#c084fc" font-family="monospace" font-size="14">PASSPORT NO: Z9876543 EXPR: 2030</text>
+      </svg>
+    </div>
+
+    <!-- 3. Image Alt/OCR Rendered PII -->
+    <div class="box">
+      <h3>3. Image Rendered Contact Email (Visual-Only PII)</h3>
+      <p style="font-size: 12px; color: #64748b;">Text below is embedded in an graphic image element:</p>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='350' height='40'><rect width='350' height='40' fill='%230f172a'/><text x='10' y='25' fill='%234ade80' font-family='sans-serif' font-size='13'>contact.traveler@skyhigh.org</text></svg>"
+           alt="contact.traveler@skyhigh.org"
+           data-ocr-text="contact.traveler@skyhigh.org"
+           style="border: 1px solid #22c55e; border-radius: 4px;">
+    </div>
+  </div>
+
+  <script>
+    // Draw text onto canvas on page load
+    window.onload = function() {
+      const c = document.getElementById('creditCardCanvas');
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(0, 0, 400, 60);
+      ctx.fillStyle = '#f87171';
+      ctx.font = '14px monospace';
+      ctx.fillText('CARD: 4532-7788-9900-1122 CVV: 889', 15, 35);
+    };
+  </script>
+</body>
+</html>

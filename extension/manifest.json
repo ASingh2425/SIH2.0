@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Guard Browser Agent (SIH 26171)",
+  "version": "1.0.0",
+  "description": "On-device perception, Minimum Disclosure Engine, Local Action Firewall, and Local Token Vault.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background/service_worker.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content_script.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "action": {
+    "default_title": "Open Privacy Guard Panel"
+  }
+}
