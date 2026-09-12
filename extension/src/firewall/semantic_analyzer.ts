@@ -1,5 +1,30 @@
 import { IntentAnchor, LocalSemanticAnalysisResult, RiskLevel, StructuredAction } from '../types/action';
 
+// Homoglyph map for Cyrillic / visual character spoofing to ASCII
+const HOMOGLYPH_MAP: Record<string, string> = {
+  'е': 'e', 'а': 'a', 'о': 'o', 'р': 'p', 'с': 'c', 'х': 'x', 'у': 'y', 'і': 'i', 'ј': 'j', 'к': 'k', 'в': 'b', 'м': 'm', 'н': 'h', 'т': 't',
+  'Ε': 'E', 'Α': 'A', 'Ο': 'O', 'Ρ': 'P', 'С': 'C', 'Х': 'X', 'Υ': 'Y', 'Ι': 'I', 'Ј': 'J', 'К': 'K', 'В': 'B', 'М': 'M', 'Н': 'H', 'Т': 'T',
+  '0': 'o', '1': 'l', '3': 'e', '4': 'a', '5': 's', '8': 'b',
+};
+
+export function normalizeAndSanitizeString(input: string): string {
+  if (!input) return '';
+  // 1. Canonical Unicode Normalization (NFKD)
+  let normalized = input.normalize('NFKD');
+  // 2. Homoglyph Replacement
+  let sanitized = '';
+  for (const char of normalized) {
+    sanitized += HOMOGLYPH_MAP[char] || char;
+  }
+  return sanitized.toLowerCase().trim();
+}
+
+const SYNONYM_CLUSTERS: Record<string, string[]> = {
+  transfer: ['relocate', 'export', 'dump', 'transmit', 'mirror', 'offload', 'sync', 'dispatch payload', 'vault export', 'credential extraction', 'reallocate', 'asset move', 'transfer $'],
+  delete: ['purge', 'wipe', 'destroy', 'erase', 'clear all', 'reset credentials', 'terminate'],
+  exfiltrate: ['harvest', 'leak', 'extract', 'steal', 'send to remote', 'webhook'],
+};
+
 export class LocalSemanticActionAnalyzer {
   /**
    * Performs client-side local semantic analysis on proposed actions against Intent Anchor constraints.
@@ -12,64 +37,93 @@ export class LocalSemanticActionAnalyzer {
   ): LocalSemanticAnalysisResult {
     const startTime = performance.now();
 
-    const reasoningLower = (action.reasoning || '').toLowerCase();
-    const valueLower = (action.value || '').toLowerCase();
+    const reasoningLower = normalizeAndSanitizeString(action.reasoning || '');
+    const valueLower = normalizeAndSanitizeString(action.value || '');
 
     let isSemanticViolation = false;
     let violationReason = '';
     let actionChainRisk: RiskLevel = 'LOW';
     let semanticScore = 1.0;
 
-    // 1. Data Class Constraint Enforcement
+    // 1. Data Class & Semantic Equivalence Constraint Enforcement
     for (const forbidden of intentAnchor.forbiddenDataClasses) {
-      const lowerForbidden = forbidden.toLowerCase();
-      if (reasoningLower.includes(lowerForbidden) || valueLower.includes(lowerForbidden)) {
-        isSemanticViolation = true;
-        semanticScore = 0.0;
-        violationReason = `Forbidden data class violation: Action references '${forbidden}' which is forbidden by Intent Anchor.`;
-        actionChainRisk = 'CRITICAL';
-        break;
-      }
-    }
+      const lowerForbidden = normalizeAndSanitizeString(forbidden);
+      const synonyms = SYNONYM_CLUSTERS[lowerForbidden] || [];
+      const checkTerms = [lowerForbidden, ...synonyms];
 
-    // 2. Navigation Domain Constraint Enforcement
-    if (action.action === 'NAVIGATE') {
-      const navTarget = (action.value || '').toLowerCase();
-      let isDomainAllowed = false;
-      for (const allowedDomain of intentAnchor.allowedNavigationDomains) {
-        if (navTarget.includes(allowedDomain.toLowerCase())) {
-          isDomainAllowed = true;
+      for (const term of checkTerms) {
+        if (reasoningLower.includes(term) || valueLower.includes(term)) {
+          isSemanticViolation = true;
+          semanticScore = 0.0;
+          violationReason = `Forbidden semantic intent violation: Action references '${term}' (equivalent to '${forbidden}') which is forbidden by Intent Anchor.`;
+          actionChainRisk = 'CRITICAL';
           break;
         }
       }
-      if (!isDomainAllowed) {
+      if (isSemanticViolation) break;
+    }
+
+    // 2. Navigation Domain & Scheme Constraint Enforcement
+    if (action.action === 'NAVIGATE') {
+      const navTarget = normalizeAndSanitizeString(action.value || '');
+      
+      // Explicit URI Scheme Enforcement (Reject data:, javascript:, file:, etc.)
+      if (
+        navTarget.startsWith('data:') ||
+        navTarget.startsWith('javascript:') ||
+        navTarget.startsWith('blob:') ||
+        navTarget.startsWith('file:') ||
+        navTarget.includes('data:text/html') ||
+        navTarget.includes('base64')
+      ) {
         isSemanticViolation = true;
-        semanticScore = 0.1;
-        violationReason = `Unauthorized Navigation: Target domain '${action.value}' is not in allowedNavigationDomains.`;
+        semanticScore = 0.0;
+        violationReason = `Forbidden Navigation Scheme: Scheme in '${action.value}' is prohibited.`;
         actionChainRisk = 'CRITICAL';
+      } else {
+        let isDomainAllowed = false;
+        for (const allowedDomain of intentAnchor.allowedNavigationDomains) {
+          if (navTarget.includes(normalizeAndSanitizeString(allowedDomain))) {
+            isDomainAllowed = true;
+            break;
+          }
+        }
+        if (!isDomainAllowed) {
+          isSemanticViolation = true;
+          semanticScore = 0.1;
+          violationReason = `Unauthorized Navigation: Target domain '${action.value}' is not in allowedNavigationDomains.`;
+          actionChainRisk = 'CRITICAL';
+        }
       }
     }
 
-    // 3. Multi-Step Action Chain Analysis
+    // 3. Multi-Step Bounded Action Chain Analysis (Exfiltration DAG Tracking)
     const history = intentAnchor.chainHistory || [];
-    if (history.length > 0) {
-      const previousActions = history.map(a => a.action);
-      // Exfiltration Chain Detection: Step 1 (TYPE/SELECT PII) -> Step 2 (NAVIGATE/FETCH to external URL)
-      if (previousActions.includes('TYPE') && action.action === 'NAVIGATE' && !liveOrigin.includes(intentAnchor.originDomain)) {
+    const hasPriorPIIInput = history.some(a => 
+      a.action === 'TYPE' || 
+      a.action === 'SELECT' || 
+      (a.value && (a.value.includes('#') || a.value.includes('@') || a.value.length > 3))
+    );
+
+    if (hasPriorPIIInput && action.action === 'NAVIGATE') {
+      const navDomain = normalizeAndSanitizeString(action.value || '');
+      const originNorm = normalizeAndSanitizeString(intentAnchor.originDomain);
+      const liveNorm = normalizeAndSanitizeString(liveOrigin);
+      if (!navDomain.includes(originNorm) && !navDomain.includes(liveNorm)) {
         isSemanticViolation = true;
         semanticScore = 0.0;
-        violationReason = 'Action Chain Risk: Detected multi-step exfiltration sequence (DOM input -> External Navigation).';
+        violationReason = 'Action Chain Risk: Detected multi-step exfiltration sequence (Prior DOM input -> External Navigation).';
         actionChainRisk = 'CRITICAL';
       }
     }
 
     // 4. Target Element Semantic Role Verification
     if (targetEl) {
-      const idAttr = (targetEl.getAttribute('id') || '').toLowerCase();
-      const typeAttr = (targetEl.getAttribute('type') || '').toLowerCase();
+      const idAttr = normalizeAndSanitizeString(targetEl.getAttribute('id') || '');
+      const typeAttr = normalizeAndSanitizeString(targetEl.getAttribute('type') || '');
 
-      if (idAttr.includes('delete') || idAttr.includes('reset') || typeAttr === 'password') {
-        if (intentAnchor.targetGoal === 'flight_booking') {
+      if (idAttr.includes('delete') || idAttr.includes('reset') || idAttr.includes('transfer') || typeAttr === 'password') {
+        if (intentAnchor.targetGoal === 'flight_booking' && action.action !== 'TYPE') {
           isSemanticViolation = true;
           semanticScore = 0.2;
           violationReason = `Semantic Target Conflict: Target element '${idAttr}' conflicts with task goal '${intentAnchor.targetGoal}'.`;
@@ -89,3 +143,4 @@ export class LocalSemanticActionAnalyzer {
     };
   }
 }
+

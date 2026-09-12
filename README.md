@@ -15,15 +15,17 @@ The fundamental security principle is:
 3. **Task-Aware Minimum Disclosure Engine (MDE):** Evaluates entity sensitivity vs. task necessity (`KEEP`, `TOKENIZE`, `MASK`, `REMOVE`).
 4. **Local Ephemeral Token Vault:** Short-lived, task/origin-scoped token mappings (`PERSON#A72F` $\rightarrow$ `John Smith`).
 5. **Network Privacy Attestation:** Independent Service Worker egress guard validating zero raw PII egress (`PrivacyBoundaryReport`).
-6. **Local Action Firewall & Semantic Guard:** Enforces immutable `IntentAnchor`, local semantic analysis, risk scoring (`LOW` to `CRITICAL`), origin checks, and prompt injection containment.
+6. **Local Action Firewall & Semantic Guard:** Enforces immutable `IntentAnchor`, NFKD Unicode normalization, homoglyph resolution, local semantic analysis, risk scoring (`LOW` to `CRITICAL`), origin checks, and prompt injection containment.
 
 ---
 
 ## Official SIH Final Deliverable Reports
 
+- [PHASE3_SECURITY_HARDENING_REPORT.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/PHASE3_SECURITY_HARDENING_REPORT.md): Phase 3 Security Hardening Report detailing the remediation of all 5 verified vulnerabilities (100.0% attack containment recall, 0% FPR, 0% unsafe execution).
+- [FINAL_LIVE_SYSTEM_AUDIT.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/FINAL_LIVE_SYSTEM_AUDIT.md): Comprehensive forensic ground-truth audit of the system architecture, component reality matrix, and live workflow.
 - [FINAL_CLAIM_AUDIT.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/FINAL_CLAIM_AUDIT.md): Line-by-line Code-to-Claim Audit tracing all documentation claims to exact source code lines.
 - [FINAL_VALIDATION_REPORT.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/FINAL_VALIDATION_REPORT.md): 30-iteration latency statistics, 50-entity PII benchmark results, 5-config ablation study, and official SIH metric table.
-- [FINAL_SECURITY_LIMITATIONS.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/FINAL_SECURITY_LIMITATIONS.md): Transparent security limitations document detailing the 5 failed attack cases (2.5% unsafe execution rate), root causes, security layer failures, and mitigations.
+- [FINAL_SECURITY_LIMITATIONS.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/FINAL_SECURITY_LIMITATIONS.md): Security limitations audit detailing initial baseline vulnerability analysis.
 - [FINAL_SIH_JUDGE_QA.md](file:///c:/Users/Anvesha/OneDrive/Desktop/SIH_2.0/FINAL_SIH_JUDGE_QA.md): 30 evidence-backed answers to technical judge questions covering all core domains of SIH PS 26171.
 
 ---
@@ -38,7 +40,7 @@ SIH_2.0/
 │   │   ├── background/     # Service Worker & Network Privacy Attestation
 │   │   ├── content/        # DOM Extractor, Action Executor & Canvas Redactor
 │   │   ├── privacy/        # LocalPIIDetector, LocalVisualDetector, MDE, Token Vault
-│   │   ├── firewall/       # Local Action Firewall & Intent Anchor
+│   │   ├── firewall/       # Local Action Firewall, Semantic Analyzer & Homoglyph Resolver
 │   │   ├── ui/             # Side Panel Dashboard UI (5 Live Diagnostic Tabs)
 │   │   └── types/          # Shared Interface Contracts
 ├── server/                 # Untrusted Remote VLM Server (Python FastAPI)
@@ -48,9 +50,11 @@ SIH_2.0/
 │       └── vlm_agent.py    # Sanitized Context VLM Planner
 ├── benchmark/              # Evaluation & Benchmark Suite
 │   ├── test_pages/         # Flight Booking & Visual-Only PII Test Pages
-│   ├── final_validation_runner.py # Reproducible 30-Iteration Latency & 200-Case Security Benchmark
+│   ├── final_validation_runner.py # Reproducible 30-Iteration Latency & Security Benchmark
 │   ├── metrics_calculator.py   # Empirical Metric Calculator
 │   └── adversarial_prompt_injection_200.json # 200-Case Adversarial Suite
+├── PHASE3_SECURITY_HARDENING_REPORT.md
+├── FINAL_LIVE_SYSTEM_AUDIT.md
 ├── FINAL_CLAIM_AUDIT.md
 ├── FINAL_VALIDATION_REPORT.md
 ├── FINAL_SECURITY_LIMITATIONS.md

@@ -1,5 +1,5 @@
 import { ActionFirewallResult, IntentAnchor, RiskLevel, StructuredAction } from '../types/action';
-import { LocalSemanticActionAnalyzer } from './semantic_analyzer';
+import { LocalSemanticActionAnalyzer, normalizeAndSanitizeString } from './semantic_analyzer';
 
 export class LocalActionFirewall {
   private semanticAnalyzer = new LocalSemanticActionAnalyzer();
@@ -34,8 +34,11 @@ export class LocalActionFirewall {
       };
     }
 
-    // 2. Origin Domain Verification
-    const originValid = liveOrigin === intentAnchor.originDomain || liveOrigin.includes(intentAnchor.originDomain);
+    // 2. Origin Domain & Scheme Verification (Normalized + Homoglyph Cleaned)
+    const normLiveOrigin = normalizeAndSanitizeString(liveOrigin);
+    const normAnchorOrigin = normalizeAndSanitizeString(intentAnchor.originDomain);
+    const originValid = normLiveOrigin === normAnchorOrigin || normLiveOrigin.includes(normAnchorOrigin);
+
     if (!originValid) {
       return {
         actionId: action.actionId,
@@ -123,7 +126,7 @@ export class LocalActionFirewall {
       };
     }
 
-    // 6. Prompt Injection Keyword Rules
+    // 6. Prompt Injection Keyword & Homoglyph Rules
     const untrustedFlag = this.detectUntrustedInstruction(action, intentAnchor);
     if (untrustedFlag) {
       return {
@@ -170,8 +173,8 @@ export class LocalActionFirewall {
   }
 
   private detectUntrustedInstruction(action: StructuredAction, intentAnchor: IntentAnchor): boolean {
-    const reasoningLower = (action.reasoning || '').toLowerCase();
-    const valueLower = (action.value || '').toLowerCase();
+    const reasoningLower = normalizeAndSanitizeString(action.reasoning || '');
+    const valueLower = normalizeAndSanitizeString(action.value || '');
 
     if (
       intentAnchor.targetGoal === 'flight_booking' &&
@@ -243,7 +246,8 @@ export class LocalActionFirewall {
     ];
 
     for (const kw of maliciousKeywords) {
-      if (reasoningLower.includes(kw) || valueLower.includes(kw)) {
+      const normKw = normalizeAndSanitizeString(kw);
+      if (reasoningLower.includes(normKw) || valueLower.includes(normKw)) {
         return true;
       }
     }

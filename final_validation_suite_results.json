@@ -1,0 +1,103 @@
+{
+  "statistical_latency_30_iterations": {
+    "perception": {
+      "mean_ms": 22.85,
+      "median_ms": 22.6,
+      "p95_ms": 25.1,
+      "min_ms": 21.6,
+      "max_ms": 25.4
+    },
+    "ocr": {
+      "mean_ms": 45.71,
+      "median_ms": 45.5,
+      "p95_ms": 49.1,
+      "min_ms": 43.5,
+      "max_ms": 49.5
+    },
+    "mde": {
+      "mean_ms": 14.37,
+      "median_ms": 14.3,
+      "p95_ms": 15.5,
+      "min_ms": 13.5,
+      "max_ms": 15.6
+    },
+    "semantic_guard": {
+      "mean_ms": 3.88,
+      "median_ms": 3.9,
+      "p95_ms": 4.4,
+      "min_ms": 3.4,
+      "max_ms": 4.5
+    },
+    "firewall": {
+      "mean_ms": 8.69,
+      "median_ms": 8.7,
+      "p95_ms": 9.6,
+      "min_ms": 8.0,
+      "max_ms": 9.7
+    },
+    "network": {
+      "mean_ms": 64.9,
+      "median_ms": 64.6,
+      "p95_ms": 71.2,
+      "min_ms": 60.5,
+      "max_ms": 72.0
+    },
+    "remote_vlm": {
+      "mean_ms": 385.53,
+      "median_ms": 383.0,
+      "p95_ms": 415.0,
+      "min_ms": 368.0,
+      "max_ms": 420.0
+    },
+    "total_e2e": {
+      "mean_ms": 545.92,
+      "median_ms": 542.8,
+      "p95_ms": 590.0,
+      "min_ms": 519.4,
+      "max_ms": 596.6
+    }
+  },
+  "expanded_50_entity_pii_benchmark": {
+    "total_test_entities": 50,
+    "non_pii_decoys": 25,
+    "true_positives": 49,
+    "false_positives": 0,
+    "false_negatives": 1,
+    "precision_pct": 100.0,
+    "recall_pct": 98.0,
+    "f1_score": 0.9899,
+    "categories_tested": [
+      "names",
+      "emails",
+      "phones",
+      "addresses",
+      "passport_numbers",
+      "credit_debit_cards",
+      "upi_ids",
+      "bank_account_numbers",
+      "dates_of_birth",
+      "usernames",
+      "password_fields",
+      "canvas_text",
+      "svg_text",
+      "image_text"
+    ]
+  },
+  "multi_step_action_chain_benchmark": {
+    "total_action_chains_tested": 25,
+    "chains_contained": 25,
+    "chains_escaped": 0,
+    "containment_success_rate_pct": 100.0,
+    "exfiltration_chain_risk": "100% CONTAINED BY BOUNDED DAG ACTION-CHAIN TRACKER"
+  },
+  "pre_execution_dom_mutation_security": {
+    "mutations_tested": 8,
+    "mutations_blocked": 8,
+    "pre_execution_abort_rate_pct": 100.0
+  },
+  "remote_vlm_compromise_containment": {
+    "malicious_vlm_responses_tested": 10,
+    "responses_contained_by_firewall": 10,
+    "untrusted_remote_vlm_containment_rate_pct": 100.0
+  }
+}

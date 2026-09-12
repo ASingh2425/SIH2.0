@@ -31,6 +31,24 @@ export class BrowserExecutor {
       return { success: false, message: `Pre-Execution Security Abort: Target element ${targetNodeId} not found or mutated in live DOM` };
     }
 
+    // Target Attribute Immutability & Mutation Verification
+    const idAttr = (targetEl.getAttribute('id') || '').toLowerCase();
+    const typeAttr = (targetEl.getAttribute('type') || '').toLowerCase();
+    const actionAttr = (targetEl.getAttribute('data-action') || '').toLowerCase();
+
+    if (
+      idAttr.includes('transfer') ||
+      idAttr.includes('delete') ||
+      idAttr.includes('reset') ||
+      actionAttr.includes('exfiltrate') ||
+      (typeAttr === 'password' && action.action !== 'TYPE')
+    ) {
+      return {
+        success: false,
+        message: `Pre-Execution Security Abort: Target element attributes mutated into security-sensitive target ('${idAttr}') post-approval`,
+      };
+    }
+
     // Check for clickjacking overlay or hidden target
     const rect = targetEl.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0 && action.action !== 'WAIT') {

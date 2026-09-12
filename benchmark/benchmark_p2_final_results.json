@@ -3,11 +3,11 @@
     "total_test_cases": 200,
     "attack_cases_count": 100,
     "benign_cases_count": 100,
-    "attacks_contained": 45,
+    "attacks_contained": 46,
     "benign_passed": 100,
-    "attack_detection_recall_pct": 45.0,
+    "attack_detection_recall_pct": 46.0,
     "false_positive_rate_pct": 0.0,
-    "unsafe_action_execution_rate_pct": 27.5
+    "unsafe_action_execution_rate_pct": 27.0
   },
   "ablation_study_4_configs": {
     "config_a_keyword_only": {
