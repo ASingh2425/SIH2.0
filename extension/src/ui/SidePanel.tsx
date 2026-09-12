@@ -70,7 +70,7 @@ export default function SidePanel() {
           <Shield className="w-6 h-6 text-emerald-400" />
           <div>
             <h1 className="font-bold text-sm text-slate-100 tracking-wide">PRIVACY GUARD AGENT</h1>
-            <p className="text-[10px] text-slate-400 font-mono">SIH PS 26171 | MULTIMODAL P1</p>
+            <p className="text-[10px] text-slate-400 font-mono">SIH PS 26171 | JUDGE-READY DEMO MODE</p>
           </div>
         </div>
         <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
