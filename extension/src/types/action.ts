@@ -50,6 +50,21 @@ export interface LocalSemanticAnalysisResult {
   analysisLatencyMs: number;
 }
 
+export interface FirewallAuthorizationToken {
+  tokenId: string;
+  actionId: string;
+  taskId: string;
+  actionType: ActionType;
+  targetNodeId: string;
+  targetSelector: string;
+  originDomain: string;
+  decision: 'ALLOW' | 'CONFIRM';
+  userConfirmed: boolean;
+  issuedAt: number;
+  expiresAt: number;
+  signature: string;
+}
+
 export interface ActionFirewallResult {
   actionId: string;
   decision: 'ALLOW' | 'CONFIRM' | 'BLOCK';
@@ -61,4 +76,5 @@ export interface ActionFirewallResult {
   originValid: boolean;
   semanticAnalysis: LocalSemanticAnalysisResult;
   resolvedValue?: string; // Tokens un-vaulted to real local values ONLY if decision is ALLOW/CONFIRM
+  authorizationToken?: FirewallAuthorizationToken;
 }

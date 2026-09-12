@@ -37,6 +37,8 @@ export interface PrivacyBoundaryReport {
   rawPayloadSizeBytes: number;
   zeroRawPIIVerified: boolean;
   visualRedactionVerified: boolean;
+  visualPrivacyState: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
+  unverifiedVisualRegionsMasked: number;
   validatorVersion: string;
   validationDetails: string[];
 }

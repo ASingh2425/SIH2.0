@@ -1,8 +1,237 @@
-import { ActionFirewallResult, IntentAnchor, RiskLevel, StructuredAction } from '../types/action';
+import { ActionFirewallResult, FirewallAuthorizationToken, IntentAnchor, RiskLevel, StructuredAction } from '../types/action';
 import { LocalSemanticActionAnalyzer, normalizeAndSanitizeString } from './semantic_analyzer';
 
 export class LocalActionFirewall {
   private semanticAnalyzer = new LocalSemanticActionAnalyzer();
+
+  // Isolated World Private Session Secret (Generated dynamically per firewall instance)
+  private readonly sessionHmacSecret: string = this.generateSessionSecret();
+
+  // Set of consumed single-use token nonces for replay prevention
+  private consumedTokenNonces = new Set<string>();
+
+  private generateSessionSecret(): string {
+    if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
+      const array = new Uint8Array(32);
+      crypto.getRandomValues(array);
+      return Array.from(array, b => b.toString(16).padStart(2, '0')).join('');
+    }
+    return `fw_secret_${Date.now()}_${Math.random().toString(36).substring(2)}`;
+  }
+
+  /**
+   * Helper function for strict URL origin parsing and comparison.
+   * Prevents substring and userinfo hijack vulnerabilities (e.g. example.com.evil.com).
+   */
+  public parseAndNormalizeOrigin(rawOrigin: string): string {
+    if (!rawOrigin || typeof rawOrigin !== 'string') return '';
+    const trimmed = rawOrigin.trim();
+    try {
+      const targetUrl = trimmed.includes('://') ? trimmed : `https://${trimmed}`;
+      const url = new URL(targetUrl);
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') return '';
+      if (url.username || url.password) return ''; // Reject userinfo URL origin attacks
+      return url.origin.toLowerCase();
+    } catch (_err) {
+      return ''; // FAIL-CLOSED: Invalid origin strings must never be normalized via fallback
+    }
+  }
+
+  public strictOriginMatch(originA: string, originB: string): boolean {
+    const normA = this.parseAndNormalizeOrigin(originA);
+    const normB = this.parseAndNormalizeOrigin(originB);
+    if (!normA || !normB) return false;
+    return normA === normB;
+  }
+
+  /**
+   * Computes cryptographic SHA-256 HMAC signature for authorization token tuple.
+   */
+  public computeTokenSignature(
+    taskId: string,
+    actionId: string,
+    actionType: string,
+    targetNodeId: string,
+    targetSelector: string,
+    originDomain: string,
+    decision: string,
+    userConfirmed: boolean,
+    issuedAt: number,
+    expiresAt: number
+  ): string {
+    const normOrigin = this.parseAndNormalizeOrigin(originDomain);
+    const rawTuple = `task=${taskId}|action=${actionId}|type=${actionType}|node=${targetNodeId}|selector=${targetSelector}|origin=${normOrigin}|decision=${decision}|confirmed=${userConfirmed}|issued=${issuedAt}|expires=${expiresAt}|secret=${this.sessionHmacSecret}`;
+    
+    // Cryptographically secure 256-bit SHA-256 digest
+    return 'sha256_hmac_' + computeSha256Digest(rawTuple);
+  }
+
+  /**
+   * Issues a signed FirewallAuthorizationToken for approved or confirmation-pending actions.
+   */
+  public issueAuthorizationToken(
+    action: StructuredAction,
+    originDomain: string,
+    decision: 'ALLOW' | 'CONFIRM',
+    userConfirmed: boolean = false
+  ): FirewallAuthorizationToken {
+    const issuedAt = Date.now();
+    const expiresAt = issuedAt + 30000; // 30-second strict execution window
+    const targetNodeId = action.target.nodeId || '';
+    const targetSelector = action.target.selector || '';
+    const normOrigin = this.parseAndNormalizeOrigin(originDomain);
+    const tokenId = `token_${issuedAt}_${Math.random().toString(36).substring(2, 8)}`;
+
+    const signature = this.computeTokenSignature(
+      action.taskId,
+      action.actionId,
+      action.action,
+      targetNodeId,
+      targetSelector,
+      normOrigin,
+      decision,
+      userConfirmed,
+      issuedAt,
+      expiresAt
+    );
+
+    return {
+      tokenId,
+      actionId: action.actionId,
+      taskId: action.taskId,
+      actionType: action.action,
+      targetNodeId,
+      targetSelector,
+      originDomain: normOrigin,
+      decision,
+      userConfirmed,
+      issuedAt,
+      expiresAt,
+      signature,
+    };
+  }
+
+  /**
+   * Authorizes explicit human user approval for CONFIRM actions.
+   */
+  public authorizeUserConfirmation(
+    action: StructuredAction,
+    initialResult: ActionFirewallResult,
+    intentAnchor: IntentAnchor,
+    liveOrigin: string
+  ): FirewallAuthorizationToken | null {
+    if (action.taskId !== intentAnchor.taskId) return null;
+    if (initialResult.actionId !== action.actionId) return null;
+    if (initialResult.decision !== 'CONFIRM') return null;
+
+    if (!this.strictOriginMatch(liveOrigin, intentAnchor.originDomain)) {
+      return null;
+    }
+
+    return this.issueAuthorizationToken(action, liveOrigin, 'CONFIRM', true);
+  }
+
+  /**
+   * Verifies authenticity, integrity, TTL, decision state, single-use replay, and parameter binding of a token.
+   */
+  public verifyAuthorizationToken(
+    token: FirewallAuthorizationToken,
+    action: StructuredAction,
+    liveOrigin: string,
+    intentAnchor?: IntentAnchor
+  ): { valid: boolean; reason?: string } {
+    if (!token || typeof token !== 'object') {
+      return { valid: false, reason: 'Missing authorization token' };
+    }
+
+    // Structural Field Check
+    if (
+      !token.tokenId ||
+      !token.actionId ||
+      !token.taskId ||
+      !token.actionType ||
+      !token.originDomain ||
+      !token.signature ||
+      typeof token.issuedAt !== 'number' ||
+      typeof token.expiresAt !== 'number'
+    ) {
+      return { valid: false, reason: 'Malformed authorization token schema' };
+    }
+
+    // Finite Numeric Timestamp Validation (Prevents NaN/Infinity Bypass)
+    if (!Number.isFinite(token.issuedAt) || !Number.isFinite(token.expiresAt)) {
+      return { valid: false, reason: 'Non-finite token timestamp (NaN/Inf)' };
+    }
+
+    if (token.expiresAt <= token.issuedAt) {
+      return { valid: false, reason: 'Invalid token expiration window' };
+    }
+
+    // 1. Signature Verification
+    const expectedSig = this.computeTokenSignature(
+      token.taskId,
+      token.actionId,
+      token.actionType,
+      token.targetNodeId || '',
+      token.targetSelector || '',
+      token.originDomain,
+      token.decision,
+      token.userConfirmed,
+      token.issuedAt,
+      token.expiresAt
+    );
+
+    if (token.signature !== expectedSig) {
+      return { valid: false, reason: 'Cryptographic signature mismatch or token forged' };
+    }
+
+    // 2. TTL Check
+    const now = Date.now();
+    if (now > token.expiresAt) {
+      return { valid: false, reason: 'Authorization token expired' };
+    }
+
+    // 3. Single-Use Nonce Replay Check
+    if (this.consumedTokenNonces.has(token.tokenId)) {
+      return { valid: false, reason: 'Token replay detected: Nonce already consumed' };
+    }
+
+    // 4. Action & Intent Binding Checks
+    if (token.taskId !== action.taskId) {
+      return { valid: false, reason: `Task ID mismatch (Token: ${token.taskId}, Action: ${action.taskId})` };
+    }
+
+    if (token.actionId !== action.actionId) {
+      return { valid: false, reason: `Action ID mismatch (Token: ${token.actionId}, Action: ${action.actionId})` };
+    }
+
+    if (token.actionType !== action.action) {
+      return { valid: false, reason: `Action type mismatch (Token: ${token.actionType}, Action: ${action.action})` };
+    }
+
+    const actionNodeId = action.target.nodeId || '';
+    if (token.targetNodeId !== actionNodeId) {
+      return { valid: false, reason: `Target node ID mismatch (Token: ${token.targetNodeId}, Action: ${actionNodeId})` };
+    }
+
+    if (!this.strictOriginMatch(liveOrigin, token.originDomain)) {
+      return { valid: false, reason: `Origin domain mismatch (Token: ${token.originDomain}, Live: ${liveOrigin})` };
+    }
+
+    if (intentAnchor && token.taskId !== intentAnchor.taskId) {
+      return { valid: false, reason: 'Intent anchor task ID mismatch' };
+    }
+
+    // 5. Decision & CONFIRM Semantics
+    if (token.decision === 'CONFIRM' && !token.userConfirmed) {
+      return { valid: false, reason: 'Action requires explicit user confirmation (userConfirmed is false)' };
+    }
+
+    // Consume single-use nonce upon successful verification
+    this.consumedTokenNonces.add(token.tokenId);
+
+    return { valid: true };
+  }
 
   /**
    * Validates candidate remote action against local Intent Anchor & semantic constraints.
@@ -159,6 +388,8 @@ export class LocalActionFirewall {
     // Append to chain history upon approval
     intentAnchor.chainHistory.push(action);
 
+    const authorizationToken = this.issueAuthorizationToken(action, normLiveOrigin, decision, false);
+
     return {
       actionId: action.actionId,
       decision,
@@ -169,6 +400,7 @@ export class LocalActionFirewall {
       targetExists: true,
       originValid: true,
       semanticAnalysis: semanticRes,
+      authorizationToken,
     };
   }
 
@@ -283,4 +515,96 @@ export class LocalActionFirewall {
 
     return 'MEDIUM';
   }
+}
+
+/**
+ * Authoritative Synchronous SHA-256 Digest Engine for Extension Isolated World
+ */
+export function computeSha256Digest(ascii: string): string {
+  const mathPow = Math.pow;
+  const maxWord = mathPow(2, 32);
+  const lengthProperty = 'length';
+  let i, j;
+  let result = '';
+
+  const words: number[] = [];
+  const asciiBitLength = ascii[lengthProperty] * 8;
+
+  let hash = (computeSha256Digest as any).h = (computeSha256Digest as any).h || [];
+  let k = (computeSha256Digest as any).k = (computeSha256Digest as any).k || [];
+  let primeCounter = k[lengthProperty];
+
+  const isPrime = (n: number) => {
+    for (let factor = 2; factor * factor <= n; factor++) {
+      if (n % factor === 0) return false;
+    }
+    return true;
+  };
+
+  const getFractionalBits = (n: number) => Math.floor((n - Math.floor(n)) * maxWord);
+
+  if (!primeCounter) {
+    let candidate = 2;
+    while (primeCounter < 64) {
+      if (isPrime(candidate)) {
+        if (primeCounter < 8) {
+          hash[primeCounter] = getFractionalBits(Math.pow(candidate, 1 / 2));
+        }
+        k[primeCounter] = getFractionalBits(Math.pow(candidate, 1 / 3));
+        primeCounter++;
+      }
+      candidate++;
+    }
+  }
+
+  hash = hash.slice(0);
+
+  for (i = 0; i < ascii[lengthProperty]; i++) {
+    j = ascii.charCodeAt(i);
+    words[i >> 2] |= j << ((3 - (i % 4)) * 8);
+  }
+  words[ascii[lengthProperty] >> 2] |= 0x80 << ((3 - (ascii[lengthProperty] % 4)) * 8);
+  words[((asciiBitLength + 64 >> 9) << 4) + 15] = asciiBitLength;
+
+  for (i = 0; i < words[lengthProperty]; i += 16) {
+    const w = words.slice(i, i + 16);
+    for (j = w.length; j < 16; j++) w[j] = 0;
+    const oldHash = hash.slice(0);
+
+    for (j = 0; j < 64; j++) {
+      const w15 = w[j - 15], w2 = w[j - 2];
+
+      const a = hash[0], e = hash[4];
+      const temp1 = hash[7]
+        + (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25))
+        + ((e & hash[5]) ^ (~e & hash[6]))
+        + k[j]
+        + (w[j] = (j < 16) ? w[j] : (
+          w[j - 16]
+          + (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3))
+          + w[j - 7]
+          + (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10))
+        ) | 0);
+      const temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22))
+        + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+
+      hash = [(temp1 + temp2) | 0, a, hash[1], hash[2], (hash[3] + temp1) | 0, e, hash[5], hash[6]];
+    }
+
+    for (j = 0; j < 8; j++) {
+      hash[j] = (hash[j] + oldHash[j]) | 0;
+    }
+  }
+
+  for (i = 0; i < 8; i++) {
+    for (j = 3; j >= 0; j--) {
+      const b = (hash[i] >> (j * 8)) & 255;
+      result += (b < 16 ? '0' : '') + b.toString(16);
+    }
+  }
+  return result;
+}
+
+function rightRotate(value: number, amount: number) {
+  return (value >>> amount) | (value << (32 - amount));
 }

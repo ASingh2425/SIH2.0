@@ -1,25 +1,46 @@
-import { StructuredAction } from '../types/action';
+import { FirewallAuthorizationToken, StructuredAction } from '../types/action';
 import { LocalTokenVault } from '../privacy/token_vault';
+import { LocalActionFirewall } from '../firewall/action_firewall';
 
 export class BrowserExecutor {
   private tokenVault = LocalTokenVault.getInstance();
 
   /**
-   * Executes authorized action in browser DOM with Pre-Execution Page Re-Evaluation.
+   * Executes verified action in browser DOM ONLY after firewall authorization token validation
+   * AND immediate pre-execution DOM re-evaluation (TOCTOU defense).
    */
-  public async executeAction(
+  public async executeVerifiedAction(
     action: StructuredAction,
     nodeMap: Map<string, HTMLElement>,
-    originDomain: string
+    originDomain: string,
+    authorizationToken: FirewallAuthorizationToken,
+    firewall: LocalActionFirewall
   ): Promise<{ success: boolean; message: string }> {
+    // 0. Firewall Authorization Gate Verification
+    if (!authorizationToken) {
+      return { success: false, message: 'Execution Security Abort: Missing Firewall Authorization Token' };
+    }
+
+    if (!firewall) {
+      return { success: false, message: 'Execution Security Abort: Missing LocalActionFirewall verifier instance' };
+    }
+
+    const authVerification = firewall.verifyAuthorizationToken(authorizationToken, action, originDomain);
+    if (!authVerification.valid) {
+      return {
+        success: false,
+        message: `Execution Security Abort: Firewall Authorization Failed (${authVerification.reason})`,
+      };
+    }
+
     const targetNodeId = action.target.nodeId;
     if (!targetNodeId) {
       return { success: false, message: 'Action execution failed: Missing target nodeId' };
     }
 
-    // 1. Immediate Pre-Execution DOM & Origin Verification
+    // 1. Immediate Pre-Execution DOM & Origin Verification (TOCTOU Defense)
     const currentOrigin = window.location.origin;
-    if (currentOrigin !== originDomain && !currentOrigin.includes(originDomain)) {
+    if (!firewall.strictOriginMatch(currentOrigin, originDomain)) {
       return {
         success: false,
         message: `Pre-Execution Security Abort: Active window origin (${currentOrigin}) mutated from task origin (${originDomain})`,

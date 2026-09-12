@@ -10,6 +10,11 @@ export type PrivacyTreatment =
   | 'LOCAL_ONLY'
   | 'REMOVE';
 
+export type VisualPrivacyState =
+  | 'VERIFIED_SAFE'
+  | 'PII_DETECTED'
+  | 'VISUAL_PRIVACY_UNVERIFIED';
+
 export type EntityType =
   | 'EMAIL'
   | 'PHONE'
@@ -21,7 +26,8 @@ export type EntityType =
   | 'UPI_ID'
   | 'DOB'
   | 'AUTH_CODE'
-  | 'UNKNOWN_SENSITIVE';
+  | 'UNKNOWN_SENSITIVE'
+  | 'UNVERIFIED_VISUAL_REGION';
 
 export type DetectionSource =
   | 'REGEX'

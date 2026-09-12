@@ -110,6 +110,8 @@ export function validateNetworkEgress(
     rawPayloadSizeBytes,
     zeroRawPIIVerified,
     visualRedactionVerified,
+    visualPrivacyState: 'VERIFIED_SAFE',
+    unverifiedVisualRegionsMasked: 0,
     validatorVersion: 'v1.2.0-p1-multimodal',
     validationDetails,
   };

@@ -23,6 +23,8 @@ export class LocalPIIDetector {
   ): Promise<{
     entities: DetectedEntity[];
     ocrLatencyMs: number;
+    visualPrivacyState: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
+    unverifiedVisualRegionsMasked: number;
   }> {
     const detected: DetectedEntity[] = [];
 
@@ -41,16 +43,23 @@ export class LocalPIIDetector {
 
     // 3. Visual OCR & Image/Canvas/SVG Perception
     let ocrLatencyMs = 0;
+    let visualPrivacyState: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED' = 'VERIFIED_SAFE';
+    let unverifiedVisualRegionsMasked = 0;
+
     if (documentRoot || typeof document !== 'undefined') {
       const doc = documentRoot || document;
       const visualRes = await this.visualDetector.performVisualPerception(doc);
       detected.push(...visualRes.detectedVisualEntities);
       ocrLatencyMs = visualRes.latencyMs;
+      visualPrivacyState = visualRes.visualPrivacyState;
+      unverifiedVisualRegionsMasked = visualRes.unverifiedVisualRegionsMasked;
     }
 
     return {
       entities: this.deduplicateEntities(detected),
       ocrLatencyMs,
+      visualPrivacyState,
+      unverifiedVisualRegionsMasked,
     };
   }
 

