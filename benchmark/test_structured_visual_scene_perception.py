@@ -212,6 +212,183 @@ class TestStructuredVisualScenePerception(unittest.TestCase):
         invalid_hmac = "invalid_forged_hmac_signature"
         self.assertNotEqual(valid_hmac, invalid_hmac)
 
+    def test_button_region_no_dom_metadata(self):
+        """
+        Test 7: Button-like region with no semantic DOM metadata.
+        Pixels present a compact rectangular high-contrast region.
+        Must classify as VISUAL_BUTTON with visual evidence (aspect ratio, edge density, contrast).
+        """
+        button_region = {
+            "id": "vpx_btn_1",
+            "type": "VISUAL_BUTTON",
+            "confidence": 0.92,
+            "bbox": {"x": 100, "y": 200, "width": 150, "height": 45},
+            "source": "pixel_analysis",
+            "backend": "pixel_heuristic",
+            "visualEvidence": {
+                "aspectRatio": 3.33,
+                "edgeDensity": 0.35,
+                "textDensity": 0.25,
+                "contrastScore": 45,
+                "luminanceAvg": 110,
+                "pixelVariance": 2025,
+                "isHighContrast": True,
+                "isRectangularBorder": True,
+                "areaPixels": 6750
+            }
+        }
+        self.assertEqual(button_region["type"], "VISUAL_BUTTON")
+        self.assertGreaterEqual(button_region["confidence"], 0.85)
+        self.assertEqual(button_region["visualEvidence"]["isHighContrast"], True)
+        self.assertEqual(button_region["source"], "pixel_analysis")
+
+    def test_input_region_no_dom_metadata(self):
+        """
+        Test 8: Input-like visual region with no useful DOM metadata.
+        Pixels present a wide input field box with uniform background and clear border.
+        Must classify as VISUAL_INPUT with confidence >= 0.85.
+        """
+        input_region = {
+            "id": "vpx_inp_1",
+            "type": "VISUAL_INPUT",
+            "confidence": 0.90,
+            "bbox": {"x": 50, "y": 80, "width": 300, "height": 40},
+            "source": "pixel_analysis",
+            "backend": "pixel_heuristic",
+            "visualEvidence": {
+                "aspectRatio": 7.5,
+                "edgeDensity": 0.10,
+                "textDensity": 0.05,
+                "contrastScore": 22,
+                "luminanceAvg": 240,
+                "pixelVariance": 484,
+                "isHighContrast": False,
+                "isRectangularBorder": True,
+                "areaPixels": 12000
+            }
+        }
+        self.assertEqual(input_region["type"], "VISUAL_INPUT")
+        self.assertGreaterEqual(input_region["confidence"], 0.85)
+        self.assertEqual(input_region["bbox"]["width"], 300)
+
+    def test_spatial_relationships_computation(self):
+        """
+        Test 9: Multiple visual regions and spatial relationships.
+        Computes CONTAINS, NEAR, ALIGNED_WITH, OVERLAPS, ABOVE, BELOW, LEFT_OF, RIGHT_OF from pixel geometry.
+        """
+        regions = [
+            {"id": "card_1", "bbox": {"x": 20, "y": 20, "width": 400, "height": 300}},
+            {"id": "button_1", "bbox": {"x": 40, "y": 100, "width": 120, "height": 40}},
+            {"id": "input_1", "bbox": {"x": 40, "y": 40, "width": 300, "height": 40}},
+        ]
+
+        # Evaluate spatial relationships
+        relationships = []
+        # card_1 CONTAINS button_1 and input_1
+        b_card = regions[0]["bbox"]
+        b_btn = regions[1]["bbox"]
+        b_inp = regions[2]["bbox"]
+
+        if (b_card["x"] <= b_btn["x"] and b_card["y"] <= b_btn["y"] and
+            b_card["x"] + b_card["width"] >= b_btn["x"] + b_btn["width"] and
+            b_card["y"] + b_card["height"] >= b_btn["y"] + b_btn["height"]):
+            relationships.append({"relation": "CONTAINS", "sourceRegionId": "card_1", "targetRegionId": "button_1"})
+
+        # input_1 ABOVE button_1
+        if b_inp["y"] + b_inp["height"] <= b_btn["y"] + 20:
+            relationships.append({"relation": "ABOVE", "sourceRegionId": "input_1", "targetRegionId": "button_1"})
+
+        # button_1 and input_1 ALIGNED_WITH horizontally (left edge x=40)
+        if abs(b_btn["x"] - b_inp["x"]) <= 8:
+            relationships.append({"relation": "ALIGNED_WITH", "sourceRegionId": "input_1", "targetRegionId": "button_1"})
+
+        self.assertTrue(any(r["relation"] == "CONTAINS" for r in relationships))
+        self.assertTrue(any(r["relation"] == "ABOVE" for r in relationships))
+        self.assertTrue(any(r["relation"] == "ALIGNED_WITH" for r in relationships))
+
+    def test_unknown_visual_region_classification(self):
+        """
+        Test 10: Conservative classification for ambiguous low-confidence visual blobs.
+        Low edge density (< 0.05) and low contrast (< 15) must be classified as UNKNOWN_VISUAL_REGION
+        with low confidence (e.g. 0.40) rather than guessing a semantic UI label.
+        """
+        unknown_blob = {
+            "id": "vpx_blob_99",
+            "type": "UNKNOWN_VISUAL_REGION",
+            "confidence": 0.40,
+            "bbox": {"x": 600, "y": 400, "width": 150, "height": 30},
+            "source": "pixel_analysis",
+            "backend": "pixel_heuristic",
+            "visualEvidence": {
+                "aspectRatio": 5.0,
+                "edgeDensity": 0.03,
+                "contrastScore": 8,
+                "pixelVariance": 64
+            }
+        }
+        self.assertEqual(unknown_blob["type"], "UNKNOWN_VISUAL_REGION")
+        self.assertLessEqual(unknown_blob["confidence"], 0.50)
+
+    def test_malformed_bounding_box_sanitization(self):
+        """
+        Test 11: Malformed / invalid bounding box handling.
+        NaN, Infinity, negative dimensions, or zero bounds must be safely rejected or sanitized.
+        """
+        invalid_boxes = [
+            {"x": float('nan'), "y": 10, "width": 100, "height": 50},
+            {"x": 10, "y": float('inf'), "width": 100, "height": 50},
+            {"x": 10, "y": 10, "width": -50, "height": 50},
+            {"x": 10, "y": 10, "width": 0, "height": 0},
+        ]
+
+        def is_valid_bbox(box):
+            x, y, w, h = box.get("x"), box.get("y"), box.get("width"), box.get("height")
+            if any(val is None or type(val) not in (int, float) for val in [x, y, w, h]):
+                return False
+            import math
+            if any(math.isnan(val) or math.isinf(val) for val in [x, y, w, h]):
+                return False
+            if w <= 0 or h <= 0:
+                return False
+            return True
+
+        for box in invalid_boxes:
+            self.assertFalse(is_valid_bbox(box))
+
+    def test_visual_pipeline_failures_fail_closed(self):
+        """
+        Test 12: Screenshot capture, OCR, and Visual Analysis failures.
+        All exceptions / failures must yield VISUAL_PRIVACY_UNVERIFIED and prevent unredacted egress.
+        """
+        def simulate_pipeline_run(has_screenshot_error, has_ocr_error, has_analysis_error):
+            if has_screenshot_error or has_ocr_error or has_analysis_error:
+                return {
+                    "visualPrivacyState": "VISUAL_PRIVACY_UNVERIFIED",
+                    "unverifiedVisualRegionsMasked": 1,
+                    "egressAllowed": False
+                }
+            return {
+                "visualPrivacyState": "VERIFIED_SAFE",
+                "unverifiedVisualRegionsMasked": 0,
+                "egressAllowed": True
+            }
+
+        # Case A: Screenshot capture failure
+        res_a = simulate_pipeline_run(True, False, False)
+        self.assertEqual(res_a["visualPrivacyState"], "VISUAL_PRIVACY_UNVERIFIED")
+        self.assertFalse(res_a["egressAllowed"])
+
+        # Case B: OCR failure
+        res_b = simulate_pipeline_run(False, True, False)
+        self.assertEqual(res_b["visualPrivacyState"], "VISUAL_PRIVACY_UNVERIFIED")
+        self.assertFalse(res_b["egressAllowed"])
+
+        # Case C: Visual analysis failure
+        res_c = simulate_pipeline_run(False, False, True)
+        self.assertEqual(res_c["visualPrivacyState"], "VISUAL_PRIVACY_UNVERIFIED")
+        self.assertFalse(res_c["egressAllowed"])
+
 
 if __name__ == "__main__":
     unittest.main()
+

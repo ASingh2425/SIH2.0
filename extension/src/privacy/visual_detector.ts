@@ -37,6 +37,7 @@ export interface VisualScene {
   fusionLatencyMs: number;
   totalPerceptionLatencyMs: number;
   backendUsed: string;
+  sceneSummary?: string;
 }
 
 export interface VisualPerceptionResult {
@@ -193,192 +194,198 @@ export class LocalVisualDetector {
     let visualFeatureRegions: VisualFeatureRegion[] = [];
     let spatialRelationships: SpatialRelationship[] = [];
 
-    // 1. GENUINE PIXEL-LEVEL LOCAL VISUAL MODEL INFERENCE & PIXEL ANALYSIS
-    if (rawPixelInput) {
-      const ocrStart = performance.now();
-      const ocrResult = await this.modelEngine.recognizePixels(rawPixelInput);
-      ocrLatencyMs = Math.round(performance.now() - ocrStart);
+    try {
+      // 1. GENUINE PIXEL-LEVEL LOCAL VISUAL MODEL INFERENCE & PIXEL ANALYSIS
+      if (rawPixelInput) {
+        const ocrStart = performance.now();
+        const ocrResult = await this.modelEngine.recognizePixels(rawPixelInput);
+        ocrLatencyMs = Math.round(performance.now() - ocrStart);
 
-      // Execute Local Computer Vision Pixel Feature Analysis
-      const pixelRes = this.pixelAnalysisEngine.analyzePixels(
-        rawPixelInput,
-        typeof window !== 'undefined' ? window.innerWidth : 1920,
-        typeof window !== 'undefined' ? window.innerHeight : 1080
-      );
-      pixelAnalysisLatencyMs = pixelRes.pixelAnalysisLatencyMs;
-      visualFeatureRegions = pixelRes.visualRegions;
-      spatialRelationships = pixelRes.relationships;
+        // Execute Local Computer Vision Pixel Feature Analysis
+        const pixelRes = this.pixelAnalysisEngine.analyzePixels(
+          rawPixelInput,
+          typeof window !== 'undefined' ? window.innerWidth : 1920,
+          typeof window !== 'undefined' ? window.innerHeight : 1080
+        );
+        pixelAnalysisLatencyMs = pixelRes.pixelAnalysisLatencyMs;
+        visualFeatureRegions = pixelRes.visualRegions;
+        spatialRelationships = pixelRes.relationships;
 
-      if (ocrResult.state === 'INFERENCE_COMPLETE' && ocrResult.entities.length > 0) {
-        for (let i = 0; i < ocrResult.entities.length; i++) {
-          const entity: GenuineVisualEntity = ocrResult.entities[i];
-          const sanitizedBounds = sanitizeBoundingBox(entity.bbox);
-          if (!sanitizedBounds) continue;
+        if (ocrResult.state === 'INFERENCE_COMPLETE' && ocrResult.entities.length > 0) {
+          for (let i = 0; i < ocrResult.entities.length; i++) {
+            const entity: GenuineVisualEntity = ocrResult.entities[i];
+            const sanitizedBounds = sanitizeBoundingBox(entity.bbox);
+            if (!sanitizedBounds) continue;
 
-          ocrRegions.push({
-            text: entity.text,
-            bounds: sanitizedBounds,
-            confidence: entity.confidence,
-            source: 'VISUAL_OCR',
-            backend: entity.backend,
-            modelId: entity.modelId,
-            inferenceId: entity.inferenceId,
-          });
+            ocrRegions.push({
+              text: entity.text,
+              bounds: sanitizedBounds,
+              confidence: entity.confidence,
+              source: 'VISUAL_OCR',
+              backend: entity.backend,
+              modelId: entity.modelId,
+              inferenceId: entity.inferenceId,
+            });
 
-          const piiEntities = this.extractEntitiesFromVisualText(
-            entity.text,
-            sanitizedBounds,
-            `vocr_${i}`,
-            'VISUAL_OCR'
-          );
+            const piiEntities = this.extractEntitiesFromVisualText(
+              entity.text,
+              sanitizedBounds,
+              `vocr_${i}`,
+              'VISUAL_OCR'
+            );
 
-          if (piiEntities.length > 0) {
-            detectedVisualEntities.push(...piiEntities);
-            state = 'PII_DETECTED';
+            if (piiEntities.length > 0) {
+              detectedVisualEntities.push(...piiEntities);
+              state = 'PII_DETECTED';
+            }
           }
-        }
-      } else if (ocrResult.state === 'INFERENCE_FAILED') {
-        // FAIL-CLOSED: Local model inference failed -> transition state to VISUAL_PRIVACY_UNVERIFIED
-        state = 'VISUAL_PRIVACY_UNVERIFIED';
-        unverifiedVisualRegionsMasked++;
-      }
-    }
-
-    // 2. Scan Canvas Elements (<canvas>) (DOM fallback/supplement)
-    if (documentRoot && typeof documentRoot.querySelectorAll === 'function') {
-      const canvasElements = Array.from(documentRoot.querySelectorAll('canvas'));
-      for (let i = 0; i < canvasElements.length; i++) {
-        const canvas = canvasElements[i];
-        const rawBounds = this.getBounds(canvas);
-        const bounds = sanitizeBoundingBox(rawBounds);
-        if (!bounds) continue;
-
-        const text = canvas.getAttribute('data-canvas-text') || canvas.getAttribute('aria-label') || canvas.getAttribute('title') || '';
-
-        if (text.length > 0) {
-          ocrRegions.push({
-            text,
-            bounds,
-            confidence: 0.93,
-            source: 'CANVAS_TEXT',
-            backend: 'dom_fallback',
-          });
-          const entities = this.extractEntitiesFromVisualText(text, bounds, `canvas_${i}`, 'CANVAS_TEXT');
-          if (entities.length > 0) {
-            detectedVisualEntities.push(...entities);
-            if (state !== 'PII_DETECTED') state = 'PII_DETECTED';
-          }
-        } else if (!rawPixelInput) {
-          // FAIL-CLOSED CANVAS BLIND SPOT FIX (DOM-only path):
-          if (state !== 'PII_DETECTED') {
-            state = 'VISUAL_PRIVACY_UNVERIFIED';
-          }
+        } else if (ocrResult.state === 'INFERENCE_FAILED') {
+          // FAIL-CLOSED: Local model inference failed -> transition state to VISUAL_PRIVACY_UNVERIFIED
+          state = 'VISUAL_PRIVACY_UNVERIFIED';
           unverifiedVisualRegionsMasked++;
-
-          detectedVisualEntities.push({
-            id: `unverified_canvas_${i}`,
-            type: 'UNVERIFIED_VISUAL_REGION',
-            rawValue: '[UNVERIFIED_CANVAS_PIXELS]',
-            maskedDisplay: '[VISUAL_PRIVACY_UNVERIFIED]',
-            confidence: 0.50,
-            sensitivity: 'CRITICAL',
-            taskNecessity: 'NONE',
-            treatment: 'REMOVE',
-            boundingRect: bounds,
-            detectionSource: 'CANVAS_TEXT',
-            isVisualOnly: true,
-          });
         }
       }
 
-      // 3. Scan SVG Elements (<svg>)
-      const svgElements = Array.from(documentRoot.querySelectorAll('svg'));
-      for (let i = 0; i < svgElements.length; i++) {
-        const svg = svgElements[i];
-        const rawBounds = this.getBounds(svg as unknown as HTMLElement);
-        const bounds = sanitizeBoundingBox(rawBounds);
-        if (!bounds) continue;
+      // 2. Scan Canvas Elements (<canvas>) (DOM fallback/supplement)
+      if (documentRoot && typeof documentRoot.querySelectorAll === 'function') {
+        const canvasElements = Array.from(documentRoot.querySelectorAll('canvas'));
+        for (let i = 0; i < canvasElements.length; i++) {
+          const canvas = canvasElements[i];
+          const rawBounds = this.getBounds(canvas);
+          const bounds = sanitizeBoundingBox(rawBounds);
+          if (!bounds) continue;
 
-        const svgTexts = Array.from(svg.querySelectorAll('text'));
-        const combinedText = svgTexts.map(t => t.textContent?.trim() || '').filter(Boolean).join(' ');
+          const text = canvas.getAttribute('data-canvas-text') || canvas.getAttribute('aria-label') || canvas.getAttribute('title') || '';
 
-        if (combinedText.length > 0) {
-          ocrRegions.push({
-            text: combinedText,
-            bounds,
-            confidence: 0.95,
-            source: 'SVG_TEXT',
-            backend: 'dom_fallback',
-          });
-          const entities = this.extractEntitiesFromVisualText(combinedText, bounds, `svg_${i}`, 'SVG_TEXT');
-          if (entities.length > 0) {
-            detectedVisualEntities.push(...entities);
-            if (state !== 'PII_DETECTED') state = 'PII_DETECTED';
+          if (text.length > 0) {
+            ocrRegions.push({
+              text,
+              bounds,
+              confidence: 0.93,
+              source: 'CANVAS_TEXT',
+              backend: 'dom_fallback',
+            });
+            const entities = this.extractEntitiesFromVisualText(text, bounds, `canvas_${i}`, 'CANVAS_TEXT');
+            if (entities.length > 0) {
+              detectedVisualEntities.push(...entities);
+              if (state !== 'PII_DETECTED') state = 'PII_DETECTED';
+            }
+          } else if (!rawPixelInput) {
+            // FAIL-CLOSED CANVAS BLIND SPOT FIX (DOM-only path):
+            if (state !== 'PII_DETECTED') {
+              state = 'VISUAL_PRIVACY_UNVERIFIED';
+            }
+            unverifiedVisualRegionsMasked++;
+
+            detectedVisualEntities.push({
+              id: `unverified_canvas_${i}`,
+              type: 'UNVERIFIED_VISUAL_REGION',
+              rawValue: '[UNVERIFIED_CANVAS_PIXELS]',
+              maskedDisplay: '[VISUAL_PRIVACY_UNVERIFIED]',
+              confidence: 0.50,
+              sensitivity: 'CRITICAL',
+              taskNecessity: 'NONE',
+              treatment: 'REMOVE',
+              boundingRect: bounds,
+              detectionSource: 'CANVAS_TEXT',
+              isVisualOnly: true,
+            });
           }
-        } else if (bounds.width > 20 && bounds.height > 20 && !svg.getAttribute('aria-hidden') && !rawPixelInput) {
-          if (state !== 'PII_DETECTED') {
-            state = 'VISUAL_PRIVACY_UNVERIFIED';
+        }
+
+        // 3. Scan SVG Elements (<svg>)
+        const svgElements = Array.from(documentRoot.querySelectorAll('svg'));
+        for (let i = 0; i < svgElements.length; i++) {
+          const svg = svgElements[i];
+          const rawBounds = this.getBounds(svg as unknown as HTMLElement);
+          const bounds = sanitizeBoundingBox(rawBounds);
+          if (!bounds) continue;
+
+          const svgTexts = Array.from(svg.querySelectorAll('text'));
+          const combinedText = svgTexts.map(t => t.textContent?.trim() || '').filter(Boolean).join(' ');
+
+          if (combinedText.length > 0) {
+            ocrRegions.push({
+              text: combinedText,
+              bounds,
+              confidence: 0.95,
+              source: 'SVG_TEXT',
+              backend: 'dom_fallback',
+            });
+            const entities = this.extractEntitiesFromVisualText(combinedText, bounds, `svg_${i}`, 'SVG_TEXT');
+            if (entities.length > 0) {
+              detectedVisualEntities.push(...entities);
+              if (state !== 'PII_DETECTED') state = 'PII_DETECTED';
+            }
+          } else if (bounds.width > 20 && bounds.height > 20 && !svg.getAttribute('aria-hidden') && !rawPixelInput) {
+            if (state !== 'PII_DETECTED') {
+              state = 'VISUAL_PRIVACY_UNVERIFIED';
+            }
+            unverifiedVisualRegionsMasked++;
+            detectedVisualEntities.push({
+              id: `unverified_svg_${i}`,
+              type: 'UNVERIFIED_VISUAL_REGION',
+              rawValue: '[UNVERIFIED_SVG_REGION]',
+              maskedDisplay: '[VISUAL_PRIVACY_UNVERIFIED]',
+              confidence: 0.50,
+              sensitivity: 'CRITICAL',
+              taskNecessity: 'NONE',
+              treatment: 'REMOVE',
+              boundingRect: bounds,
+              detectionSource: 'SVG_TEXT',
+              isVisualOnly: true,
+            });
           }
-          unverifiedVisualRegionsMasked++;
-          detectedVisualEntities.push({
-            id: `unverified_svg_${i}`,
-            type: 'UNVERIFIED_VISUAL_REGION',
-            rawValue: '[UNVERIFIED_SVG_REGION]',
-            maskedDisplay: '[VISUAL_PRIVACY_UNVERIFIED]',
-            confidence: 0.50,
-            sensitivity: 'CRITICAL',
-            taskNecessity: 'NONE',
-            treatment: 'REMOVE',
-            boundingRect: bounds,
-            detectionSource: 'SVG_TEXT',
-            isVisualOnly: true,
-          });
+        }
+
+        // 4. Scan Image Elements (<img>)
+        const imgElements = Array.from(documentRoot.querySelectorAll('img'));
+        for (let i = 0; i < imgElements.length; i++) {
+          const img = imgElements[i];
+          const rawBounds = this.getBounds(img);
+          const bounds = sanitizeBoundingBox(rawBounds);
+          if (!bounds) continue;
+
+          const altText = img.getAttribute('alt') || img.getAttribute('data-ocr-text') || '';
+
+          if (altText.length > 0) {
+            ocrRegions.push({
+              text: altText,
+              bounds,
+              confidence: 0.89,
+              source: 'IMAGE_TEXT',
+              backend: 'dom_fallback',
+            });
+            const entities = this.extractEntitiesFromVisualText(altText, bounds, `img_${i}`, 'IMAGE_TEXT');
+            if (entities.length > 0) {
+              detectedVisualEntities.push(...entities);
+              if (state !== 'PII_DETECTED') state = 'PII_DETECTED';
+            }
+          } else if (bounds.width > 30 && bounds.height > 30 && !rawPixelInput) {
+            if (state !== 'PII_DETECTED') {
+              state = 'VISUAL_PRIVACY_UNVERIFIED';
+            }
+            unverifiedVisualRegionsMasked++;
+            detectedVisualEntities.push({
+              id: `unverified_img_${i}`,
+              type: 'UNVERIFIED_VISUAL_REGION',
+              rawValue: '[UNVERIFIED_IMAGE_PIXELS]',
+              maskedDisplay: '[VISUAL_PRIVACY_UNVERIFIED]',
+              confidence: 0.50,
+              sensitivity: 'CRITICAL',
+              taskNecessity: 'NONE',
+              treatment: 'REMOVE',
+              boundingRect: bounds,
+              detectionSource: 'IMAGE_TEXT',
+              isVisualOnly: true,
+            });
+          }
         }
       }
-
-      // 4. Scan Image Elements (<img>)
-      const imgElements = Array.from(documentRoot.querySelectorAll('img'));
-      for (let i = 0; i < imgElements.length; i++) {
-        const img = imgElements[i];
-        const rawBounds = this.getBounds(img);
-        const bounds = sanitizeBoundingBox(rawBounds);
-        if (!bounds) continue;
-
-        const altText = img.getAttribute('alt') || img.getAttribute('data-ocr-text') || '';
-
-        if (altText.length > 0) {
-          ocrRegions.push({
-            text: altText,
-            bounds,
-            confidence: 0.89,
-            source: 'IMAGE_TEXT',
-            backend: 'dom_fallback',
-          });
-          const entities = this.extractEntitiesFromVisualText(altText, bounds, `img_${i}`, 'IMAGE_TEXT');
-          if (entities.length > 0) {
-            detectedVisualEntities.push(...entities);
-            if (state !== 'PII_DETECTED') state = 'PII_DETECTED';
-          }
-        } else if (bounds.width > 30 && bounds.height > 30 && !rawPixelInput) {
-          if (state !== 'PII_DETECTED') {
-            state = 'VISUAL_PRIVACY_UNVERIFIED';
-          }
-          unverifiedVisualRegionsMasked++;
-          detectedVisualEntities.push({
-            id: `unverified_img_${i}`,
-            type: 'UNVERIFIED_VISUAL_REGION',
-            rawValue: '[UNVERIFIED_IMAGE_PIXELS]',
-            maskedDisplay: '[VISUAL_PRIVACY_UNVERIFIED]',
-            confidence: 0.50,
-            sensitivity: 'CRITICAL',
-            taskNecessity: 'NONE',
-            treatment: 'REMOVE',
-            boundingRect: bounds,
-            detectionSource: 'IMAGE_TEXT',
-            isVisualOnly: true,
-          });
-        }
-      }
+    } catch (err) {
+      console.warn('[LocalVisualDetector] Exception during visual perception:', err);
+      state = 'VISUAL_PRIVACY_UNVERIFIED';
+      unverifiedVisualRegionsMasked++;
     }
 
     const fusionStart = performance.now();
@@ -390,6 +397,47 @@ export class LocalVisualDetector {
       source: 'pixel_ocr',
       backend: r.backend || 'wasm',
     }));
+
+    // 5. OCR + VISUAL REGION FUSION
+    for (let i = 0; i < visualFeatureRegions.length; i++) {
+      const vReg = visualFeatureRegions[i];
+      const associatedTexts: string[] = [];
+
+      for (let j = 0; j < textRegions.length; j++) {
+        const tReg = textRegions[j];
+        const bV = vReg.bbox;
+        const bT = tReg.bbox;
+
+        // Check if visual region contains or overlaps text region
+        if (
+          bV.x <= bT.x + bT.width &&
+          bV.x + bV.width >= bT.x &&
+          bV.y <= bT.y + bT.height &&
+          bV.y + bV.height >= bT.y
+        ) {
+          associatedTexts.push(tReg.text);
+          spatialRelationships.push({
+            relation: 'CONTAINS',
+            sourceRegionId: vReg.id,
+            targetRegionId: tReg.id,
+            confidence: 0.95,
+            source: 'spatial_heuristic',
+          });
+        }
+      }
+
+      if (associatedTexts.length > 0) {
+        vReg.visualEvidence.associatedText = associatedTexts.join(' ');
+      }
+    }
+
+    // Build structured Scene Summary string for remote reasoners
+    const sceneSummaryParts: string[] = [];
+    for (const vReg of visualFeatureRegions) {
+      const label = vReg.visualEvidence.associatedText ? ` "${vReg.visualEvidence.associatedText}"` : '';
+      sceneSummaryParts.push(`[${vReg.type}${label} at (${vReg.bbox.x},${vReg.bbox.y}) [${vReg.bbox.width}x${vReg.bbox.height}]]`);
+    }
+    const sceneSummary = sceneSummaryParts.join(', ');
 
     const fusionLatencyMs = Math.round(performance.now() - fusionStart);
     const totalPerceptionLatencyMs = Math.round(performance.now() - startTime);
@@ -413,6 +461,7 @@ export class LocalVisualDetector {
       fusionLatencyMs: fusionLatencyMs || 2,
       totalPerceptionLatencyMs,
       backendUsed: backendUsed === 'wasm' ? 'wasm' : 'pixel_heuristic',
+      sceneSummary,
     };
 
     return {
