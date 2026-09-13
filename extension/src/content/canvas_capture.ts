@@ -1,4 +1,5 @@
 import { DetectedEntity } from '../types/privacy';
+import { ImageEgressAttestation } from '../types/context';
 import { sanitizeBoundingBox } from '../privacy/visual_detector';
 
 export interface RedactionResult {
@@ -6,6 +7,18 @@ export interface RedactionResult {
   redactionCount: number;
   visualPrivacyState: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
   isRealCapture: boolean;
+  attestation?: ImageEgressAttestation;
+}
+
+export function computeStringDigest(str: string): string {
+  if (!str) return '';
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash |= 0;
+  }
+  return 'digest_' + Math.abs(hash).toString(16) + '_' + str.length;
 }
 
 export class ClientCanvasRedactor {
@@ -20,7 +33,10 @@ export class ClientCanvasRedactor {
     sensitiveEntities: DetectedEntity[],
     viewportWidth: number = typeof window !== 'undefined' ? window.innerWidth : 1920,
     viewportHeight: number = typeof window !== 'undefined' ? window.innerHeight : 1080,
-    _devicePixelRatio: number = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
+    _devicePixelRatio: number = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1,
+    taskId: string = 'task_default',
+    captureId: string = 'cap_default',
+    perceptionId: string = 'percept_default'
   ): Promise<RedactionResult> {
     // 0. Validate raw input screenshot string (FAIL-CLOSED)
     if (!rawBase64Image || typeof rawBase64Image !== 'string' || !rawBase64Image.startsWith('data:image/')) {
@@ -108,12 +124,24 @@ export class ClientCanvasRedactor {
       }
 
       const sanitizedBase64 = canvas.toDataURL('image/png');
+      const sanitizedImageDigest = computeStringDigest(sanitizedBase64);
+
+      const attestation: ImageEgressAttestation = {
+        captureId,
+        taskId,
+        sanitizedImageDigest,
+        perceptionId,
+        redactionCount,
+        timestamp: Date.now(),
+        status: hasUnverifiedRegion ? 'UNVERIFIED' : 'SANITIZED',
+      };
 
       return {
         sanitizedBase64,
         redactionCount,
         visualPrivacyState: hasUnverifiedRegion ? 'VISUAL_PRIVACY_UNVERIFIED' : 'VERIFIED_SAFE',
         isRealCapture: true,
+        attestation,
       };
     } catch (_err) {
       // FAIL-CLOSED ON REDACTION EXCEPTION
@@ -144,8 +172,11 @@ export class ClientCanvasRedactor {
     width: number = typeof window !== 'undefined' ? window.innerWidth : 1920,
     height: number = typeof window !== 'undefined' ? window.innerHeight : 1080,
     rawScreenshotBase64?: string,
-    devicePixelRatio: number = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
-  ): Promise<{ sanitizedBase64: string; redactionCount: number; visualPrivacyState: string; isRealCapture: boolean }> {
+    devicePixelRatio: number = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1,
+    taskId: string = 'task_default',
+    captureId: string = 'cap_default',
+    perceptionId: string = 'percept_default'
+  ): Promise<RedactionResult> {
     if (rawScreenshotBase64 && rawScreenshotBase64.startsWith('data:image/')) {
       try {
         const res = await this.redactRealViewportScreenshot(
@@ -153,14 +184,12 @@ export class ClientCanvasRedactor {
           sensitiveEntities,
           width,
           height,
-          devicePixelRatio
+          devicePixelRatio,
+          taskId,
+          captureId,
+          perceptionId
         );
-        return {
-          sanitizedBase64: res.sanitizedBase64,
-          redactionCount: res.redactionCount,
-          visualPrivacyState: res.visualPrivacyState,
-          isRealCapture: res.isRealCapture,
-        };
+        return res;
       } catch (_err) {
         return {
           sanitizedBase64: '',

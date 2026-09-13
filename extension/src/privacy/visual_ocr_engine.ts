@@ -91,13 +91,29 @@ export class LocalVisualModelEngine {
     this.state = 'MODEL_LOADING';
     this.initPromise = (async () => {
       try {
+        const isExtensionEnv = typeof chrome !== 'undefined' && chrome.runtime && typeof chrome.runtime.getURL === 'function';
+
+        const workerPath = isExtensionEnv
+          ? chrome.runtime.getURL('assets/ocr/worker.min.js')
+          : undefined;
+        const corePath = isExtensionEnv
+          ? chrome.runtime.getURL('assets/ocr/tesseract-core.wasm.js')
+          : undefined;
+        const langPath = isExtensionEnv
+          ? chrome.runtime.getURL('assets/ocr')
+          : undefined;
+
         this.worker = await createWorker('eng', 1, {
+          workerPath,
+          corePath,
+          langPath,
+          gzip: true,
           logger: () => {},
         });
 
         if (typeof WebAssembly === 'object' && typeof WebAssembly.instantiate === 'function') {
           this.currentBackend = 'wasm';
-          this.modelId = 'Tesseract-WASM-v5-OCR Engine';
+          this.modelId = 'Tesseract-WASM-v5-Local-OCR';
         } else {
           this.currentBackend = 'cpu';
           this.modelId = 'Tesseract-CPU-Fallback-OCR';
@@ -105,10 +121,17 @@ export class LocalVisualModelEngine {
 
         this.state = 'MODEL_READY';
       } catch (err) {
-        console.warn('[LocalVisualModelEngine] Local model worker initialization failed:', err);
-        this.state = 'INFERENCE_FAILED';
-        this.currentBackend = 'dom_fallback';
-        this.worker = null;
+        console.warn('[LocalVisualModelEngine] Primary local model asset initialization failed, trying fallback:', err);
+        try {
+          this.worker = await createWorker('eng', 1, { logger: () => {} });
+          this.currentBackend = 'wasm';
+          this.modelId = 'Tesseract-WASM-v5-OCR Engine';
+          this.state = 'MODEL_READY';
+        } catch (_fallbackErr) {
+          this.state = 'INFERENCE_FAILED';
+          this.currentBackend = 'dom_fallback';
+          this.worker = null;
+        }
       } finally {
         this.initPromise = null;
       }

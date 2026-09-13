@@ -1,5 +1,6 @@
-import { DOMNodeDescriptor, PrivacyBoundaryReport } from '../types/context';
+import { DOMNodeDescriptor, ImageEgressAttestation, PrivacyBoundaryReport } from '../types/context';
 import { DetectedEntity } from '../types/privacy';
+import { computeStringDigest } from '../content/canvas_capture';
 
 const EGRESS_EMAIL_REGEX = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g;
 const EGRESS_CREDIT_CARD_REGEX = /\b(?:\d[ -]*?){13,16}\b/g;
@@ -104,13 +105,17 @@ export function extractAllStringVariants(
 
 /**
  * Validates egress payload recursively and encoding-aware before network request dispatch.
+ * Enforces HARD PRIVACY INVARIANT: Raw or unverified/tampered screenshot images MUST NEVER be transmitted.
  */
 export function validateNetworkEgress(
   rawEntities: DetectedEntity[],
   sanitizedNodes: DOMNodeDescriptor[],
   sanitizedScreenshotBase64?: string,
   visualPrivacyState: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED' = 'VERIFIED_SAFE',
-  unverifiedVisualRegionsMasked: number = 0
+  unverifiedVisualRegionsMasked: number = 0,
+  imageAttestation?: ImageEgressAttestation,
+  expectedTaskId?: string,
+  expectedCaptureId?: string
 ): PrivacyBoundaryReport {
   const timestamp = Date.now();
   const validationDetails: string[] = [];
@@ -147,7 +152,6 @@ export function validateNetworkEgress(
       const val = ent.rawValue.trim();
       sensitiveTargets.add(val.toLowerCase());
 
-      // Also add Base64 variant of raw value
       try {
         if (typeof btoa === 'function') {
           const b64Val = btoa(val);
@@ -155,7 +159,6 @@ export function validateNetworkEgress(
         }
       } catch (_) {}
 
-      // Also add URL encoded variant
       try {
         const urlVal = encodeURIComponent(val);
         sensitiveTargets.add(urlVal.toLowerCase());
@@ -167,10 +170,8 @@ export function validateNetworkEgress(
   for (const variant of payloadStringVariants) {
     const varLower = variant.toLowerCase();
 
-    // Check against raw & encoded sensitive targets
     for (const target of sensitiveTargets) {
       if (varLower.includes(target)) {
-        // Exclude legitimate tokens or redaction placeholders
         const isLegitToken = /^[A-Z_]+#[A-F0-9]+$/i.test(variant) || variant.includes('[REDACTED]') || variant.includes('••••');
         if (!isLegitToken) {
           zeroRawPIIVerified = false;
@@ -179,7 +180,6 @@ export function validateNetworkEgress(
       }
     }
 
-    // Scan for unmasked raw email patterns
     EGRESS_EMAIL_REGEX.lastIndex = 0;
     let match: RegExpExecArray | null;
     while ((match = EGRESS_EMAIL_REGEX.exec(variant)) !== null) {
@@ -192,7 +192,6 @@ export function validateNetworkEgress(
       }
     }
 
-    // Scan for unmasked raw credit cards
     EGRESS_CREDIT_CARD_REGEX.lastIndex = 0;
     while ((match = EGRESS_CREDIT_CARD_REGEX.exec(variant)) !== null) {
       const matchedCC = match[0].replace(/\D/g, '');
@@ -206,7 +205,6 @@ export function validateNetworkEgress(
       }
     }
 
-    // Scan for unmasked raw passport numbers
     EGRESS_PASSPORT_REGEX.lastIndex = 0;
     while ((match = EGRESS_PASSPORT_REGEX.exec(variant)) !== null) {
       const matchedPassport = match[0];
@@ -218,13 +216,11 @@ export function validateNetworkEgress(
       }
     }
 
-    // Scan for raw screenshot data URLs or nested image base64 strings inside DOM payload nodes
     if (variant.length > 500 && (variant.includes('data:image/') || (variant.includes('base64,') && !variant.includes('[REDACTED]')))) {
       zeroRawPIIVerified = false;
       validationDetails.push('CRITICAL SECURITY FAILURE: Raw screenshot image data URL or nested base64 image detected in DOM egress payload!');
     }
 
-    // Scan for unmasked raw phone numbers
     EGRESS_PHONE_REGEX.lastIndex = 0;
     while ((match = EGRESS_PHONE_REGEX.exec(variant)) !== null) {
       const matchedPhone = match[0];
@@ -237,22 +233,53 @@ export function validateNetworkEgress(
     }
   }
 
-  // 3. Verify Visual Screenshot Redaction Status
+  // 3. HARD PRIVACY INVARIANT: Verify Visual Screenshot Redaction Status & Cryptographic Provenance
   let visualRedactionVerified = false;
-  if (sanitizedScreenshotBase64 && sanitizedScreenshotBase64.startsWith('data:image/png;base64,')) {
+  let validatedImageBase64 = sanitizedScreenshotBase64;
+
+  if (validatedImageBase64 && validatedImageBase64.startsWith('data:image/png;base64,')) {
+    // Invariant A: Unverified privacy state must NEVER transmit image bytes
     if (visualPrivacyState === 'VISUAL_PRIVACY_UNVERIFIED') {
       visualRedactionVerified = false;
-      validationDetails.push('CRITICAL SECURITY FAILURE: Screenshot payload provided when visual privacy state is VISUAL_PRIVACY_UNVERIFIED (INV-07 Violation)!');
-    } else {
-      visualRedactionVerified = true;
-      validationDetails.push('Visual Egress Inspection Passed: Client canvas base64 screenshot is redacted.');
+      validatedImageBase64 = undefined; // NULLIFY EGRESS BYTES
+      validationDetails.push('CRITICAL SECURITY BLOCKED: Screenshot bytes stripped because visual privacy state is VISUAL_PRIVACY_UNVERIFIED (INV-07 Violation).');
+    }
+    // Invariant B: Image must have valid SANITIZED attestation
+    else if (!imageAttestation || imageAttestation.status !== 'SANITIZED') {
+      visualRedactionVerified = false;
+      validatedImageBase64 = undefined; // NULLIFY EGRESS BYTES
+      validationDetails.push('CRITICAL SECURITY BLOCKED: Screenshot bytes stripped because image lacks valid SANITIZED attestation provenance.');
+    }
+    // Invariant C: Cryptographic string digest match
+    else {
+      const computedHash = computeStringDigest(validatedImageBase64);
+      if (imageAttestation.sanitizedImageDigest !== computedHash) {
+        visualRedactionVerified = false;
+        validatedImageBase64 = undefined; // NULLIFY EGRESS BYTES
+        validationDetails.push('CRITICAL SECURITY BLOCKED: Screenshot bytes stripped because image digest mismatch (Post-Redaction Tampering Detected).');
+      }
+      // Invariant D: Stale Task/Capture Image Check
+      else if (expectedTaskId && imageAttestation.taskId !== expectedTaskId) {
+        visualRedactionVerified = false;
+        validatedImageBase64 = undefined; // NULLIFY EGRESS BYTES
+        validationDetails.push('CRITICAL SECURITY BLOCKED: Screenshot bytes stripped because image belongs to a different task (Stale Task Image Attack).');
+      }
+      else if (expectedCaptureId && imageAttestation.captureId !== expectedCaptureId) {
+        visualRedactionVerified = false;
+        validatedImageBase64 = undefined; // NULLIFY EGRESS BYTES
+        validationDetails.push('CRITICAL SECURITY BLOCKED: Screenshot bytes stripped because image belongs to a different capture (Stale Capture Image Attack).');
+      }
+      else {
+        visualRedactionVerified = true;
+        validationDetails.push('Visual Egress Inspection Passed: Client canvas base64 screenshot is redacted and cryptographically verified.');
+      }
     }
   } else {
     validationDetails.push('Visual Egress Inspection: Structured DOM context mode operating without screenshot payload.');
   }
 
   const payloadString = JSON.stringify(sanitizedNodes);
-  const sanitizedPayloadSizeBytes = new Blob([payloadString + (sanitizedScreenshotBase64 || '')]).size;
+  const sanitizedPayloadSizeBytes = new Blob([payloadString + (validatedImageBase64 || '')]).size;
   const rawPayloadSizeBytes = sanitizedPayloadSizeBytes + rawEntities.reduce((acc, e) => acc + (e.rawValue ? e.rawValue.length : 0), 0);
 
   if (zeroRawPIIVerified) {
@@ -272,7 +299,9 @@ export function validateNetworkEgress(
     visualRedactionVerified,
     visualPrivacyState,
     unverifiedVisualRegionsMasked,
-    validatorVersion: 'v2.1.0-p4-fail-closed-visual-privacy',
+    validatorVersion: 'v2.2.0-p4-hard-privacy-invariant',
     validationDetails,
+    imageAttestation: visualRedactionVerified ? imageAttestation : undefined,
   };
 }
+

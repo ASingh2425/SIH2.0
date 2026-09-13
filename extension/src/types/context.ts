@@ -26,6 +26,17 @@ export interface DOMNodeDescriptor {
   assignedToken?: string;
 }
 
+export interface ImageEgressAttestation {
+  captureId: string;
+  taskId: string;
+  rawImageDigest?: string;
+  sanitizedImageDigest: string;
+  perceptionId: string;
+  redactionCount: number;
+  timestamp: number;
+  status: 'SANITIZED' | 'UNVERIFIED';
+}
+
 export interface PrivacyBoundaryReport {
   timestamp: number;
   rawEntitiesDetected: number;
@@ -41,6 +52,7 @@ export interface PrivacyBoundaryReport {
   unverifiedVisualRegionsMasked: number;
   validatorVersion: string;
   validationDetails: string[];
+  imageAttestation?: ImageEgressAttestation;
 }
 
 export interface SanitizedContextPayload {
@@ -52,4 +64,6 @@ export interface SanitizedContextPayload {
   sanitizedScreenshotBase64?: string; // Client-redacted canvas base64 image
   mlBackendStatus: MLBackendStatus;
   boundaryReport: PrivacyBoundaryReport;
+  imageAttestation?: ImageEgressAttestation;
 }
+

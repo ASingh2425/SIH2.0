@@ -86,10 +86,13 @@ class ContentAgentController {
     let unverifiedVisualRegionsMasked = 0;
     let evaluatedEntities: DetectedEntity[] = [];
     let sanitizedScreenshotBase64: string | undefined = undefined;
+    let imageAttestation: any = undefined;
+    let currentCaptureNonce: string | undefined = undefined;
 
     if (isSlowPath) {
       // 3A. STEP 1: Capture Viewport Screenshot FIRST
       const captureNonce = this.generateCaptureNonce();
+      currentCaptureNonce = captureNonce;
       this.outstandingCaptureNonces.set(captureNonce, { taskId, createdAt: Date.now(), origin: originDomain });
 
       const captureRes = await new Promise<{
@@ -163,7 +166,10 @@ class ContentAgentController {
             window.innerWidth,
             window.innerHeight,
             rawDataUrl,
-            window.devicePixelRatio || 1
+            window.devicePixelRatio || 1,
+            taskId,
+            captureNonce,
+            'percept_' + Date.now()
           );
 
           if (redactRes.visualPrivacyState === 'VISUAL_PRIVACY_UNVERIFIED') {
@@ -171,6 +177,7 @@ class ContentAgentController {
             sanitizedScreenshotBase64 = undefined;
           } else {
             sanitizedScreenshotBase64 = redactRes.sanitizedBase64 || undefined;
+            imageAttestation = redactRes.attestation;
           }
         } catch (_err) {
           visualPrivacyState = 'VISUAL_PRIVACY_UNVERIFIED';
@@ -219,7 +226,10 @@ class ContentAgentController {
       sanitizedNodes,
       sanitizedScreenshotBase64,
       visualPrivacyState,
-      unverifiedVisualRegionsMasked
+      unverifiedVisualRegionsMasked,
+      imageAttestation,
+      taskId,
+      currentCaptureNonce
     );
     this.ledger.recordBoundaryReport(boundaryReport);
 

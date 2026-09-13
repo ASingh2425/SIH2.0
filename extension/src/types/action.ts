@@ -1,3 +1,5 @@
+import { VisualActionBinding } from '../firewall/visual_action_binder';
+
 export type ActionType =
   | 'CLICK'
   | 'TYPE'
@@ -21,6 +23,7 @@ export interface StructuredAction {
   value?: string; // May contain token like "PERSON#A72F" or literal input
   confidence: number;
   reasoning: string;
+  visualBinding?: VisualActionBinding;
 }
 
 export interface IntentAnchor {
@@ -63,6 +66,7 @@ export interface FirewallAuthorizationToken {
   issuedAt: number;
   expiresAt: number;
   signature: string;
+  visualBinding?: VisualActionBinding;
 }
 
 export interface ActionFirewallResult {

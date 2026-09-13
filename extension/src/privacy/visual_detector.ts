@@ -423,6 +423,31 @@ export class LocalVisualDetector {
             confidence: 0.95,
             source: 'spatial_heuristic',
           });
+
+          // Calculate text occupancy & position relative to visual bounding box
+          const textArea = bT.width * bT.height;
+          const regArea = Math.max(1, bV.width * bV.height);
+          vReg.visualEvidence.textOccupancy = Math.round(Math.min(1.0, textArea / regArea) * 100) / 100;
+
+          const padLeft = Math.max(0, bT.x - bV.x);
+          const padRight = Math.max(0, (bV.x + bV.width) - (bT.x + bT.width));
+          const padTop = Math.max(0, bT.y - bV.y);
+          const padBottom = Math.max(0, (bV.y + bV.height) - (bT.y + bT.height));
+
+          vReg.visualEvidence.paddingEstimate = {
+            top: Math.round(padTop),
+            right: Math.round(padRight),
+            bottom: Math.round(padBottom),
+            left: Math.round(padLeft),
+          };
+
+          if (Math.abs(padLeft - padRight) <= 20) {
+            vReg.visualEvidence.textPositionRelative = 'CENTER';
+          } else if (padLeft < padRight) {
+            vReg.visualEvidence.textPositionRelative = 'LEFT';
+          } else {
+            vReg.visualEvidence.textPositionRelative = 'RIGHT';
+          }
         }
       }
 

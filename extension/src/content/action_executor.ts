@@ -1,13 +1,15 @@
 import { FirewallAuthorizationToken, StructuredAction } from '../types/action';
 import { LocalTokenVault } from '../privacy/token_vault';
 import { LocalActionFirewall } from '../firewall/action_firewall';
+import { VisualActionBinder } from '../firewall/visual_action_binder';
 
 export class BrowserExecutor {
   private tokenVault = LocalTokenVault.getInstance();
+  private visualBinder = VisualActionBinder.getInstance();
 
   /**
-   * Executes verified action in browser DOM ONLY after firewall authorization token validation
-   * AND immediate pre-execution DOM re-evaluation (TOCTOU defense).
+   * Executes verified action in browser DOM ONLY after firewall authorization token validation,
+   * visual-to-action grounding verification, AND immediate pre-execution DOM re-evaluation (TOCTOU defense).
    */
   public async executeVerifiedAction(
     action: StructuredAction,
@@ -74,6 +76,24 @@ export class BrowserExecutor {
     const rect = targetEl.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0 && action.action !== 'WAIT') {
       return { success: false, message: `Pre-Execution Security Abort: Target element ${targetNodeId} is hidden or invisible` };
+    }
+
+    // 2. VISUAL-TO-ACTION GROUNDING VERIFICATION
+    const binding = action.visualBinding || authorizationToken.visualBinding;
+    if (binding) {
+      const groundingRes = this.visualBinder.verifyVisualGrounding(
+        binding,
+        { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+        currentOrigin,
+        originDomain,
+        action.action
+      );
+      if (!groundingRes.valid) {
+        return {
+          success: false,
+          message: `Visual Grounding Security Abort: ${groundingRes.reason}`,
+        };
+      }
     }
 
     try {
