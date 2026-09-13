@@ -95,10 +95,7 @@ export class LocalVisualModelEngine {
           logger: () => {},
         });
 
-        if (this.isWebGPUAvailable) {
-          this.currentBackend = 'webgpu';
-          this.modelId = 'Tesseract-WASM+WebGPU-Spatial-OCR-Engine';
-        } else if (typeof WebAssembly === 'object' && typeof WebAssembly.instantiate === 'function') {
+        if (typeof WebAssembly === 'object' && typeof WebAssembly.instantiate === 'function') {
           this.currentBackend = 'wasm';
           this.modelId = 'Tesseract-WASM-v5-OCR Engine';
         } else {

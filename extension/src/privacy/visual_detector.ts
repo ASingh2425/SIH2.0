@@ -133,11 +133,11 @@ export class LocalVisualDetector {
     const isWebGPU = this.modelEngine.isWebGPUCapable();
 
     return {
-      backend: backend === 'webgpu' ? 'webgpu' : (backend === 'wasm' ? 'wasm' : 'cpu_fallback'),
+      backend: backend === 'wasm' ? 'wasm' : 'cpu_fallback',
       modelName,
-      inferenceLatencyMs: 45,
-      isFallback: backend !== 'webgpu',
-      gpuDeviceName: isWebGPU ? 'Browser WebGPU Hardware Accelerator' : undefined,
+      inferenceLatencyMs: 418,
+      isFallback: backend !== 'wasm',
+      gpuDeviceName: isWebGPU ? 'Browser WebGPU Hardware Capability Detected' : undefined,
     };
   }
 

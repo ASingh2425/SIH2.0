@@ -449,10 +449,9 @@ export default function SidePanel() {
 
                   <div className="flex justify-between bg-slate-950 p-1.5 rounded border border-slate-800">
                     <span className="text-slate-400">Actual Active Backend:</span>
-                    <span className="font-bold text-slate-100 text-[9px] uppercase">
-                      {lastResponse.mlBackendStatus?.backend === 'webgpu' ? 'WebGPU Acceleration' :
-                       lastResponse.mlBackendStatus?.backend === 'wasm' ? 'WASM (WebAssembly Engine)' :
-                       lastResponse.mlBackendStatus?.backend || 'WASM'}
+                    <span className="font-bold text-emerald-400 text-[9px] uppercase">
+                      {lastResponse.mlBackendStatus?.backend === 'wasm' ? 'WASM (WebAssembly Worker Engine)' :
+                       lastResponse.mlBackendStatus?.backend === 'cpu_fallback' ? 'CPU Fallback' : 'WASM Engine'}
                     </span>
                   </div>
 

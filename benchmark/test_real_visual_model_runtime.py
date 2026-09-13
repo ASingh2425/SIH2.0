@@ -38,8 +38,8 @@ class TestRealVisualModelRuntime(unittest.TestCase):
         with open(self.engine_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Ensure model initialization sets actual running backend
-        self.assertIn("this.currentBackend = 'webgpu'", content)
+        # Ensure capability detection exists and inference engine backend reports truthful execution
+        self.assertIn("isWebGPUAvailable", content)
         self.assertIn("this.currentBackend = 'wasm'", content)
         self.assertIn("this.currentBackend = 'cpu'", content)
 
