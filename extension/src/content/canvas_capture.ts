@@ -102,9 +102,17 @@ export class ClientCanvasRedactor {
           const bounds = sanitizeBoundingBox(rawBounds, canvas.width, canvas.height);
           if (!bounds) continue;
 
+          // 2px tight safety margin padding to guarantee complete coverage of antialiased text edges
+          const pad = 2;
+          const padX = Math.max(0, bounds.x - pad);
+          const padY = Math.max(0, bounds.y - pad);
+          const padW = Math.min(canvas.width - padX, bounds.width + pad * 2);
+          const padH = Math.min(canvas.height - padY, bounds.height + pad * 2);
+
+          ctx.save();
           // Solid dark fill pixel redaction
           ctx.fillStyle = '#020617';
-          ctx.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+          ctx.fillRect(padX, padY, padW, padH);
 
           // Security border & label
           const isUnverified = ent.type === 'UNVERIFIED_VISUAL_REGION';
@@ -112,12 +120,18 @@ export class ClientCanvasRedactor {
 
           ctx.strokeStyle = isUnverified ? '#f59e0b' : '#ef4444';
           ctx.lineWidth = 1.5;
-          ctx.strokeRect(bounds.x, bounds.y, bounds.width, bounds.height);
+          ctx.strokeRect(padX, padY, padW, padH);
+
+          // Clip label strictly inside redacted box to prevent bleeding onto benign UI
+          ctx.beginPath();
+          ctx.rect(padX, padY, padW, padH);
+          ctx.clip();
 
           ctx.fillStyle = isUnverified ? '#fbbf24' : '#f87171';
           ctx.font = '10px monospace';
           const maskLabel = isUnverified ? '[UNVERIFIED REGION MASKED]' : `[REDACTED ${ent.type}]`;
-          ctx.fillText(maskLabel, bounds.x + 4, bounds.y + Math.min(bounds.height / 2 + 3, bounds.height - 4));
+          ctx.fillText(maskLabel, padX + 4, padY + Math.min(padH / 2 + 3, padH - 4));
+          ctx.restore();
 
           redactionCount++;
         }

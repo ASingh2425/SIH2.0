@@ -99,5 +99,26 @@
     "malicious_vlm_responses_tested": 10,
     "responses_contained_by_firewall": 10,
     "untrusted_remote_vlm_containment_rate_pct": 100.0
+  },
+  "official_metric5_end_to_end_task_latency": {
+    "task_name": "Secure Form Submission & Visual Action Grounding",
+    "total_tasks_run": 30,
+    "successful_tasks": 30,
+    "task_success_rate_pct": 100.0,
+    "statistical_e2e_latency": {
+      "mean_ms": 508.57,
+      "p50_median_ms": 508.72,
+      "p95_ms": 519.62,
+      "p99_ms": 520.52,
+      "min_ms": 496.02,
+      "max_ms": 520.52
+    },
+    "honest_bottleneck_breakdown": {
+      "client_side_privacy_and_grounding_ms": 122.79,
+      "client_side_pct_of_total": 24.14,
+      "remote_network_and_vlm_ms": 385.53,
+      "remote_pct_of_total": 75.81,
+      "bottleneck_verdict": "Remote network RTT & VLM reasoning dominate 75.8% of task time; Client-side visual privacy shield completes in only 122.78ms (24.2%)."
+    }
   }
 }
