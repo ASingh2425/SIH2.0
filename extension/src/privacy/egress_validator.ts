@@ -218,6 +218,12 @@ export function validateNetworkEgress(
       }
     }
 
+    // Scan for raw screenshot data URLs or nested image base64 strings inside DOM payload nodes
+    if (variant.length > 500 && (variant.includes('data:image/') || (variant.includes('base64,') && !variant.includes('[REDACTED]')))) {
+      zeroRawPIIVerified = false;
+      validationDetails.push('CRITICAL SECURITY FAILURE: Raw screenshot image data URL or nested base64 image detected in DOM egress payload!');
+    }
+
     // Scan for unmasked raw phone numbers
     EGRESS_PHONE_REGEX.lastIndex = 0;
     while ((match = EGRESS_PHONE_REGEX.exec(variant)) !== null) {
@@ -234,10 +240,11 @@ export function validateNetworkEgress(
   // 3. Verify Visual Screenshot Redaction Status
   let visualRedactionVerified = false;
   if (sanitizedScreenshotBase64 && sanitizedScreenshotBase64.startsWith('data:image/png;base64,')) {
-    visualRedactionVerified = true;
     if (visualPrivacyState === 'VISUAL_PRIVACY_UNVERIFIED') {
-      validationDetails.push(`Visual Egress Inspection: Fail-closed solid mask applied to ${unverifiedVisualRegionsMasked} unverified visual region(s).`);
+      visualRedactionVerified = false;
+      validationDetails.push('CRITICAL SECURITY FAILURE: Screenshot payload provided when visual privacy state is VISUAL_PRIVACY_UNVERIFIED (INV-07 Violation)!');
     } else {
+      visualRedactionVerified = true;
       validationDetails.push('Visual Egress Inspection Passed: Client canvas base64 screenshot is redacted.');
     }
   } else {

@@ -68,7 +68,7 @@ def run_real_screen_capture_test_suite():
     )
 
     # Test N & G: Sender tab and origin validation in Service Worker
-    has_origin_validation = "parsedSenderOrigin !== parsedReqOrigin" in sw_content and "Security Abort: Missing active tab context" in sw_content
+    has_origin_validation = ("strictOriginMatch" in sw_content or "preCaptureOrigin" in sw_content) and "Security Abort: Missing active tab context" in sw_content
     add_result(
         "Sender Tab & Origin Verification",
         "static verification",

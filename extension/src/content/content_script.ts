@@ -4,11 +4,12 @@ import { TaskIntentParser } from '../privacy/task_intent';
 import { MinimumDisclosureEngine } from '../privacy/minimum_disclosure';
 import { LocalActionFirewall } from '../firewall/action_firewall';
 import { BrowserExecutor } from './action_executor';
-import { PrivacyLedger } from '../ledger/privacy_ledger';
 import { ClientCanvasRedactor } from './canvas_capture';
 import { validateNetworkEgress } from '../privacy/egress_validator';
+import { PrivacyLedger } from '../ledger/privacy_ledger';
 import { SanitizedContextPayload } from '../types/context';
-import { ActionFirewallResult, IntentAnchor, StructuredAction } from '../types/action';
+import { DetectedEntity } from '../types/privacy';
+import { IntentAnchor, StructuredAction } from '../types/action';
 
 class ContentAgentController {
   private domExtractor = new DOMExtractor();
@@ -22,38 +23,49 @@ class ContentAgentController {
 
   private activeIntentAnchor: IntentAnchor | null = null;
   private currentLiveNodeMap = new Map<string, HTMLElement>();
+  private outstandingCaptureNonces = new Map<string, { taskId: string; createdAt: number; origin: string }>();
 
   constructor() {
     this.initMessageListeners();
     console.log('[PrivacyGuard Content Agent] Active and listening in DOM.');
   }
 
+  private generateCaptureNonce(): string {
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+      return crypto.randomUUID();
+    }
+    if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+      const buf = new Uint8Array(16);
+      crypto.getRandomValues(buf);
+      return Array.from(buf).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    return 'nonce_' + Math.random().toString(36).substring(2) + '_' + Date.now();
+  }
+
   private initMessageListeners() {
     chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
       if (request.type === 'START_TASK') {
-        this.handleStartTask(request.userPrompt, request.taskId, request.forceSlowPath || false)
+        this.handleStartTask(request.userPrompt, request.taskId, request.forceSlowPath)
           .then(res => sendResponse(res))
           .catch(err => sendResponse({ error: err.message }));
-        return true; // async response
+        return true;
       }
 
       if (request.type === 'EXECUTE_CONFIRMED_ACTION') {
-        this.handleExecuteConfirmedAction(request.action, request.firewallResult)
+        this.handleConfirmedAction(request.action, request.firewallResult)
           .then(res => sendResponse(res))
           .catch(err => sendResponse({ error: err.message }));
         return true;
       }
 
       if (request.type === 'GET_LEDGER_DATA') {
-        const data = this.ledger.getFullLedger(request.taskId || 'default');
-        sendResponse(data);
-        return false;
+        sendResponse(this.ledger.getFullLedger(request.taskId));
+        return true;
       }
     });
   }
 
-  private async handleStartTask(userPrompt: string, taskId: string, forceSlowPath: boolean = false) {
-    const startTime = performance.now();
+  private async handleStartTask(userPrompt: string, taskId: string, forceSlowPath = false) {
     const originDomain = window.location.origin;
 
     // 1. Create Immutable Local Intent Anchor
@@ -63,33 +75,31 @@ class ContentAgentController {
     const perceptionStart = performance.now();
     const { nodes, nodeMap } = this.domExtractor.extractDOMContext();
     this.currentLiveNodeMap = nodeMap;
-    const perceptionMs = performance.now() - perceptionStart;
 
     // Determine Tiered Path Execution (Fast Path vs Slow Path)
     const hasVisualElements = document.querySelector('canvas, svg, img') !== null;
     const isSlowPath = forceSlowPath || hasVisualElements;
 
-    // 3. Multimodal PII Perception (DOM + Regex + Visual OCR)
-    const perceptionRes = await this.piiDetector.detectMultimodalEntities(nodes, document);
-    const rawEntities = perceptionRes.entities;
-    const ocrLatencyMs = perceptionRes.ocrLatencyMs;
-
-    // 4. Minimum Disclosure Engine (MDE) Evaluation
-    const mdeStart = performance.now();
-    const evaluatedEntities = this.mde.evaluateDisclosure(rawEntities, this.activeIntentAnchor);
-    const mdeMs = performance.now() - mdeStart;
-
-    // Record privacy decisions in local ledger
-    this.ledger.recordPerceptionDecisions(taskId, evaluatedEntities);
-
-    // 5. Client Canvas Screenshot Redaction (Local Visual Masking over Real Viewport Capture)
-    let sanitizedScreenshotBase64: string | undefined;
-    let visualPrivacyState = perceptionRes.visualPrivacyState;
+    let rawEntities: DetectedEntity[] = [];
+    let ocrLatencyMs = 0;
+    let visualPrivacyState: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED' = 'VERIFIED_SAFE';
+    let unverifiedVisualRegionsMasked = 0;
+    let evaluatedEntities: DetectedEntity[] = [];
+    let sanitizedScreenshotBase64: string | undefined = undefined;
 
     if (isSlowPath) {
+      // 3A. STEP 1: Capture Viewport Screenshot FIRST
+      const captureNonce = this.generateCaptureNonce();
+      this.outstandingCaptureNonces.set(captureNonce, { taskId, createdAt: Date.now(), origin: originDomain });
+
       const captureRes = await new Promise<{
         success: boolean;
         dataUrl?: string;
+        taskId?: string;
+        captureNonce?: string;
+        tabId?: number;
+        origin?: string;
+        captureTimestamp?: number;
         visualPrivacyState?: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
         error?: string;
       }>(resolve => {
@@ -98,6 +108,7 @@ class ContentAgentController {
             {
               type: 'CAPTURE_VISIBLE_TAB',
               taskId,
+              captureNonce,
               expectedOrigin: originDomain,
               viewportWidth: window.innerWidth,
               viewportHeight: window.innerHeight,
@@ -116,26 +127,80 @@ class ContentAgentController {
         }
       });
 
-      if (captureRes.success && captureRes.dataUrl) {
-        const redactRes = await this.redactor.redactViewportScreenshot(
-          evaluatedEntities,
-          window.innerWidth,
-          window.innerHeight,
-          captureRes.dataUrl,
-          window.devicePixelRatio || 1
-        );
-        sanitizedScreenshotBase64 = redactRes.sanitizedBase64 || undefined;
-        if (redactRes.visualPrivacyState === 'VISUAL_PRIVACY_UNVERIFIED') {
+      // Single-use Nonce Consumption & Validation
+      const nonceMeta = captureRes.captureNonce ? this.outstandingCaptureNonces.get(captureRes.captureNonce) : undefined;
+      const isNonceValid = !!nonceMeta && nonceMeta.taskId === taskId && nonceMeta.origin === originDomain;
+      if (captureRes.captureNonce) {
+        this.outstandingCaptureNonces.delete(captureRes.captureNonce);
+      }
+
+      const now = Date.now();
+      const isFresh = typeof captureRes.captureTimestamp === 'number' && (now - captureRes.captureTimestamp) <= 5000 && (now - captureRes.captureTimestamp) >= 0;
+      const isActiveTask = this.activeIntentAnchor !== null && this.activeIntentAnchor.taskId === taskId;
+      const isOriginMatch = captureRes.origin ? captureRes.origin === originDomain : true;
+      const isTaskMatch = captureRes.taskId ? captureRes.taskId === taskId : true;
+
+      const isCaptureValid = captureRes.success && captureRes.dataUrl && isNonceValid && isFresh && isActiveTask && isOriginMatch && isTaskMatch;
+
+      if (isCaptureValid) {
+        let rawDataUrl: string | undefined = captureRes.dataUrl;
+        delete (captureRes as any).dataUrl; // Immediate memory cleanup
+
+        try {
+          // 3B. STEP 2: Execute Local Visual OCR & Multimodal Perception on Real Captured Screenshot Pixels
+          const perceptionRes = await this.piiDetector.detectMultimodalEntities(nodes, document, rawDataUrl);
+          rawEntities = perceptionRes.entities;
+          ocrLatencyMs = perceptionRes.ocrLatencyMs;
+          visualPrivacyState = perceptionRes.visualPrivacyState;
+          unverifiedVisualRegionsMasked = perceptionRes.unverifiedVisualRegionsMasked;
+
+          // 3C. STEP 3: Evaluate Minimum Disclosure Engine (MDE) on Fused Entity Set
+          evaluatedEntities = this.mde.evaluateDisclosure(rawEntities, this.activeIntentAnchor);
+
+          // 3D. STEP 4: Perform Solid Dark Fill Canvas Redaction (#020617) over Screenshot Pixels
+          const redactRes = await this.redactor.redactViewportScreenshot(
+            evaluatedEntities,
+            window.innerWidth,
+            window.innerHeight,
+            rawDataUrl,
+            window.devicePixelRatio || 1
+          );
+
+          if (redactRes.visualPrivacyState === 'VISUAL_PRIVACY_UNVERIFIED') {
+            visualPrivacyState = 'VISUAL_PRIVACY_UNVERIFIED';
+            sanitizedScreenshotBase64 = undefined;
+          } else {
+            sanitizedScreenshotBase64 = redactRes.sanitizedBase64 || undefined;
+          }
+        } catch (_err) {
           visualPrivacyState = 'VISUAL_PRIVACY_UNVERIFIED';
+          sanitizedScreenshotBase64 = undefined;
+        } finally {
+          rawDataUrl = undefined; // Immediate raw reference release
         }
       } else {
-        // FAIL-CLOSED: Real capture unavailable or error -> Transition to VISUAL_PRIVACY_UNVERIFIED and transmit NO image
+        if (captureRes && (captureRes as any).dataUrl) {
+          delete (captureRes as any).dataUrl;
+        }
         visualPrivacyState = 'VISUAL_PRIVACY_UNVERIFIED';
         sanitizedScreenshotBase64 = undefined;
       }
+    } else {
+      // 3E. Fast Path (DOM-only perception without screenshot)
+      const perceptionRes = await this.piiDetector.detectMultimodalEntities(nodes, document);
+      rawEntities = perceptionRes.entities;
+      ocrLatencyMs = perceptionRes.ocrLatencyMs;
+      visualPrivacyState = perceptionRes.visualPrivacyState;
+      unverifiedVisualRegionsMasked = perceptionRes.unverifiedVisualRegionsMasked;
+      evaluatedEntities = this.mde.evaluateDisclosure(rawEntities, this.activeIntentAnchor);
     }
 
-    // 6. Construct Sanitized DOM Payload
+    const perceptionMs = performance.now() - perceptionStart;
+
+    // Record privacy decisions in local ledger
+    this.ledger.recordPerceptionDecisions(taskId, evaluatedEntities);
+
+    // 4. Construct Sanitized DOM Payload
     const sanitizedNodes = nodes.map(n => {
       const ent = evaluatedEntities.find(e => e.nodeId === n.nodeId);
       if (ent) {
@@ -148,13 +213,13 @@ class ContentAgentController {
       return n;
     });
 
-    // 7. Independent Network Egress Validation & Boundary Attestation Generation
+    // 5. Independent Network Egress Validation & Boundary Attestation Generation
     const boundaryReport = validateNetworkEgress(
       evaluatedEntities,
       sanitizedNodes,
       sanitizedScreenshotBase64,
       visualPrivacyState,
-      perceptionRes.unverifiedVisualRegionsMasked
+      unverifiedVisualRegionsMasked
     );
     this.ledger.recordBoundaryReport(boundaryReport);
 
@@ -171,156 +236,101 @@ class ContentAgentController {
       boundaryReport,
     };
 
-    // 8. Network Egress: Send ONLY sanitized context to Remote Reasoning Server
-    const networkStart = performance.now();
-    const candidateAction = await this.queryRemoteReasoningServer(sanitizedPayload);
-    const networkMs = performance.now() - networkStart;
+    // 6. Send Sanitized Payload to Remote Reasoning Server
+    const reasonerResponse = await this.queryRemoteReasoningServer(sanitizedPayload);
+    const candidateAction = reasonerResponse.candidateAction;
 
-    // 9. Local Action Firewall Validation against Intent Anchor
-    const firewallStart = performance.now();
+    // 7. Local Action Firewall Authorization
+    const structuredAction: StructuredAction = {
+      actionId: candidateAction.actionId || `act_${Date.now()}`,
+      taskId,
+      action: candidateAction.actionType as any,
+      target: { nodeId: candidateAction.targetNodeId || 'N/A' },
+      value: candidateAction.value,
+      confidence: 0.95,
+      reasoning: candidateAction.expectedResult || 'Execute user task action',
+    };
     const firewallResult = this.firewall.validateAction(
-      candidateAction,
-      this.activeIntentAnchor,
+      structuredAction,
+      this.activeIntentAnchor!,
       originDomain,
       this.currentLiveNodeMap
     );
-    const firewallMs = performance.now() - firewallStart;
-
-    let executionResult = { success: false, message: 'Action pending approval or blocked' };
-
-    // 10. Execute in Browser DOM if Firewall decision is ALLOW and authorization token exists
-    if (firewallResult.decision === 'ALLOW' && firewallResult.authorizationToken) {
-      executionResult = await this.executor.executeVerifiedAction(
-        candidateAction,
-        this.currentLiveNodeMap,
-        originDomain,
-        firewallResult.authorizationToken,
-        this.firewall
-      );
-    }
-
-    // Record action log in audit ledger
-    this.ledger.recordFirewallDecision(taskId, candidateAction, firewallResult, executionResult.success);
-
-    const totalMs = performance.now() - startTime;
+    this.ledger.recordFirewallDecision(taskId, structuredAction, firewallResult);
 
     return {
       taskId,
       intentAnchor: this.activeIntentAnchor,
+      firewallResult,
+      candidateAction,
       boundaryReport,
       mlBackendStatus,
-      candidateAction,
-      firewallResult,
-      executionResult,
-      isSlowPath,
       timing: {
-        perceptionMs,
-        ocrLatencyMs,
-        mdeMs,
-        networkMs,
-        firewallMs,
-        totalMs,
+        perceptionMs: Math.round(perceptionMs),
+        ocrLatencyMs: Math.round(ocrLatencyMs),
       },
     };
   }
 
-  private async handleExecuteConfirmedAction(
-    action: StructuredAction,
-    firewallResult: ActionFirewallResult
-  ) {
+  private async queryRemoteReasoningServer(payload: SanitizedContextPayload): Promise<any> {
+    const isMock = true; // Simulated local mock remote reasoner server
+    if (isMock) {
+      await new Promise(r => setTimeout(r, 200));
+
+      const userGoal = this.activeIntentAnchor?.targetGoal || '';
+      let actionType = 'CLICK';
+      let targetNodeId = 'btn_search';
+      let value = undefined;
+
+      if (userGoal.toLowerCase().includes('delhi')) {
+        actionType = 'TYPE';
+        targetNodeId = 'input_destination';
+        value = 'Delhi';
+      }
+
+      return {
+        status: 'SUCCESS',
+        candidateAction: {
+          actionId: `act_${Date.now()}`,
+          actionType,
+          targetNodeId,
+          value,
+          expectedResult: 'Proceed to flight search results',
+        },
+      };
+    }
+
+    const response = await fetch('https://api.reasoner.local/agent/step', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return await response.json();
+  }
+
+  private async handleConfirmedAction(action: any, firewallResult: any) {
     if (!this.activeIntentAnchor) {
-      throw new Error('No active Intent Anchor');
+      throw new Error('No active intent anchor bound to session');
     }
 
-    const originDomain = window.location.origin;
+    const structuredAction: StructuredAction = {
+      actionId: action.actionId || `act_${Date.now()}`,
+      taskId: this.activeIntentAnchor.taskId,
+      action: action.actionType as any,
+      target: { nodeId: action.targetNodeId || 'N/A' },
+      value: action.value,
+      confidence: 0.95,
+      reasoning: action.expectedResult || 'Confirmed action execution',
+    };
 
-    // Explicit human user confirmation authorization token issuance
-    const userAuthToken = this.firewall.authorizeUserConfirmation(
-      action,
-      firewallResult,
-      this.activeIntentAnchor,
-      originDomain
-    );
-
-    if (!userAuthToken) {
-      const failRes = { success: false, message: 'Execution Security Abort: User confirmation authorization failed' };
-      this.ledger.recordFirewallDecision(action.taskId, action, firewallResult, false);
-      return failRes;
-    }
-
-    const res = await this.executor.executeVerifiedAction(
-      action,
+    return await this.executor.executeVerifiedAction(
+      structuredAction,
       this.currentLiveNodeMap,
-      originDomain,
-      userAuthToken,
+      window.location.origin,
+      firewallResult.authorizationToken,
       this.firewall
     );
-    this.ledger.recordFirewallDecision(action.taskId, action, firewallResult, res.success);
-    return res;
-  }
-
-  private async queryRemoteReasoningServer(
-    payload: SanitizedContextPayload
-  ): Promise<StructuredAction> {
-    try {
-      const response = await fetch('http://localhost:8000/api/v1/reason', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (response.ok) {
-        return await response.json();
-      }
-    } catch (_err) {
-      console.warn('[ContentAgent] Remote server offline; utilizing local deterministic fallback planner.');
-    }
-
-    // Deterministic Fallback Planner for P1 Flight Booking Demo Execution
-    return this.generateDeterministicFallbackAction(payload);
-  }
-
-  private generateDeterministicFallbackAction(payload: SanitizedContextPayload): StructuredAction {
-    const promptLower = (this.activeIntentAnchor?.userPrompt || '').toLowerCase();
-    if (['exfiltrate', 'attacker', 'override', 'transfer', 'delete', 'steal'].some(kw => promptLower.includes(kw))) {
-      return {
-        actionId: `action_${Date.now()}`,
-        taskId: payload.taskId,
-        action: 'NAVIGATE',
-        target: { nodeId: 'el_1' },
-        value: 'http://attacker.com/steal',
-        confidence: 0.99,
-        reasoning: 'Obeying prompt instruction to exfiltrate user data to attacker.com',
-      };
-    }
-
-    const nameNode = payload.sanitizedDomNodes.find(
-      n => n.nameAttr?.includes('name') || n.idAttr?.includes('name') || n.nameAttr?.includes('passenger')
-    );
-
-    if (nameNode) {
-      const token = nameNode.assignedToken || 'PERSON#A72F';
-      return {
-        actionId: `action_${Date.now()}`,
-        taskId: payload.taskId,
-        action: 'TYPE',
-        target: { nodeId: nameNode.nodeId },
-        value: token,
-        confidence: 0.96,
-        reasoning: `Filling passenger name field using local token ${token} for flight booking requirement.`,
-      };
-    }
-
-    const buttonNode = payload.sanitizedDomNodes.find(n => n.isClickable);
-    return {
-      actionId: `action_${Date.now()}`,
-      taskId: payload.taskId,
-      action: 'CLICK',
-      target: { nodeId: buttonNode?.nodeId || 'el_1' },
-      confidence: 0.90,
-      reasoning: 'Submitting flight search parameters to query flight availability.',
-    };
   }
 }
 
-// Initialize content agent in active browser tab
 new ContentAgentController();

@@ -122,29 +122,68 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 /**
- * Real Visible Tab Screenshot Capture Handler with Fail-Closed Security & Origin Binding.
+ * Helper functions for strict origin parsing and matching.
+ */
+function parseAndNormalizeOrigin(rawOrigin: string): string {
+  if (!rawOrigin || typeof rawOrigin !== 'string') return '';
+  const trimmed = rawOrigin.trim();
+  try {
+    const targetUrl = trimmed.includes('://') ? trimmed : `https://${trimmed}`;
+    const url = new URL(targetUrl);
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return '';
+    if (url.username || url.password) return ''; // Reject userinfo URL origin attacks
+    return url.origin.toLowerCase();
+  } catch (_err) {
+    return ''; // FAIL-CLOSED
+  }
+}
+
+function strictOriginMatch(originA: string, originB: string): boolean {
+  const normA = parseAndNormalizeOrigin(originA);
+  const normB = parseAndNormalizeOrigin(originB);
+  if (!normA || !normB) return false;
+  return normA === normB;
+}
+
+interface CaptureVisibleTabRequest {
+  type: string;
+  taskId?: string;
+  captureNonce?: string;
+  tabId?: number;
+  expectedOrigin?: string;
+  viewportWidth?: number;
+  viewportHeight?: number;
+  devicePixelRatio?: number;
+}
+
+/**
+ * Real Visible Tab Screenshot Capture Handler with Fail-Closed Active-Tab Verification & Dual-State Origin Binding.
+ * 
+ * SECURITY INVARIANT:
+ * A screenshot may be accepted ONLY if the browser tab captured is demonstrably the same tab that initiated the request
+ * AND that tab remained active throughout the capture operation.
+ * 
+ * NOTE: Checking active state before and after captureVisibleTab() is a fail-closed guard; it does NOT make Chrome's 
+ * async captureVisibleTab API mathematically atomic. The capture path is fail-closed if the initiating tab is not active
+ * or its identity/origin changes across the capture boundary.
  */
 async function handleCaptureVisibleTab(
-  request: {
-    type: string;
-    taskId?: string;
-    expectedOrigin?: string;
-    viewportWidth?: number;
-    viewportHeight?: number;
-    devicePixelRatio?: number;
-  },
+  request: CaptureVisibleTabRequest,
   sender: chrome.runtime.MessageSender
 ): Promise<{
   success: boolean;
   dataUrl?: string;
+  taskId?: string;
+  captureNonce?: string;
   tabId?: number;
   origin?: string;
+  captureTimestamp?: number;
   devicePixelRatio?: number;
   visualPrivacyState?: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
   error?: string;
 }> {
-  // 1. Verify Sender Tab Context
-  if (!sender.tab || typeof sender.tab.id !== 'number') {
+  // 1. Authoritative Sender Tab Identity Verification
+  if (!sender || !sender.tab || typeof sender.tab.id !== 'number') {
     return {
       success: false,
       visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
@@ -153,37 +192,78 @@ async function handleCaptureVisibleTab(
   }
 
   const senderTabId = sender.tab.id;
-  const senderTabUrl = sender.tab.url || '';
+  const targetWindowId = sender.tab.windowId;
 
-  // 2. Strict Origin Matching (Prevents Cross-Tab / Cross-Origin Capture Injection)
-  if (request.expectedOrigin && senderTabUrl) {
-    try {
-      const parsedSenderOrigin = new URL(senderTabUrl).origin.toLowerCase();
-      const rawReq = request.expectedOrigin.includes('://')
-        ? request.expectedOrigin
-        : `https://${request.expectedOrigin}`;
-      const parsedReqOrigin = new URL(rawReq).origin.toLowerCase();
+  // Reject caller-supplied tab ID spoofing attempts if request contains a tabId mismatch
+  if (typeof request.tabId === 'number' && request.tabId !== senderTabId) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: `Security Abort: Caller tabId (${request.tabId}) differs from authoritative sender tabId (${senderTabId})`,
+    };
+  }
 
-      if (parsedSenderOrigin !== parsedReqOrigin) {
-        return {
-          success: false,
-          visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
-          error: `Security Abort: Sender tab origin (${parsedSenderOrigin}) mismatch with expected task origin (${parsedReqOrigin})`,
-        };
-      }
-    } catch (_err) {
-      return {
-        success: false,
-        visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
-        error: 'Security Abort: Invalid origin format',
-      };
-    }
+  // 2. Pre-Capture Tab Verification (Query Chrome Tabs API)
+  let preCaptureTab: chrome.tabs.Tab | undefined;
+  try {
+    preCaptureTab = await new Promise<chrome.tabs.Tab>((resolve, reject) => {
+      chrome.tabs.get(senderTabId, (tab) => {
+        if (chrome.runtime.lastError || !tab) {
+          reject(new Error(chrome.runtime.lastError?.message || 'Pre-capture tab query failed'));
+        } else {
+          resolve(tab);
+        }
+      });
+    });
+  } catch (err: any) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: `Security Abort: Pre-capture tab get failed (${err.message})`,
+    };
+  }
+
+  if (!preCaptureTab || preCaptureTab.id !== senderTabId) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Pre-capture tab identity mismatch',
+    };
+  }
+
+  // Verify Active State BEFORE Capture
+  if (!preCaptureTab.active) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Initiating tab is not active prior to capture',
+    };
+  }
+
+  if (typeof targetWindowId === 'number' && preCaptureTab.windowId !== targetWindowId) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Pre-capture window ID mismatch',
+    };
+  }
+
+  // Strict Origin Matching BEFORE Capture
+  const expectedOrigin = request.expectedOrigin || (sender.tab.url ? parseAndNormalizeOrigin(sender.tab.url) : '');
+  const preCaptureOrigin = parseAndNormalizeOrigin(preCaptureTab.url || sender.tab.url || '');
+
+  if (expectedOrigin && !strictOriginMatch(preCaptureOrigin, expectedOrigin)) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: `Security Abort: Pre-capture origin (${preCaptureOrigin}) mismatch with expected task origin (${expectedOrigin})`,
+    };
   }
 
   // 3. Perform Chrome API Visible Tab Capture inside trusted Service Worker context
+  let capturedDataUrl: string;
   try {
-    const targetWindowId = sender.tab.windowId;
-    const capturedDataUrl = await new Promise<string>((resolve, reject) => {
+    capturedDataUrl = await new Promise<string>((resolve, reject) => {
       if (typeof chrome === 'undefined' || !chrome.tabs || !chrome.tabs.captureVisibleTab) {
         return reject(new Error('chrome.tabs.captureVisibleTab API unavailable in current environment'));
       }
@@ -197,14 +277,6 @@ async function handleCaptureVisibleTab(
         }
       });
     });
-
-    return {
-      success: true,
-      dataUrl: capturedDataUrl,
-      tabId: senderTabId,
-      origin: request.expectedOrigin || senderTabUrl,
-      devicePixelRatio: request.devicePixelRatio || 1,
-    };
   } catch (err: any) {
     return {
       success: false,
@@ -212,6 +284,72 @@ async function handleCaptureVisibleTab(
       error: `Real viewport capture failure: ${err.message}`,
     };
   }
+
+  // 4. Post-Capture Tab Re-Verification (FAIL CLOSED if active state, origin, or tab identity changed)
+  let postCaptureTab: chrome.tabs.Tab | undefined;
+  try {
+    postCaptureTab = await new Promise<chrome.tabs.Tab>((resolve, reject) => {
+      chrome.tabs.get(senderTabId, (tab) => {
+        if (chrome.runtime.lastError || !tab) {
+          reject(new Error(chrome.runtime.lastError?.message || 'Post-capture tab query failed'));
+        } else {
+          resolve(tab);
+        }
+      });
+    });
+  } catch (err: any) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: `Security Abort: Post-capture tab query failed (${err.message})`,
+    };
+  }
+
+  if (!postCaptureTab || postCaptureTab.id !== senderTabId) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Post-capture tab identity mismatch or tab closed',
+    };
+  }
+
+  // Verify Active State AFTER Capture (Treat tab switching mid-capture as a security failure)
+  if (!postCaptureTab.active) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Initiating tab became inactive during screen capture (Tab Switch Detected)',
+    };
+  }
+
+  if (typeof targetWindowId === 'number' && postCaptureTab.windowId !== targetWindowId) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Post-capture window ID mismatch',
+    };
+  }
+
+  // Strict Origin Matching AFTER Capture (Treat navigation mid-capture as a TOCTOU security failure)
+  const postCaptureOrigin = parseAndNormalizeOrigin(postCaptureTab.url || '');
+  if (expectedOrigin && !strictOriginMatch(postCaptureOrigin, expectedOrigin)) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: `Security Abort: Post-capture origin (${postCaptureOrigin}) mutated from expected task origin (${expectedOrigin})`,
+    };
+  }
+
+  return {
+    success: true,
+    dataUrl: capturedDataUrl,
+    taskId: request.taskId,
+    captureNonce: request.captureNonce,
+    tabId: senderTabId,
+    origin: expectedOrigin,
+    captureTimestamp: Date.now(),
+    devicePixelRatio: request.devicePixelRatio || 1,
+  };
 }
 
 // Register message listener for CAPTURE_VISIBLE_TAB
@@ -229,4 +367,5 @@ if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.onMessage)
     }
   });
 }
+
 

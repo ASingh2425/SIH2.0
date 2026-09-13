@@ -51,77 +51,87 @@ export class ClientCanvasRedactor {
 
     // 1. Load real browser viewport screenshot into Image element
     const img = new Image();
-    const imgLoaded = await new Promise<boolean>(resolve => {
-      img.onload = () => resolve(true);
-      img.onerror = () => resolve(false);
-      img.src = rawBase64Image;
-    });
+    try {
+      const imgLoaded = await new Promise<boolean>(resolve => {
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = rawBase64Image;
+      });
 
-    if (!imgLoaded || img.width === 0 || img.height === 0) {
-      // Clear image reference
-      img.src = '';
+      if (!imgLoaded || img.width === 0 || img.height === 0) {
+        return {
+          sanitizedBase64: '',
+          redactionCount: 0,
+          visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+          isRealCapture: false,
+        };
+      }
+
+      // 2. Render real image onto canvas scaled to CSS viewport dimensions
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      let redactionCount = 0;
+      let hasUnverifiedRegion = false;
+
+      // 3. Apply Solid Dark Fill (#020617) over all sensitive PII and unverified visual regions
+      for (const ent of sensitiveEntities) {
+        if (
+          ent.treatment === 'REMOVE' ||
+          ent.treatment === 'MASK' ||
+          ent.treatment === 'TOKENIZE' ||
+          ent.treatment === 'LOCAL_ONLY' ||
+          ent.type === 'UNVERIFIED_VISUAL_REGION'
+        ) {
+          const rawBounds = ent.boundingRect || { x: 0, y: 0, width: canvas.width, height: canvas.height };
+          const bounds = sanitizeBoundingBox(rawBounds, canvas.width, canvas.height);
+          if (!bounds) continue;
+
+          // Solid dark fill pixel redaction
+          ctx.fillStyle = '#020617';
+          ctx.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+          // Security border & label
+          const isUnverified = ent.type === 'UNVERIFIED_VISUAL_REGION';
+          if (isUnverified) hasUnverifiedRegion = true;
+
+          ctx.strokeStyle = isUnverified ? '#f59e0b' : '#ef4444';
+          ctx.lineWidth = 1.5;
+          ctx.strokeRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+          ctx.fillStyle = isUnverified ? '#fbbf24' : '#f87171';
+          ctx.font = '10px monospace';
+          const maskLabel = isUnverified ? '[UNVERIFIED REGION MASKED]' : `[REDACTED ${ent.type}]`;
+          ctx.fillText(maskLabel, bounds.x + 4, bounds.y + Math.min(bounds.height / 2 + 3, bounds.height - 4));
+
+          redactionCount++;
+        }
+      }
+
+      const sanitizedBase64 = canvas.toDataURL('image/png');
+
+      return {
+        sanitizedBase64,
+        redactionCount,
+        visualPrivacyState: hasUnverifiedRegion ? 'VISUAL_PRIVACY_UNVERIFIED' : 'VERIFIED_SAFE',
+        isRealCapture: true,
+      };
+    } catch (_err) {
+      // FAIL-CLOSED ON REDACTION EXCEPTION
       return {
         sanitizedBase64: '',
         redactionCount: 0,
         visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
         isRealCapture: false,
       };
-    }
-
-    // 2. Render real image onto canvas scaled to CSS viewport dimensions
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-    let redactionCount = 0;
-    let hasUnverifiedRegion = false;
-
-    // 3. Apply Solid Dark Fill (#020617) over all sensitive PII and unverified visual regions
-    for (const ent of sensitiveEntities) {
-      if (
-        ent.treatment === 'REMOVE' ||
-        ent.treatment === 'MASK' ||
-        ent.treatment === 'TOKENIZE' ||
-        ent.treatment === 'LOCAL_ONLY' ||
-        ent.type === 'UNVERIFIED_VISUAL_REGION'
-      ) {
-        const rawBounds = ent.boundingRect || { x: 0, y: 0, width: canvas.width, height: canvas.height };
-        const bounds = sanitizeBoundingBox(rawBounds, canvas.width, canvas.height);
-        if (!bounds) continue;
-
-        // Solid dark fill pixel redaction
-        ctx.fillStyle = '#020617';
-        ctx.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-
-        // Security border & label
-        const isUnverified = ent.type === 'UNVERIFIED_VISUAL_REGION';
-        if (isUnverified) hasUnverifiedRegion = true;
-
-        ctx.strokeStyle = isUnverified ? '#f59e0b' : '#ef4444';
-        ctx.lineWidth = 1.5;
-        ctx.strokeRect(bounds.x, bounds.y, bounds.width, bounds.height);
-
-        ctx.fillStyle = isUnverified ? '#fbbf24' : '#f87171';
-        ctx.font = '10px monospace';
-        const maskLabel = isUnverified ? '[UNVERIFIED REGION MASKED]' : `[REDACTED ${ent.type}]`;
-        ctx.fillText(maskLabel, bounds.x + 4, bounds.y + Math.min(bounds.height / 2 + 3, bounds.height - 4));
-
-        redactionCount++;
+    } finally {
+      // 4. In-Memory Reference Discarding / Zeroing
+      if (ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
+      canvas.width = 0;
+      canvas.height = 0;
+      img.src = '';
     }
-
-    const sanitizedBase64 = canvas.toDataURL('image/png');
-
-    // 4. In-Memory Security Zeroing / Reference Discarding
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = 0;
-    canvas.height = 0;
-    img.src = '';
-
-    return {
-      sanitizedBase64,
-      redactionCount,
-      visualPrivacyState: hasUnverifiedRegion ? 'VISUAL_PRIVACY_UNVERIFIED' : 'VERIFIED_SAFE',
-      isRealCapture: true,
-    };
   }
 
   /**
@@ -137,19 +147,28 @@ export class ClientCanvasRedactor {
     devicePixelRatio: number = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
   ): Promise<{ sanitizedBase64: string; redactionCount: number; visualPrivacyState: string; isRealCapture: boolean }> {
     if (rawScreenshotBase64 && rawScreenshotBase64.startsWith('data:image/')) {
-      const res = await this.redactRealViewportScreenshot(
-        rawScreenshotBase64,
-        sensitiveEntities,
-        width,
-        height,
-        devicePixelRatio
-      );
-      return {
-        sanitizedBase64: res.sanitizedBase64,
-        redactionCount: res.redactionCount,
-        visualPrivacyState: res.visualPrivacyState,
-        isRealCapture: res.isRealCapture,
-      };
+      try {
+        const res = await this.redactRealViewportScreenshot(
+          rawScreenshotBase64,
+          sensitiveEntities,
+          width,
+          height,
+          devicePixelRatio
+        );
+        return {
+          sanitizedBase64: res.sanitizedBase64,
+          redactionCount: res.redactionCount,
+          visualPrivacyState: res.visualPrivacyState,
+          isRealCapture: res.isRealCapture,
+        };
+      } catch (_err) {
+        return {
+          sanitizedBase64: '',
+          redactionCount: 0,
+          visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+          isRealCapture: false,
+        };
+      }
     }
 
     // FAIL-CLOSED: No raw real screenshot supplied. Return unverified state with NO egress image.
