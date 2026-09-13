@@ -120,3 +120,113 @@ export function validateNetworkEgress(
 chrome.runtime.onInstalled.addListener(() => {
   console.log('[PrivacyGuard Service Worker] Extension installed and active.');
 });
+
+/**
+ * Real Visible Tab Screenshot Capture Handler with Fail-Closed Security & Origin Binding.
+ */
+async function handleCaptureVisibleTab(
+  request: {
+    type: string;
+    taskId?: string;
+    expectedOrigin?: string;
+    viewportWidth?: number;
+    viewportHeight?: number;
+    devicePixelRatio?: number;
+  },
+  sender: chrome.runtime.MessageSender
+): Promise<{
+  success: boolean;
+  dataUrl?: string;
+  tabId?: number;
+  origin?: string;
+  devicePixelRatio?: number;
+  visualPrivacyState?: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
+  error?: string;
+}> {
+  // 1. Verify Sender Tab Context
+  if (!sender.tab || typeof sender.tab.id !== 'number') {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: 'Security Abort: Missing active tab context from sender',
+    };
+  }
+
+  const senderTabId = sender.tab.id;
+  const senderTabUrl = sender.tab.url || '';
+
+  // 2. Strict Origin Matching (Prevents Cross-Tab / Cross-Origin Capture Injection)
+  if (request.expectedOrigin && senderTabUrl) {
+    try {
+      const parsedSenderOrigin = new URL(senderTabUrl).origin.toLowerCase();
+      const rawReq = request.expectedOrigin.includes('://')
+        ? request.expectedOrigin
+        : `https://${request.expectedOrigin}`;
+      const parsedReqOrigin = new URL(rawReq).origin.toLowerCase();
+
+      if (parsedSenderOrigin !== parsedReqOrigin) {
+        return {
+          success: false,
+          visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+          error: `Security Abort: Sender tab origin (${parsedSenderOrigin}) mismatch with expected task origin (${parsedReqOrigin})`,
+        };
+      }
+    } catch (_err) {
+      return {
+        success: false,
+        visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+        error: 'Security Abort: Invalid origin format',
+      };
+    }
+  }
+
+  // 3. Perform Chrome API Visible Tab Capture inside trusted Service Worker context
+  try {
+    const targetWindowId = sender.tab.windowId;
+    const capturedDataUrl = await new Promise<string>((resolve, reject) => {
+      if (typeof chrome === 'undefined' || !chrome.tabs || !chrome.tabs.captureVisibleTab) {
+        return reject(new Error('chrome.tabs.captureVisibleTab API unavailable in current environment'));
+      }
+      chrome.tabs.captureVisibleTab(targetWindowId, { format: 'png' }, (dataUrl) => {
+        if (chrome.runtime.lastError) {
+          reject(new Error(chrome.runtime.lastError.message));
+        } else if (!dataUrl || !dataUrl.startsWith('data:image/')) {
+          reject(new Error('Empty or invalid base64 image captured from browser tab'));
+        } else {
+          resolve(dataUrl);
+        }
+      });
+    });
+
+    return {
+      success: true,
+      dataUrl: capturedDataUrl,
+      tabId: senderTabId,
+      origin: request.expectedOrigin || senderTabUrl,
+      devicePixelRatio: request.devicePixelRatio || 1,
+    };
+  } catch (err: any) {
+    return {
+      success: false,
+      visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+      error: `Real viewport capture failure: ${err.message}`,
+    };
+  }
+}
+
+// Register message listener for CAPTURE_VISIBLE_TAB
+if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.onMessage) {
+  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request && request.type === 'CAPTURE_VISIBLE_TAB') {
+      handleCaptureVisibleTab(request, sender)
+        .then(res => sendResponse(res))
+        .catch(err => sendResponse({
+          success: false,
+          visualPrivacyState: 'VISUAL_PRIVACY_UNVERIFIED',
+          error: err.message || 'Capture exception',
+        }));
+      return true; // Async response
+    }
+  });
+}
+

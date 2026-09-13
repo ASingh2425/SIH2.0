@@ -82,11 +82,57 @@ class ContentAgentController {
     // Record privacy decisions in local ledger
     this.ledger.recordPerceptionDecisions(taskId, evaluatedEntities);
 
-    // 5. Client Canvas Screenshot Redaction (Local Visual Masking)
+    // 5. Client Canvas Screenshot Redaction (Local Visual Masking over Real Viewport Capture)
     let sanitizedScreenshotBase64: string | undefined;
+    let visualPrivacyState = perceptionRes.visualPrivacyState;
+
     if (isSlowPath) {
-      const redactRes = await this.redactor.redactViewportScreenshot(evaluatedEntities);
-      sanitizedScreenshotBase64 = redactRes.sanitizedBase64;
+      const captureRes = await new Promise<{
+        success: boolean;
+        dataUrl?: string;
+        visualPrivacyState?: 'VERIFIED_SAFE' | 'PII_DETECTED' | 'VISUAL_PRIVACY_UNVERIFIED';
+        error?: string;
+      }>(resolve => {
+        if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.sendMessage) {
+          chrome.runtime.sendMessage(
+            {
+              type: 'CAPTURE_VISIBLE_TAB',
+              taskId,
+              expectedOrigin: originDomain,
+              viewportWidth: window.innerWidth,
+              viewportHeight: window.innerHeight,
+              devicePixelRatio: window.devicePixelRatio || 1,
+            },
+            res => {
+              if (chrome.runtime.lastError) {
+                resolve({ success: false, error: chrome.runtime.lastError.message });
+              } else {
+                resolve(res || { success: false, error: 'No response from capture service worker' });
+              }
+            }
+          );
+        } else {
+          resolve({ success: false, error: 'Extension runtime unavailable' });
+        }
+      });
+
+      if (captureRes.success && captureRes.dataUrl) {
+        const redactRes = await this.redactor.redactViewportScreenshot(
+          evaluatedEntities,
+          window.innerWidth,
+          window.innerHeight,
+          captureRes.dataUrl,
+          window.devicePixelRatio || 1
+        );
+        sanitizedScreenshotBase64 = redactRes.sanitizedBase64 || undefined;
+        if (redactRes.visualPrivacyState === 'VISUAL_PRIVACY_UNVERIFIED') {
+          visualPrivacyState = 'VISUAL_PRIVACY_UNVERIFIED';
+        }
+      } else {
+        // FAIL-CLOSED: Real capture unavailable or error -> Transition to VISUAL_PRIVACY_UNVERIFIED and transmit NO image
+        visualPrivacyState = 'VISUAL_PRIVACY_UNVERIFIED';
+        sanitizedScreenshotBase64 = undefined;
+      }
     }
 
     // 6. Construct Sanitized DOM Payload
@@ -107,7 +153,7 @@ class ContentAgentController {
       evaluatedEntities,
       sanitizedNodes,
       sanitizedScreenshotBase64,
-      perceptionRes.visualPrivacyState,
+      visualPrivacyState,
       perceptionRes.unverifiedVisualRegionsMasked
     );
     this.ledger.recordBoundaryReport(boundaryReport);
