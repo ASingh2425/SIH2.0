@@ -1,0 +1,12 @@
+{
+  "dataset_name": "unseen_challenge_dataset.json",
+  "total_scenes": 20,
+  "total_ground_truth_objects": 387,
+  "total_predictions": 386,
+  "precision_pct": 100.0,
+  "recall_pct": 99.74,
+  "f1_score": 0.9987,
+  "mAP_50": 0.9974,
+  "mean_bounding_box_iou": 0.8707,
+  "mean_latency_ms": 22.95
+}

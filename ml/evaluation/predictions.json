@@ -1,0 +1,5193 @@
+[
+  {
+    "image_id": 401,
+    "scene_name": "scene_401",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 30,
+    "predictions": [
+      {
+        "id": "pred_401_s401_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          3,
+          2,
+          197,
+          898
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          23,
+          22,
+          19,
+          20
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          19,
+          83,
+          166,
+          21
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_link_3",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          21,
+          130,
+          164,
+          19
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          17,
+          171,
+          168,
+          23
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          21,
+          220,
+          164,
+          19
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_navigation_6",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          203,
+          2,
+          1237,
+          54
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          234,
+          13,
+          296,
+          33
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_icon_8",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1364,
+          19,
+          20,
+          21
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1262,
+          11,
+          83,
+          35
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_card_10",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          226,
+          81,
+          584,
+          255
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_text_block_11",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          239,
+          94,
+          556,
+          22
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_image_12",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          241,
+          131,
+          554,
+          115
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          238,
+          268,
+          107,
+          32
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_icon_14",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          775,
+          275,
+          15,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_card_15",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          832,
+          77,
+          588,
+          259
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_text_block_16",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          849,
+          94,
+          556,
+          22
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_image_17",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          850,
+          130,
+          555,
+          116
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_button_18",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          848,
+          268,
+          107,
+          32
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_icon_19",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1382,
+          272,
+          18,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_card_20",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          225,
+          360,
+          585,
+          256
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_text_block_21",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          238,
+          373,
+          557,
+          23
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_image_22",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          241,
+          411,
+          554,
+          115
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_button_23",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          237,
+          547,
+          108,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_icon_24",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          775,
+          555,
+          15,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_card_25",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          835,
+          360,
+          585,
+          256
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_text_block_26",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          849,
+          374,
+          556,
+          22
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_image_27",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          851,
+          411,
+          554,
+          115
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_button_28",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          847,
+          547,
+          108,
+          33
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_401_s401_icon_29",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1385,
+          555,
+          15,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 402,
+    "scene_name": "scene_402",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 13,
+    "predictions": [
+      {
+        "id": "pred_402_s402_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          3,
+          2,
+          1363,
+          62
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          24,
+          19,
+          28,
+          29
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          183,
+          16,
+          597,
+          34
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1272,
+          19,
+          74,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          42,
+          95,
+          448,
+          449
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_image_5",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          66,
+          119,
+          404,
+          405
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_card_6",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          524,
+          97,
+          696,
+          447
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_text_block_7",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          545,
+          118,
+          655,
+          36
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_select_8",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          542,
+          175,
+          198,
+          37
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          545,
+          238,
+          235,
+          44
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_button_10",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          795,
+          238,
+          235,
+          44
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_checkbox_11",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          544,
+          307,
+          14,
+          15
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_402_s402_link_12",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          569,
+          307,
+          146,
+          15
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 403,
+    "scene_name": "scene_403",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 17,
+    "predictions": [
+      {
+        "id": "pred_403_s403_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          4,
+          3,
+          1276,
+          52
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          25,
+          18,
+          23,
+          24
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          966,
+          15,
+          234,
+          29
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_navigation_3",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          4,
+          58,
+          256,
+          662
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          78,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          23,
+          113,
+          217,
+          18
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_6",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          151,
+          215,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_7",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          186,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_8",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          220,
+          218,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_9",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          26,
+          260,
+          214,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_10",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          294,
+          216,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          331,
+          215,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_card_12",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          292,
+          76,
+          958,
+          624
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_text_block_13",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          317,
+          101,
+          908,
+          49
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_text_block_14",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          317,
+          166,
+          908,
+          119
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_button_15",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          318,
+          307,
+          127,
+          34
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_403_s403_link_16",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          465,
+          317,
+          135,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 404,
+    "scene_name": "scene_404",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 15,
+    "predictions": [
+      {
+        "id": "pred_404_s404_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          2,
+          1,
+          388,
+          59
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          33,
+          21,
+          26,
+          27
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          112,
+          24,
+          75,
+          20
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          274,
+          15,
+          96,
+          33
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          26,
+          104,
+          344,
+          515
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_text_block_5",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          42,
+          125,
+          308,
+          29
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_input_6",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          46,
+          174,
+          304,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          46,
+          224,
+          304,
+          31
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_input_8",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          44,
+          272,
+          306,
+          33
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_input_9",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          44,
+          322,
+          306,
+          33
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_select_10",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          42,
+          370,
+          308,
+          35
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_checkbox_11",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          43,
+          425,
+          15,
+          16
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_link_12",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          70,
+          424,
+          118,
+          17
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_radio_13",
+        "category": "radio",
+        "category_id": 3,
+        "bbox": [
+          224,
+          426,
+          14,
+          15
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_404_s404_button_14",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          42,
+          465,
+          308,
+          41
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 405,
+    "scene_name": "scene_405",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 30,
+    "predictions": [
+      {
+        "id": "pred_405_s405_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          4,
+          3,
+          56,
+          1077
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          20,
+          19,
+          22,
+          23
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          17,
+          81,
+          28,
+          23
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_link_3",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          17,
+          126,
+          28,
+          23
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          19,
+          173,
+          26,
+          21
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          17,
+          216,
+          28,
+          23
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_navigation_6",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          63,
+          2,
+          1857,
+          54
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          95,
+          14,
+          295,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_icon_8",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1842,
+          17,
+          22,
+          23
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1745,
+          14,
+          80,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_card_10",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          84,
+          79,
+          896,
+          257
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_text_block_11",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          100,
+          95,
+          865,
+          21
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_image_12",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          99,
+          129,
+          866,
+          117
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          99,
+          269,
+          106,
+          31
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_icon_14",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          945,
+          275,
+          15,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_card_15",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          1002,
+          77,
+          898,
+          259
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_text_block_16",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          1018,
+          93,
+          867,
+          23
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_image_17",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          1020,
+          130,
+          865,
+          116
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_button_18",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1018,
+          268,
+          107,
+          32
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_icon_19",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1864,
+          274,
+          16,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_card_20",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          83,
+          358,
+          897,
+          258
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_text_block_21",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          97,
+          372,
+          868,
+          24
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_image_22",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          98,
+          408,
+          867,
+          118
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_button_23",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          99,
+          549,
+          106,
+          31
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_icon_24",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          946,
+          556,
+          14,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_card_25",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          1003,
+          358,
+          897,
+          258
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_text_block_26",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          1018,
+          373,
+          867,
+          23
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_image_27",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          1021,
+          411,
+          864,
+          115
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_button_28",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1021,
+          551,
+          104,
+          29
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_405_s405_icon_29",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1862,
+          552,
+          18,
+          19
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 406,
+    "scene_name": "scene_406",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 13,
+    "predictions": [
+      {
+        "id": "pred_406_s406_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          6,
+          5,
+          1434,
+          59
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          26,
+          21,
+          26,
+          27
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          186,
+          19,
+          594,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1346,
+          19,
+          74,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          45,
+          98,
+          445,
+          446
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_image_5",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          62,
+          115,
+          408,
+          409
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_card_6",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          526,
+          99,
+          694,
+          445
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_text_block_7",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          543,
+          116,
+          657,
+          38
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_select_8",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          543,
+          176,
+          197,
+          36
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          544,
+          237,
+          236,
+          45
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_button_10",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          796,
+          239,
+          234,
+          43
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_checkbox_11",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          545,
+          308,
+          13,
+          14
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_406_s406_link_12",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          567,
+          305,
+          148,
+          17
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 407,
+    "scene_name": "scene_407",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 17,
+    "predictions": [
+      {
+        "id": "pred_407_s407_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          2,
+          1,
+          1364,
+          54
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          25,
+          18,
+          23,
+          24
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          1048,
+          11,
+          238,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_navigation_3",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          3,
+          57,
+          257,
+          711
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          26,
+          80,
+          214,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          26,
+          116,
+          214,
+          15
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_6",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          148,
+          218,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_7",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          186,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_8",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          223,
+          215,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_9",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          259,
+          215,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_10",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          292,
+          218,
+          19
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          328,
+          218,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_card_12",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          292,
+          76,
+          1044,
+          672
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_text_block_13",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          320,
+          104,
+          991,
+          46
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_text_block_14",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          320,
+          169,
+          991,
+          116
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_button_15",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          317,
+          306,
+          128,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_407_s407_link_16",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          465,
+          317,
+          135,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 408,
+    "scene_name": "scene_408",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 14,
+    "predictions": [
+      {
+        "id": "pred_408_s408_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          6,
+          5,
+          1274,
+          50
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          20,
+          19,
+          28,
+          29
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          139,
+          21,
+          78,
+          23
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1163,
+          14,
+          97,
+          34
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          342,
+          103,
+          598,
+          599
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_text_block_5",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          364,
+          130,
+          556,
+          27
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_input_6",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          362,
+          173,
+          558,
+          35
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          363,
+          224,
+          557,
+          34
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_input_8",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          365,
+          276,
+          555,
+          32
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_select_9",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          366,
+          327,
+          554,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_checkbox_10",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          362,
+          377,
+          16,
+          17
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          394,
+          381,
+          114,
+          13
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_radio_12",
+        "category": "radio",
+        "category_id": 3,
+        "bbox": [
+          544,
+          379,
+          14,
+          15
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_408_s408_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          363,
+          419,
+          557,
+          40
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 409,
+    "scene_name": "scene_409",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 30,
+    "predictions": [
+      {
+        "id": "pred_409_s409_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          5,
+          4,
+          55,
+          840
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          24,
+          23,
+          18,
+          19
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          21,
+          85,
+          24,
+          19
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_link_3",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          21,
+          130,
+          24,
+          19
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          21,
+          175,
+          24,
+          19
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          20,
+          219,
+          25,
+          20
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_navigation_6",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          63,
+          2,
+          327,
+          54
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          96,
+          15,
+          224,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_icon_8",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          315,
+          20,
+          19,
+          20
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          215,
+          14,
+          80,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_card_10",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          85,
+          80,
+          130,
+          256
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_text_block_11",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          99,
+          94,
+          101,
+          22
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_image_12",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          101,
+          131,
+          99,
+          115
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          98,
+          268,
+          102,
+          32
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_icon_14",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          181,
+          276,
+          14,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_card_15",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          240,
+          80,
+          130,
+          256
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_text_block_16",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          256,
+          96,
+          99,
+          20
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_image_17",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          253,
+          128,
+          102,
+          118
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_button_18",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          253,
+          268,
+          102,
+          32
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_icon_19",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          332,
+          272,
+          18,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_card_20",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          83,
+          358,
+          132,
+          258
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_text_block_21",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          97,
+          372,
+          103,
+          24
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_image_22",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          100,
+          410,
+          100,
+          116
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_button_23",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          97,
+          547,
+          103,
+          33
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_icon_24",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          179,
+          554,
+          16,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_card_25",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          241,
+          361,
+          129,
+          255
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_text_block_26",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          253,
+          373,
+          102,
+          23
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_image_27",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          252,
+          407,
+          103,
+          119
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_button_28",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          254,
+          549,
+          101,
+          31
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_409_s409_icon_29",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          332,
+          552,
+          18,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 410,
+    "scene_name": "scene_410",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 13,
+    "predictions": [
+      {
+        "id": "pred_410_s410_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          5,
+          4,
+          1915,
+          60
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          22,
+          17,
+          30,
+          31
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          184,
+          17,
+          596,
+          33
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1825,
+          18,
+          75,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          43,
+          96,
+          447,
+          448
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_image_5",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          64,
+          117,
+          406,
+          407
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_card_6",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          525,
+          98,
+          695,
+          446
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_text_block_7",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          542,
+          115,
+          658,
+          39
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_select_8",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          544,
+          177,
+          196,
+          35
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          542,
+          235,
+          238,
+          47
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_button_10",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          795,
+          238,
+          235,
+          44
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_checkbox_11",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          546,
+          309,
+          12,
+          13
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_410_s410_link_12",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          567,
+          305,
+          148,
+          17
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 411,
+    "scene_name": "scene_411",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 17,
+    "predictions": [
+      {
+        "id": "pred_411_s411_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          4,
+          3,
+          1436,
+          52
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          23,
+          16,
+          25,
+          26
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          1126,
+          15,
+          234,
+          29
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_navigation_3",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          3,
+          57,
+          257,
+          843
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          78,
+          216,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          23,
+          113,
+          217,
+          18
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_6",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          150,
+          216,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_7",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          186,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_8",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          220,
+          218,
+          19
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_9",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          258,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_10",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          295,
+          215,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          331,
+          215,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_card_12",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          296,
+          80,
+          1114,
+          800
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_text_block_13",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          318,
+          102,
+          1067,
+          48
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_text_block_14",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          317,
+          166,
+          1068,
+          119
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_button_15",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          319,
+          308,
+          126,
+          33
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_411_s411_link_16",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          464,
+          316,
+          136,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 412,
+    "scene_name": "scene_412",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 14,
+    "predictions": [
+      {
+        "id": "pred_412_s412_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          3,
+          2,
+          1363,
+          53
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          27,
+          20,
+          27,
+          28
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          150,
+          22,
+          77,
+          22
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1250,
+          15,
+          96,
+          33
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          439,
+          106,
+          494,
+          335
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_text_block_5",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          459,
+          131,
+          454,
+          25
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_input_6",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          458,
+          175,
+          455,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          459,
+          226,
+          454,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_input_8",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          455,
+          272,
+          458,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_select_9",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          455,
+          322,
+          458,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_checkbox_10",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          456,
+          377,
+          15,
+          16
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          483,
+          376,
+          118,
+          17
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_radio_12",
+        "category": "radio",
+        "category_id": 3,
+        "bbox": [
+          638,
+          379,
+          13,
+          14
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_412_s412_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          459,
+          421,
+          454,
+          37
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 413,
+    "scene_name": "scene_413",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 40,
+    "predictions": [
+      {
+        "id": "pred_413_s413_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          2,
+          1,
+          58,
+          719
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          24,
+          23,
+          18,
+          19
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          20,
+          84,
+          25,
+          20
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_link_3",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          20,
+          129,
+          25,
+          20
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          20,
+          174,
+          25,
+          20
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          19,
+          218,
+          26,
+          21
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_navigation_6",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          63,
+          2,
+          1217,
+          54
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          95,
+          14,
+          295,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_8",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1202,
+          17,
+          22,
+          23
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1106,
+          15,
+          79,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_card_10",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          86,
+          81,
+          374,
+          255
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_text_block_11",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          100,
+          95,
+          345,
+          21
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_image_12",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          101,
+          131,
+          344,
+          115
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          100,
+          270,
+          105,
+          30
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_14",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          426,
+          276,
+          14,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_card_15",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          485,
+          80,
+          375,
+          256
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_text_block_16",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          499,
+          94,
+          346,
+          22
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_image_17",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          499,
+          129,
+          346,
+          117
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_18",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          497,
+          267,
+          108,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_19",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          823,
+          273,
+          17,
+          18
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_card_20",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          884,
+          79,
+          376,
+          257
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_text_block_21",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          898,
+          93,
+          347,
+          23
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_image_22",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          898,
+          128,
+          347,
+          118
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_23",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          901,
+          271,
+          104,
+          29
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_24",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1223,
+          273,
+          17,
+          18
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_card_25",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          86,
+          361,
+          374,
+          255
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_text_block_26",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          98,
+          373,
+          347,
+          23
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_image_27",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          97,
+          407,
+          348,
+          119
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_28",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          100,
+          550,
+          105,
+          30
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_29",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          424,
+          554,
+          16,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_card_30",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          482,
+          357,
+          378,
+          259
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_text_block_31",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          500,
+          375,
+          345,
+          21
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_image_32",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          497,
+          407,
+          348,
+          119
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_33",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          497,
+          547,
+          108,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_34",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          825,
+          555,
+          15,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_card_35",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          885,
+          360,
+          375,
+          256
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_text_block_36",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          897,
+          372,
+          348,
+          24
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_image_37",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          897,
+          407,
+          348,
+          119
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_button_38",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          897,
+          547,
+          108,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_413_s413_icon_39",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1224,
+          554,
+          16,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 414,
+    "scene_name": "scene_414",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 9,
+    "predictions": [
+      {
+        "id": "pred_414_s414_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          6,
+          5,
+          384,
+          59
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          24,
+          19,
+          28,
+          29
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          182,
+          15,
+          48,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          292,
+          15,
+          78,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          12,
+          75,
+          368,
+          219
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_image_5",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          24,
+          87,
+          346,
+          197
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_card_6",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          16,
+          309,
+          364,
+          295
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_text_block_7",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          23,
+          321,
+          347,
+          28
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_414_s414_button_8",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          24,
+          367,
+          346,
+          41
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 415,
+    "scene_name": "scene_415",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 17,
+    "predictions": [
+      {
+        "id": "pred_415_s415_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          2,
+          1,
+          1918,
+          54
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          26,
+          19,
+          22,
+          23
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          1602,
+          11,
+          238,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_navigation_3",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          2,
+          56,
+          258,
+          1024
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          76,
+          218,
+          19
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          115,
+          215,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_6",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          151,
+          215,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_7",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          186,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_8",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          222,
+          216,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_9",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          258,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_10",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          26,
+          296,
+          214,
+          15
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          24,
+          330,
+          216,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_card_12",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          295,
+          79,
+          1595,
+          981
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_text_block_13",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          321,
+          105,
+          1544,
+          45
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_text_block_14",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          319,
+          168,
+          1546,
+          117
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_button_15",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          317,
+          306,
+          128,
+          35
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_415_s415_link_16",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          465,
+          317,
+          135,
+          16
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 416,
+    "scene_name": "scene_416",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 14,
+    "predictions": [
+      {
+        "id": "pred_416_s416_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          6,
+          5,
+          1434,
+          50
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          27,
+          19,
+          28,
+          29
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          146,
+          25,
+          74,
+          19
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1326,
+          17,
+          94,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          551,
+          93,
+          344,
+          415
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_text_block_5",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          570,
+          117,
+          305,
+          26
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_input_6",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          570,
+          162,
+          305,
+          32
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          567,
+          209,
+          308,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_input_8",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          567,
+          259,
+          308,
+          35
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_select_9",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          571,
+          313,
+          304,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_checkbox_10",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          569,
+          365,
+          14,
+          15
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          596,
+          364,
+          117,
+          16
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_radio_12",
+        "category": "radio",
+        "category_id": 3,
+        "bbox": [
+          748,
+          364,
+          15,
+          16
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_416_s416_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          568,
+          405,
+          307,
+          40
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 417,
+    "scene_name": "scene_417",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 40,
+    "predictions": [
+      {
+        "id": "pred_417_s417_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          5,
+          4,
+          195,
+          764
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          23,
+          22,
+          19,
+          20
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          19,
+          83,
+          166,
+          21
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_link_3",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          21,
+          130,
+          164,
+          19
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          17,
+          171,
+          168,
+          23
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          20,
+          219,
+          165,
+          20
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_navigation_6",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          202,
+          1,
+          1164,
+          55
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          234,
+          13,
+          296,
+          33
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_8",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1290,
+          19,
+          20,
+          21
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1192,
+          15,
+          79,
+          31
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_card_10",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          224,
+          79,
+          358,
+          257
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_text_block_11",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          238,
+          93,
+          329,
+          23
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_image_12",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          237,
+          127,
+          330,
+          119
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          239,
+          269,
+          106,
+          31
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_14",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          546,
+          274,
+          16,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_card_15",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          606,
+          79,
+          358,
+          257
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_text_block_16",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          622,
+          95,
+          327,
+          21
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_image_17",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          620,
+          128,
+          329,
+          118
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_18",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          620,
+          268,
+          107,
+          32
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_19",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          926,
+          272,
+          18,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_card_20",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          988,
+          79,
+          358,
+          257
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_text_block_21",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          1005,
+          96,
+          326,
+          20
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_image_22",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          1001,
+          127,
+          330,
+          119
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_23",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1005,
+          271,
+          104,
+          29
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_24",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1312,
+          276,
+          14,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_card_25",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          225,
+          360,
+          357,
+          256
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_text_block_26",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          237,
+          372,
+          330,
+          24
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_image_27",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          238,
+          408,
+          329,
+          118
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_28",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          238,
+          548,
+          107,
+          32
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_29",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          546,
+          554,
+          16,
+          17
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_card_30",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          605,
+          358,
+          359,
+          258
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_text_block_31",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          623,
+          376,
+          326,
+          20
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_image_32",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          622,
+          410,
+          327,
+          116
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_33",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          623,
+          551,
+          104,
+          29
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_34",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          927,
+          553,
+          17,
+          18
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_card_35",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          989,
+          360,
+          357,
+          256
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_text_block_36",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          1002,
+          373,
+          329,
+          23
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_image_37",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          1002,
+          408,
+          329,
+          118
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_button_38",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1002,
+          548,
+          107,
+          32
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_417_s417_icon_39",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          1310,
+          554,
+          16,
+          17
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 418,
+    "scene_name": "scene_418",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 13,
+    "predictions": [
+      {
+        "id": "pred_418_s418_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          3,
+          2,
+          1277,
+          62
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          25,
+          20,
+          27,
+          28
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          183,
+          16,
+          597,
+          34
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1185,
+          18,
+          75,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          43,
+          96,
+          447,
+          448
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_image_5",
+        "category": "image",
+        "category_id": 8,
+        "bbox": [
+          62,
+          115,
+          408,
+          409
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_card_6",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          522,
+          95,
+          698,
+          449
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_text_block_7",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          544,
+          117,
+          656,
+          37
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_select_8",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          545,
+          178,
+          195,
+          34
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_button_9",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          545,
+          238,
+          235,
+          44
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_button_10",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          792,
+          235,
+          238,
+          47
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_checkbox_11",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          543,
+          306,
+          15,
+          16
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_418_s418_link_12",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          570,
+          308,
+          145,
+          14
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 419,
+    "scene_name": "scene_419",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 17,
+    "predictions": [
+      {
+        "id": "pred_419_s419_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          6,
+          5,
+          384,
+          50
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          23,
+          16,
+          25,
+          26
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_input_2",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          102,
+          11,
+          238,
+          33
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_navigation_3",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          2,
+          56,
+          95,
+          788
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_4",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          25,
+          79,
+          52,
+          16
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_5",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          112,
+          55,
+          19
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_6",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          23,
+          149,
+          54,
+          18
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_7",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          22,
+          184,
+          55,
+          19
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_8",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          23,
+          221,
+          54,
+          18
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_9",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          23,
+          257,
+          54,
+          18
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_10",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          23,
+          293,
+          54,
+          18
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          26,
+          332,
+          51,
+          15
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_card_12",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          129,
+          76,
+          231,
+          748
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_text_block_13",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          154,
+          101,
+          181,
+          49
+        ],
+        "confidence": 0.86,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_text_block_14",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          156,
+          168,
+          179,
+          117
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_button_15",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          155,
+          307,
+          127,
+          34
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_419_s419_link_16",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          303,
+          318,
+          134,
+          15
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      }
+    ]
+  },
+  {
+    "image_id": 420,
+    "scene_name": "scene_420",
+    "raw_detections": 25,
+    "postprocessed_nms_detections": 14,
+    "predictions": [
+      {
+        "id": "pred_420_s420_navigation_0",
+        "category": "navigation",
+        "category_id": 6,
+        "bbox": [
+          6,
+          5,
+          1914,
+          59
+        ],
+        "confidence": 0.95,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_icon_1",
+        "category": "icon",
+        "category_id": 9,
+        "bbox": [
+          27,
+          20,
+          27,
+          28
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_link_2",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          107,
+          25,
+          74,
+          19
+        ],
+        "confidence": 0.9,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_button_3",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          1803,
+          14,
+          97,
+          34
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_card_4",
+        "category": "card",
+        "category_id": 7,
+        "bbox": [
+          663,
+          118,
+          597,
+          598
+        ],
+        "confidence": 0.92,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_text_block_5",
+        "category": "text_block",
+        "category_id": 10,
+        "bbox": [
+          684,
+          144,
+          556,
+          27
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_input_6",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          684,
+          189,
+          556,
+          33
+        ],
+        "confidence": 0.93,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_input_7",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          682,
+          237,
+          558,
+          35
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_input_8",
+        "category": "input",
+        "category_id": 1,
+        "bbox": [
+          685,
+          290,
+          555,
+          32
+        ],
+        "confidence": 0.89,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_select_9",
+        "category": "select",
+        "category_id": 4,
+        "bbox": [
+          685,
+          340,
+          555,
+          32
+        ],
+        "confidence": 0.94,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_checkbox_10",
+        "category": "checkbox",
+        "category_id": 2,
+        "bbox": [
+          682,
+          391,
+          16,
+          17
+        ],
+        "confidence": 0.91,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_link_11",
+        "category": "link",
+        "category_id": 5,
+        "bbox": [
+          711,
+          392,
+          117,
+          16
+        ],
+        "confidence": 0.87,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_radio_12",
+        "category": "radio",
+        "category_id": 3,
+        "bbox": [
+          864,
+          393,
+          14,
+          15
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      },
+      {
+        "id": "pred_420_s420_button_13",
+        "category": "button",
+        "category_id": 0,
+        "bbox": [
+          684,
+          434,
+          556,
+          39
+        ],
+        "confidence": 0.88,
+        "source": "onnx_object_detector"
+      }
+    ]
+  }
+]

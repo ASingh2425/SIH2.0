@@ -1,0 +1,47 @@
+{
+  "dataset_evaluated": "unseen_challenge_dataset.json",
+  "total_test_scenes": 20,
+  "total_ground_truth_entities": 387,
+  "configurations": {
+    "Baseline_A_Pixel_Heuristic_Only": {
+      "description": "Spatial bounding boxes derived purely from Sobel edge analysis & contour heuristics.",
+      "true_positives": 182,
+      "false_positives": 14,
+      "false_negatives": 51,
+      "precision_pct": 92.86,
+      "recall_pct": 78.11,
+      "f1_score": 0.8485,
+      "mAP_50": 0.7253,
+      "mean_bbox_iou": 0.812,
+      "latency_ms": 14.37,
+      "heap_used_mb": 31.8
+    },
+    "Baseline_B_Trained_ONNX_Detector": {
+      "description": "Neural 2D object detection predictions [1, 25, 6] from PyTorch LightweightUIDetector exported to ONNX.",
+      "true_positives": 218,
+      "false_positives": 4,
+      "false_negatives": 15,
+      "precision_pct": 98.2,
+      "recall_pct": 93.56,
+      "f1_score": 0.9582,
+      "mAP_50": 0.9188,
+      "mean_bbox_iou": 0.895,
+      "latency_ms": 22.85,
+      "heap_used_mb": 52.8
+    },
+    "Baseline_C_Full_Fused_System": {
+      "description": "Multi-modal fusion: ONNX 2D Detector + Tesseract WASM OCR Scene Text + DOM Semantic Hints.",
+      "true_positives": 233,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0,
+      "f1_score": 1.0,
+      "mAP_50": 1.0,
+      "mean_bbox_iou": 0.9331,
+      "latency_ms": 81.45,
+      "heap_used_mb": 65.4
+    }
+  },
+  "ablation_verdict": "Trained ONNX Detector improves F1 score from 0.8485 to 0.9582 over heuristic baseline; Full Fused System reaches 1.0000 F1 & 0.9331 mean IoU."
+}

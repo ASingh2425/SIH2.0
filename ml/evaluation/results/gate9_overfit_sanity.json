@@ -1,0 +1,8 @@
+{
+  "gate": "GATE_9_OVERFIT_SANITY_CHECK",
+  "memorized_scenes": 10,
+  "total_gt_objects": 211,
+  "true_positives": 3,
+  "training_recall_pct": 1.42,
+  "status": "FAILED"
+}

@@ -1,0 +1,20 @@
+{
+  "traceability_audit": "54.61% Metric Origin & Provenance Analysis",
+  "metric_value": 0.5461,
+  "metric_type": "Overall Recall (TP / Total GT)",
+  "dataset_evaluated": "val_ui_dataset.json",
+  "dataset_type": "VALIDATION_SET_ONLY",
+  "is_locked_test_set": false,
+  "locked_test_set_file": "ml/evaluation/fixtures/real_world_annotations.json",
+  "num_scenes": 30,
+  "num_gt_objects": 575,
+  "evaluated_mode": "hybrid_global_tiles",
+  "evaluation_script": "ml/evaluation/gate4_tiled_inference_ablation.py",
+  "execution_timestamp": "2026-09-13T22:34:39Z",
+  "findings": [
+    "The 54.61% recall result belongs STRICTLY to the 30-scene Validation Set (val_ui_dataset.json).",
+    "It is NOT a locked real-world test result.",
+    "The true single-pass locked real-world test score remains mAP50 = 0.3285, Recall = 0.3285, Precision = 1.0000 on the 25 locked screenshots / 137 GT objects.",
+    "Any description of 54.61% as a locked test score in prior reports was an ambiguous split label conflation and has been formally retracted."
+  ]
+}

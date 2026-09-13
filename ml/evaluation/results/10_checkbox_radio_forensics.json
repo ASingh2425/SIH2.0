@@ -1,0 +1,7 @@
+{
+  "checkbox_recall_single_pass": 0.0,
+  "checkbox_recall_tiled": 28.57,
+  "radio_recall_single_pass": 0.0,
+  "radio_recall_tiled": 14.29,
+  "cause": "Sub-18px geometry occupies less than 1.2px in feature space."
+}

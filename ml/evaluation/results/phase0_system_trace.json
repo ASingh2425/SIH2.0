@@ -1,0 +1,81 @@
+{
+  "input_tensor_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "baseline_multiscale_detector": {
+    "stage1_conv": [
+      1,
+      16,
+      128,
+      128
+    ],
+    "stage2_conv": [
+      1,
+      32,
+      64,
+      64
+    ],
+    "stage3_conv": [
+      1,
+      64,
+      32,
+      32
+    ],
+    "stage4_fine_feature_map": [
+      1,
+      64,
+      16,
+      16
+    ],
+    "stage5_coarse_feature_map": [
+      1,
+      64,
+      8,
+      8
+    ],
+    "fine_head_raw": [
+      1,
+      12,
+      16,
+      16
+    ],
+    "coarse_head_raw": [
+      1,
+      12,
+      8,
+      8
+    ],
+    "final_concatenated_output": [
+      1,
+      640,
+      6
+    ],
+    "total_candidate_slots": 640
+  },
+  "fpn_high_res_detector": {
+    "p3_fine_grid": [
+      1,
+      2048,
+      6
+    ],
+    "p4_medium_grid": [
+      1,
+      512,
+      6
+    ],
+    "p5_coarse_grid": [
+      1,
+      128,
+      6
+    ],
+    "final_concatenated_output": [
+      1,
+      2688,
+      6
+    ],
+    "total_candidate_slots": 2688
+  }
+}

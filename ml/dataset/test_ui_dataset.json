@@ -1,0 +1,6376 @@
+{
+  "split": "test",
+  "classes": [
+    "button",
+    "input",
+    "checkbox",
+    "radio",
+    "select",
+    "link",
+    "navigation",
+    "card",
+    "image",
+    "icon",
+    "text_block"
+  ],
+  "samples": [
+    {
+      "image_id": 301,
+      "template": "test_tpl_1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "annotations": [
+        {
+          "id": "s301_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            200,
+            900
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            200,
+            0,
+            1240,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            230,
+            10,
+            300,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1360,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1260,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            220,
+            76,
+            386,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            235,
+            91,
+            356,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            235,
+            126,
+            356,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            235,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            566,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            626,
+            76,
+            386,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            641,
+            91,
+            356,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            641,
+            126,
+            356,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            641,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            972,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            1032,
+            76,
+            386,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            1047,
+            91,
+            356,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            1047,
+            126,
+            356,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1047,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1378,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            220,
+            356,
+            386,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            235,
+            371,
+            356,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            235,
+            406,
+            356,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            235,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            566,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_card_30",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            626,
+            356,
+            386,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_text_block_31",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            641,
+            371,
+            356,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_image_32",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            641,
+            406,
+            356,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_33",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            641,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_34",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            972,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_card_35",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            1032,
+            356,
+            386,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_text_block_36",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            1047,
+            371,
+            356,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_image_37",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            1047,
+            406,
+            356,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_button_38",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1047,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s301_icon_39",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1378,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 302,
+      "template": "test_tpl_2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "annotations": [
+        {
+          "id": "s302_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            64
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            180,
+            14,
+            600,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1266,
+            14,
+            80,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            40,
+            94,
+            450,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_image_5",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            60,
+            114,
+            410,
+            410
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_card_6",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            520,
+            94,
+            700,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_text_block_7",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            540,
+            114,
+            660,
+            40
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            540,
+            174,
+            200,
+            38
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            540,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_button_10",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            790,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            540,
+            304,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s302_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            565,
+            304,
+            150,
+            18
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 303,
+      "template": "test_tpl_3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "annotations": [
+        {
+          "id": "s303_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            14,
+            28,
+            28
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            960,
+            10,
+            240,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_navigation_3",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            55,
+            260,
+            665
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            75,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            111,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_6",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            147,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_7",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            183,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_8",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            219,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_9",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            255,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            291,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            327,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_card_12",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            290,
+            75,
+            960,
+            625
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_text_block_13",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            100,
+            910,
+            50
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_text_block_14",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            165,
+            910,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_button_15",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            315,
+            305,
+            130,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s303_link_16",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            460,
+            313,
+            140,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 304,
+      "template": "test_tpl_4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "annotations": [
+        {
+          "id": "s304_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            390,
+            60
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            29,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            129,
+            20,
+            80,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            270,
+            12,
+            100,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            20,
+            92,
+            350,
+            420
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_text_block_5",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            40,
+            117,
+            310,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_input_6",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            40,
+            162,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            40,
+            212,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_input_8",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            40,
+            262,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_input_9",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            40,
+            312,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_select_10",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            40,
+            362,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            40,
+            416,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            68,
+            416,
+            120,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_radio_13",
+          "category_id": 3,
+          "category": "radio",
+          "bbox": [
+            220,
+            416,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s304_button_14",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            40,
+            457,
+            310,
+            42
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 305,
+      "template": "test_tpl_0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s305_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            200,
+            1080
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            200,
+            0,
+            1720,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            230,
+            10,
+            300,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1840,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1740,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            220,
+            76,
+            546,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            235,
+            91,
+            516,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            235,
+            126,
+            516,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            235,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            726,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            786,
+            76,
+            546,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            801,
+            91,
+            516,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            801,
+            126,
+            516,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            801,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1292,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            1352,
+            76,
+            546,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            1367,
+            91,
+            516,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            1367,
+            126,
+            516,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1367,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1858,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            220,
+            356,
+            546,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            235,
+            371,
+            516,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            235,
+            406,
+            516,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            235,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            726,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_card_30",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            786,
+            356,
+            546,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_text_block_31",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            801,
+            371,
+            516,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_image_32",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            801,
+            406,
+            516,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_33",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            801,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_34",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1292,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_card_35",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            1352,
+            356,
+            546,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_text_block_36",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            1367,
+            371,
+            516,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_image_37",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            1367,
+            406,
+            516,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_button_38",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1367,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s305_icon_39",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1858,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 306,
+      "template": "test_tpl_1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "annotations": [
+        {
+          "id": "s306_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            64
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            180,
+            14,
+            600,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1340,
+            14,
+            80,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            40,
+            94,
+            450,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_image_5",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            60,
+            114,
+            410,
+            410
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_card_6",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            520,
+            94,
+            700,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_text_block_7",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            540,
+            114,
+            660,
+            40
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            540,
+            174,
+            200,
+            38
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            540,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_button_10",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            790,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            540,
+            304,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s306_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            565,
+            304,
+            150,
+            18
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 307,
+      "template": "test_tpl_2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "annotations": [
+        {
+          "id": "s307_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            14,
+            28,
+            28
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            1046,
+            10,
+            240,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_navigation_3",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            55,
+            260,
+            713
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            75,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            111,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_6",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            147,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_7",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            183,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_8",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            219,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_9",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            255,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            291,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            327,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_card_12",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            290,
+            75,
+            1046,
+            673
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_text_block_13",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            100,
+            996,
+            50
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_text_block_14",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            165,
+            996,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_button_15",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            315,
+            305,
+            130,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s307_link_16",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            460,
+            313,
+            140,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 308,
+      "template": "test_tpl_3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "annotations": [
+        {
+          "id": "s308_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            60
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            124,
+            20,
+            80,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1160,
+            12,
+            100,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            340,
+            116,
+            600,
+            600
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_text_block_5",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            360,
+            141,
+            560,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_input_6",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            360,
+            186,
+            560,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            360,
+            236,
+            560,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            360,
+            286,
+            560,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_checkbox_9",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            360,
+            340,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            388,
+            340,
+            120,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_radio_11",
+          "category_id": 3,
+          "category": "radio",
+          "bbox": [
+            540,
+            340,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s308_button_12",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            360,
+            381,
+            560,
+            42
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 309,
+      "template": "test_tpl_4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "annotations": [
+        {
+          "id": "s309_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            130,
+            844
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            100,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            100,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            100,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            100,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            130,
+            0,
+            260,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            160,
+            10,
+            160,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            310,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            210,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            150,
+            76,
+            100,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            165,
+            91,
+            70,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            165,
+            126,
+            70,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            165,
+            266,
+            70,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            210,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            270,
+            76,
+            100,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            285,
+            91,
+            70,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            285,
+            126,
+            70,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            285,
+            266,
+            70,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            330,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            150,
+            356,
+            100,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            165,
+            371,
+            70,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            165,
+            406,
+            70,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            165,
+            546,
+            70,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            210,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            270,
+            356,
+            100,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            285,
+            371,
+            70,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            285,
+            406,
+            70,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            285,
+            546,
+            70,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s309_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            330,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 310,
+      "template": "test_tpl_0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s310_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            64
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            180,
+            14,
+            600,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1820,
+            14,
+            80,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            40,
+            94,
+            450,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_image_5",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            60,
+            114,
+            410,
+            410
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_card_6",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            520,
+            94,
+            700,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_text_block_7",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            540,
+            114,
+            660,
+            40
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            540,
+            174,
+            200,
+            38
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            540,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_button_10",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            790,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            540,
+            304,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s310_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            565,
+            304,
+            150,
+            18
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 311,
+      "template": "test_tpl_1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "annotations": [
+        {
+          "id": "s311_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            14,
+            28,
+            28
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            1120,
+            10,
+            240,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_navigation_3",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            55,
+            260,
+            845
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            75,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            111,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_6",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            147,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_7",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            183,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_8",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            219,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_9",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            255,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            291,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            327,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_card_12",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            290,
+            75,
+            1120,
+            805
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_text_block_13",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            100,
+            1070,
+            50
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_text_block_14",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            165,
+            1070,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_button_15",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            315,
+            305,
+            130,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s311_link_16",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            460,
+            313,
+            140,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 312,
+      "template": "test_tpl_2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "annotations": [
+        {
+          "id": "s312_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            17,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            102,
+            20,
+            80,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1246,
+            12,
+            100,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            433,
+            113,
+            500,
+            420
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_text_block_5",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            453,
+            138,
+            460,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_input_6",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            453,
+            183,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            453,
+            233,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_input_8",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            453,
+            283,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_select_9",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            453,
+            333,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_checkbox_10",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            453,
+            387,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            481,
+            387,
+            120,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_radio_12",
+          "category_id": 3,
+          "category": "radio",
+          "bbox": [
+            633,
+            387,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s312_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            453,
+            428,
+            460,
+            42
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 313,
+      "template": "test_tpl_3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "annotations": [
+        {
+          "id": "s313_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            240,
+            720
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            210,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            210,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            210,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            210,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            240,
+            0,
+            1040,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            270,
+            10,
+            300,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1200,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1100,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            260,
+            76,
+            320,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            275,
+            91,
+            290,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            275,
+            126,
+            290,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            275,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            540,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            600,
+            76,
+            320,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            615,
+            91,
+            290,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            615,
+            126,
+            290,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            615,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            880,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            940,
+            76,
+            320,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            955,
+            91,
+            290,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            955,
+            126,
+            290,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            955,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1220,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            260,
+            356,
+            320,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            275,
+            371,
+            290,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            275,
+            406,
+            290,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            275,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            540,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_card_30",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            600,
+            356,
+            320,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_text_block_31",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            615,
+            371,
+            290,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_image_32",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            615,
+            406,
+            290,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_33",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            615,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_34",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            880,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_card_35",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            940,
+            356,
+            320,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_text_block_36",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            955,
+            371,
+            290,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_image_37",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            955,
+            406,
+            290,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_button_38",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            955,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s313_icon_39",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1220,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 314,
+      "template": "test_tpl_4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "annotations": [
+        {
+          "id": "s314_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            390,
+            64
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            180,
+            14,
+            50,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            290,
+            14,
+            80,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            10,
+            74,
+            370,
+            220
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_image_5",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            20,
+            84,
+            350,
+            200
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_card_6",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            10,
+            304,
+            370,
+            300
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_text_block_7",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            20,
+            319,
+            350,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s314_button_8",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            20,
+            364,
+            350,
+            44
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 315,
+      "template": "test_tpl_0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s315_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            14,
+            28,
+            28
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            1600,
+            10,
+            240,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_navigation_3",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            55,
+            260,
+            1025
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            75,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            111,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_6",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            147,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_7",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            183,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_8",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            219,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_9",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            255,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            291,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            327,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_card_12",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            290,
+            75,
+            1600,
+            985
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_text_block_13",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            100,
+            1550,
+            50
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_text_block_14",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            165,
+            1550,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_button_15",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            315,
+            305,
+            130,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s315_link_16",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            460,
+            313,
+            140,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 316,
+      "template": "test_tpl_1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "annotations": [
+        {
+          "id": "s316_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            15,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            110,
+            20,
+            80,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1320,
+            12,
+            100,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            420,
+            104,
+            600,
+            600
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_text_block_5",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            440,
+            129,
+            560,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_input_6",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            440,
+            174,
+            560,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            440,
+            224,
+            560,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            440,
+            274,
+            560,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_checkbox_9",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            440,
+            328,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            468,
+            328,
+            120,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_radio_11",
+          "category_id": 3,
+          "category": "radio",
+          "bbox": [
+            620,
+            328,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s316_button_12",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            440,
+            369,
+            560,
+            42
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 317,
+      "template": "test_tpl_2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "annotations": [
+        {
+          "id": "s317_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            60,
+            768
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            60,
+            0,
+            1306,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            90,
+            10,
+            300,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1286,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1186,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            80,
+            76,
+            408,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            95,
+            91,
+            378,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            95,
+            126,
+            378,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            95,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            448,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            508,
+            76,
+            408,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            523,
+            91,
+            378,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            523,
+            126,
+            378,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            523,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            876,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            936,
+            76,
+            408,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            951,
+            91,
+            378,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            951,
+            126,
+            378,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            951,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1304,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            80,
+            356,
+            408,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            95,
+            371,
+            378,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            95,
+            406,
+            378,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            95,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            448,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_card_30",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            508,
+            356,
+            408,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_text_block_31",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            523,
+            371,
+            378,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_image_32",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            523,
+            406,
+            378,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_33",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            523,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_34",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            876,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_card_35",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            936,
+            356,
+            408,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_text_block_36",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            951,
+            371,
+            378,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_image_37",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            951,
+            406,
+            378,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_button_38",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            951,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s317_icon_39",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1304,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 318,
+      "template": "test_tpl_3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "annotations": [
+        {
+          "id": "s318_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            64
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            180,
+            14,
+            600,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1180,
+            14,
+            80,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            40,
+            94,
+            450,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_image_5",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            60,
+            114,
+            410,
+            410
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_card_6",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            520,
+            94,
+            700,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_text_block_7",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            540,
+            114,
+            660,
+            40
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            540,
+            174,
+            200,
+            38
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            540,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_button_10",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            790,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            540,
+            304,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s318_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            565,
+            304,
+            150,
+            18
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 319,
+      "template": "test_tpl_4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "annotations": [
+        {
+          "id": "s319_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            390,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            14,
+            28,
+            28
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            100,
+            10,
+            240,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_navigation_3",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            55,
+            97,
+            789
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            75,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            111,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_6",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            147,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_7",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            183,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_8",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            219,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_9",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            255,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            291,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            327,
+            57,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_card_12",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            127,
+            75,
+            233,
+            749
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_text_block_13",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            152,
+            100,
+            183,
+            50
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_text_block_14",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            152,
+            165,
+            183,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_button_15",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            152,
+            305,
+            130,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s319_link_16",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            297,
+            313,
+            140,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 320,
+      "template": "test_tpl_0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s320_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            25,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            117,
+            20,
+            80,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1800,
+            12,
+            100,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            710,
+            113,
+            500,
+            420
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_text_block_5",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            730,
+            138,
+            460,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_input_6",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            730,
+            183,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            730,
+            233,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_input_8",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            730,
+            283,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_input_9",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            730,
+            333,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_select_10",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            730,
+            383,
+            460,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            730,
+            437,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            758,
+            437,
+            120,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_radio_13",
+          "category_id": 3,
+          "category": "radio",
+          "bbox": [
+            910,
+            437,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s320_button_14",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            730,
+            478,
+            460,
+            42
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 321,
+      "template": "test_tpl_1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "annotations": [
+        {
+          "id": "s321_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            200,
+            900
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            170,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            200,
+            0,
+            1240,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            230,
+            10,
+            300,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1360,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1260,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            220,
+            76,
+            590,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            235,
+            91,
+            560,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            235,
+            126,
+            560,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            235,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            770,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            830,
+            76,
+            590,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            845,
+            91,
+            560,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            845,
+            126,
+            560,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            845,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1380,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            220,
+            356,
+            590,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            235,
+            371,
+            560,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            235,
+            406,
+            560,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            235,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            770,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            830,
+            356,
+            590,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            845,
+            371,
+            560,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            845,
+            406,
+            560,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            845,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s321_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1380,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 322,
+      "template": "test_tpl_2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "annotations": [
+        {
+          "id": "s322_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            64
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            180,
+            14,
+            600,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1266,
+            14,
+            80,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            40,
+            94,
+            450,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_image_5",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            60,
+            114,
+            410,
+            410
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_card_6",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            520,
+            94,
+            700,
+            450
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_text_block_7",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            540,
+            114,
+            660,
+            40
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            540,
+            174,
+            200,
+            38
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            540,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_button_10",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            790,
+            234,
+            240,
+            48
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_checkbox_11",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            540,
+            304,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s322_link_12",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            565,
+            304,
+            150,
+            18
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 323,
+      "template": "test_tpl_3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "annotations": [
+        {
+          "id": "s323_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            55
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            20,
+            14,
+            28,
+            28
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_input_2",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            960,
+            10,
+            240,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_navigation_3",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            55,
+            260,
+            665
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            75,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            111,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_6",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            147,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_7",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            183,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_8",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            219,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_9",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            255,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            291,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_11",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            20,
+            327,
+            220,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_card_12",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            290,
+            75,
+            960,
+            625
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_text_block_13",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            100,
+            910,
+            50
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_text_block_14",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            315,
+            165,
+            910,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_button_15",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            315,
+            305,
+            130,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s323_link_16",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            460,
+            313,
+            140,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 324,
+      "template": "test_tpl_4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "annotations": [
+        {
+          "id": "s324_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            390,
+            60
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            22,
+            16,
+            32,
+            32
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            100,
+            20,
+            80,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_button_3",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            270,
+            12,
+            100,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_card_4",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            20,
+            124,
+            350,
+            420
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_text_block_5",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            40,
+            149,
+            310,
+            30
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_input_6",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            40,
+            194,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            40,
+            244,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_select_8",
+          "category_id": 4,
+          "category": "select",
+          "bbox": [
+            40,
+            294,
+            310,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_checkbox_9",
+          "category_id": 2,
+          "category": "checkbox",
+          "bbox": [
+            40,
+            348,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_link_10",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            68,
+            348,
+            120,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_radio_11",
+          "category_id": 3,
+          "category": "radio",
+          "bbox": [
+            220,
+            348,
+            18,
+            18
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s324_button_12",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            40,
+            389,
+            310,
+            42
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 325,
+      "template": "test_tpl_0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s325_navigation_0",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            60,
+            1080
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_icon_1",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            18,
+            18,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_link_2",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            80,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_link_3",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            125,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_link_4",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            170,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_link_5",
+          "category_id": 5,
+          "category": "link",
+          "bbox": [
+            15,
+            215,
+            30,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_navigation_6",
+          "category_id": 6,
+          "category": "navigation",
+          "bbox": [
+            60,
+            0,
+            1860,
+            56
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_input_7",
+          "category_id": 1,
+          "category": "input",
+          "bbox": [
+            90,
+            10,
+            300,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_icon_8",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1840,
+            16,
+            24,
+            24
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_button_9",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1740,
+            10,
+            85,
+            36
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_card_10",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            80,
+            76,
+            900,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_text_block_11",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            95,
+            91,
+            870,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_image_12",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            95,
+            126,
+            870,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_button_13",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            95,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_icon_14",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            940,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_card_15",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            1000,
+            76,
+            900,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_text_block_16",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            1015,
+            91,
+            870,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_image_17",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            1015,
+            126,
+            870,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_button_18",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1015,
+            266,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_icon_19",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1860,
+            271,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_card_20",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            80,
+            356,
+            900,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_text_block_21",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            95,
+            371,
+            870,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_image_22",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            95,
+            406,
+            870,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_button_23",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            95,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_icon_24",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            940,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_card_25",
+          "category_id": 7,
+          "category": "card",
+          "bbox": [
+            1000,
+            356,
+            900,
+            260
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_text_block_26",
+          "category_id": 10,
+          "category": "text_block",
+          "bbox": [
+            1015,
+            371,
+            870,
+            25
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_image_27",
+          "category_id": 8,
+          "category": "image",
+          "bbox": [
+            1015,
+            406,
+            870,
+            120
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_button_28",
+          "category_id": 0,
+          "category": "button",
+          "bbox": [
+            1015,
+            546,
+            110,
+            34
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s325_icon_29",
+          "category_id": 9,
+          "category": "icon",
+          "bbox": [
+            1860,
+            551,
+            20,
+            20
+          ],
+          "confidence": 0.95
+        }
+      ]
+    }
+  ]
+}

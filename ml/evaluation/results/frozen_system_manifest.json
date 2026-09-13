@@ -1,0 +1,35 @@
+{
+  "system_name": "SIH26171 On-Device Visual Perception System",
+  "timestamp": "2026-09-13T15:31:19Z",
+  "frozen_components": {
+    "pytorch_model": {
+      "weights_path": "ml/models/ui_detector_weights.pt",
+      "sha256": "aa57be07a936bfd6acb8836c80534575fe710bb82f244ce5b4b6c323ec4bf9ed",
+      "size_bytes": 413742,
+      "architecture": "MultiScaleUIDetector",
+      "parameters": 150000
+    },
+    "onnx_model": {
+      "model_path": "extension/public/models/ui_detector_v1.onnx",
+      "sha256": "248b62f79aeb7d305f7d88c16688157faa855e233d85856b7e208f5ae3388990",
+      "size_bytes": 405063,
+      "opset_version": 14,
+      "input_shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "output_shape": [
+        1,
+        320,
+        6
+      ]
+    },
+    "browser_engine": {
+      "engine_path": "extension/src/privacy/visual_ml_engine.ts",
+      "runtime_backend": "onnxruntime-web / WASM-SIMD",
+      "postprocessing": "NMS with spatial threshold 0.30"
+    }
+  }
+}

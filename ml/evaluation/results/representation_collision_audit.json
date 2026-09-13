@@ -1,0 +1,28 @@
+{
+  "dataset": "val_ui_dataset.json (Validation Set Only)",
+  "grid_16x16_baseline_640_slots": {
+    "grid_size": "16x16",
+    "total_gt_objects": 575,
+    "unique_slot_assigned_objects": 495,
+    "collided_objects": 80,
+    "pct_unique_slots": 86.09,
+    "pct_collided_slots": 13.91,
+    "objects_per_slot_distribution": {
+      "1": 495,
+      "2": 40
+    }
+  },
+  "grid_32x32_fpn_2048_slots": {
+    "grid_size": "32x32",
+    "total_gt_objects": 575,
+    "unique_slot_assigned_objects": 553,
+    "collided_objects": 22,
+    "pct_unique_slots": 96.17,
+    "pct_collided_slots": 3.83,
+    "objects_per_slot_distribution": {
+      "1": 553,
+      "2": 11
+    }
+  },
+  "conclusion": "Baseline 16x16 grid incurs 13.91% spatial collisions, whereas 32x32 FPN grid reduces collisions to 3.83%."
+}

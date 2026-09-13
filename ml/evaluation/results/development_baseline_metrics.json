@@ -1,0 +1,36 @@
+{
+  "phase": "PHASE_0_DEVELOPMENT_BASELINE",
+  "validation_samples_count": 30,
+  "total_ground_truth": 575,
+  "total_true_positives": 69,
+  "precision": 0.1601,
+  "recall": 0.12,
+  "f1_score": 0.1372,
+  "mAP50": 0.114,
+  "mAP50_95": 0.0984,
+  "mean_iou": 0.5054,
+  "per_class_recall": {
+    "button": 0.0,
+    "input": 0.0238,
+    "checkbox": 0.0,
+    "radio": 0.0,
+    "select": 0.0,
+    "link": 0.0086,
+    "navigation": 0.2444,
+    "card": 0.6667,
+    "image": 0.25,
+    "icon": 0.0135,
+    "text_block": 0.0
+  },
+  "size_bucket_recall": {
+    "tiny": 0.0,
+    "small": 0.0157,
+    "medium": 0.0067,
+    "large": 0.3333
+  },
+  "density_bucket_recall": {
+    "low": 0.2222,
+    "medium": 0.1242,
+    "high": 0.1115
+  }
+}

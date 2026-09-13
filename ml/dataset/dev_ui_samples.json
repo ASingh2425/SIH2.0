@@ -1,0 +1,1746 @@
+{
+  "dataset_type": "DEVELOPMENT_CALIBRATION",
+  "total_samples": 20,
+  "samples": [
+    {
+      "image_id": 1,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s1_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s1_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s1_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s1_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s1_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s1_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s1_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        }
+      ]
+    },
+    {
+      "image_id": 2,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s2_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s2_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s2_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s2_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s2_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s2_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s2_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        }
+      ]
+    },
+    {
+      "image_id": 3,
+      "template": "flight_booking_light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s3_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s3_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s3_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s3_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s3_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s3_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s3_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 4,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s4_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s4_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s4_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s4_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s4_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s4_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s4_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "image_id": 5,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s5_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s5_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s5_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s5_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s5_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s5_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s5_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        }
+      ]
+    },
+    {
+      "image_id": 6,
+      "template": "flight_booking_light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s6_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s6_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s6_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s6_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s6_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s6_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s6_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 7,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s7_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s7_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s7_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s7_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s7_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s7_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s7_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 8,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s8_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s8_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s8_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s8_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s8_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s8_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s8_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "image_id": 9,
+      "template": "flight_booking_light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s9_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s9_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s9_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s9_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s9_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s9_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s9_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    {
+      "image_id": 10,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s10_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s10_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s10_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s10_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s10_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s10_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s10_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    {
+      "image_id": 11,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s11_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s11_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s11_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s11_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s11_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s11_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s11_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 12,
+      "template": "flight_booking_light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s12_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s12_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s12_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s12_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s12_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s12_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s12_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        }
+      ]
+    },
+    {
+      "image_id": 13,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s13_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s13_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s13_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s13_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s13_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s13_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s13_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "image_id": 14,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s14_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s14_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s14_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s14_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s14_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s14_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s14_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        }
+      ]
+    },
+    {
+      "image_id": 15,
+      "template": "flight_booking_light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s15_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s15_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s15_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s15_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s15_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s15_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s15_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 16,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s16_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s16_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s16_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s16_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s16_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s16_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s16_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "image_id": 17,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s17_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s17_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s17_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s17_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s17_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s17_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s17_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        }
+      ]
+    },
+    {
+      "image_id": 18,
+      "template": "flight_booking_light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s18_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s18_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s18_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s18_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s18_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s18_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s18_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 19,
+      "template": "checkout_form_dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s19_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s19_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s19_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s19_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s19_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s19_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s19_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "image_id": 20,
+      "template": "login_portal_compact",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s20_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s20_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s20_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s20_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s20_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s20_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s20_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        }
+      ]
+    }
+  ]
+}

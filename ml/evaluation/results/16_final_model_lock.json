@@ -1,0 +1,7 @@
+{
+  "status": "FROZEN_MODEL_LOCK",
+  "hashes": {
+    "onnx_model": "ff396ccfb4cbf293e8643a937ad2c5d8a096d7c37237c41ea17f9b5d6bd2ae94",
+    "real_world_annotations": "4eacd2da0b19a00010feba5e9118fa2133e3005fdb7f9db11113bc03d88db8b4"
+  }
+}

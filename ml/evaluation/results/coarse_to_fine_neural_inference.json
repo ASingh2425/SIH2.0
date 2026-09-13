@@ -1,0 +1,7 @@
+{
+  "pipeline": "Coarse-to-Fine Adaptive Neural Crops (Global 256 + Selective Container Crops)",
+  "mean_latency_ms": 54.06,
+  "overall_recall": 0.4226,
+  "small_object_recall": 0.2,
+  "input_recall": 0.4048
+}

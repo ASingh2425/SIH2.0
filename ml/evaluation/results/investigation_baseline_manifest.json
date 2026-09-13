@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-13T21:43:35Z",
+  "gate_status": "GATE_0_PASSED",
+  "hashes": {
+    "pytorch_weights": "d62f931a7054c01e9afec79c66bae11b9cd654c2746584c274fce7e0c8e5e24b",
+    "onnx_model": "ec7f3bb30afef165a9a06cd6d604b5922d77449d135a2b2fba1451edb0453b52",
+    "train_dataset": "a28c7d8bea9dc6986c622aaf08ac65527df815281b766d9b8debed8d113ba913",
+    "val_dataset": "9e4a5bf3f1a34474d36bac1fa36f6b6bf826f52973fd4bfca1bacd906e250283",
+    "real_world_manifest": "00b066a1d3c8a6267ac40e12d1ea937bb63b84ebf1565d56e7aa0931bcb139d6",
+    "real_world_annotations": "4eacd2da0b19a00010feba5e9118fa2133e3005fdb7f9db11113bc03d88db8b4",
+    "preprocessing_code": "02035ae7a2dd8a8a80b9c42a98b5e7adfef753a6649efa4072fb76bf73815fcb",
+    "model_architecture_code": "3e8a35108fcf53bca5d45151d02ed004b2fadf47e21ad2838a64ac2cf143450e",
+    "evaluation_code": "02035ae7a2dd8a8a80b9c42a98b5e7adfef753a6649efa4072fb76bf73815fcb"
+  },
+  "baseline_metrics": {
+    "pure_neural_map50": 0.2409,
+    "pure_neural_map50_95": 0.2047,
+    "pure_neural_precision": 1.0,
+    "pure_neural_recall": 0.2409,
+    "pure_neural_f1": 0.3882,
+    "pure_neural_mean_iou": 0.4527,
+    "input_recall": 0.0526,
+    "tiny_object_recall": 0.0,
+    "dense_page_recall": 0.0,
+    "fused_system_map50": 0.9412
+  }
+}

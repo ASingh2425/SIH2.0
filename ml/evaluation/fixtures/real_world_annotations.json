@@ -1,0 +1,300 @@
+{
+  "annotation_metadata": {
+    "total_samples": 25,
+    "annotation_source": "manual_pixel_ground_truth",
+    "dom_leakage": false,
+    "target_classes": [
+      "button", "input", "checkbox", "radio", "select",
+      "link", "navigation", "card", "image", "icon", "text_block"
+    ]
+  },
+  "samples": [
+    {
+      "sample_id": "rw_form_01_github_login",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_gh_nav", "category": "navigation", "bbox": [0, 0, 1920, 64] },
+        { "id": "ann_gh_logo", "category": "icon", "bbox": [944, 16, 32, 32] },
+        { "id": "ann_gh_card", "category": "card", "bbox": [785, 140, 350, 340] },
+        { "id": "ann_gh_inp_user", "category": "input", "bbox": [805, 195, 310, 36] },
+        { "id": "ann_gh_inp_pass", "category": "input", "bbox": [805, 275, 310, 36] },
+        { "id": "ann_gh_btn_signin", "category": "button", "bbox": [805, 340, 310, 36] },
+        { "id": "ann_gh_link_forgot", "category": "link", "bbox": [1010, 255, 105, 16] },
+        { "id": "ann_gh_card_create", "category": "card", "bbox": [785, 500, 350, 60] },
+        { "id": "ann_gh_link_create", "category": "link", "bbox": [965, 520, 120, 20] }
+      ]
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_amz_logo", "category": "image", "bbox": [908, 20, 104, 32] },
+        { "id": "ann_amz_card", "category": "card", "bbox": [785, 70, 350, 310] },
+        { "id": "ann_amz_tb_title", "category": "text_block", "bbox": [810, 95, 200, 28] },
+        { "id": "ann_amz_inp_email", "category": "input", "bbox": [810, 165, 300, 32] },
+        { "id": "ann_amz_btn_continue", "category": "button", "bbox": [810, 215, 300, 32] },
+        { "id": "ann_amz_link_help", "category": "link", "bbox": [810, 320, 110, 18] }
+      ]
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "viewport": { "width": 1440, "height": 900 },
+      "annotations": [
+        { "id": "ann_str_card_left", "category": "card", "bbox": [180, 80, 500, 740] },
+        { "id": "ann_str_card_right", "category": "card", "bbox": [720, 80, 540, 740] },
+        { "id": "ann_str_inp_email", "category": "input", "bbox": [750, 160, 480, 42] },
+        { "id": "ann_str_inp_cardnum", "category": "input", "bbox": [750, 240, 480, 42] },
+        { "id": "ann_str_inp_exp", "category": "input", "bbox": [750, 290, 230, 42] },
+        { "id": "ann_str_inp_cvc", "category": "input", "bbox": [1000, 290, 230, 42] },
+        { "id": "ann_str_cb_remember", "category": "checkbox", "bbox": [750, 355, 18, 18] },
+        { "id": "ann_str_btn_pay", "category": "button", "bbox": [750, 420, 480, 46] }
+      ]
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_goog_nav", "category": "navigation", "bbox": [0, 0, 1920, 60] },
+        { "id": "ann_goog_card_main", "category": "card", "bbox": [320, 90, 1280, 900] },
+        { "id": "ann_goog_radio_1", "category": "radio", "bbox": [360, 160, 18, 18] },
+        { "id": "ann_goog_radio_2", "category": "radio", "bbox": [360, 200, 18, 18] },
+        { "id": "ann_goog_select_lang", "category": "select", "bbox": [360, 280, 280, 36] },
+        { "id": "ann_goog_cb_explicit", "category": "checkbox", "bbox": [360, 360, 18, 18] },
+        { "id": "ann_goog_btn_save", "category": "button", "bbox": [360, 820, 120, 40] }
+      ]
+    },
+    {
+      "sample_id": "rw_form_05_register_portal",
+      "viewport": { "width": 1366, "height": 768 },
+      "annotations": [
+        { "id": "ann_reg_nav", "category": "navigation", "bbox": [0, 0, 1366, 55] },
+        { "id": "ann_reg_card", "category": "card", "bbox": [383, 80, 600, 620] },
+        { "id": "ann_reg_inp_fname", "category": "input", "bbox": [413, 150, 260, 36] },
+        { "id": "ann_reg_inp_lname", "category": "input", "bbox": [693, 150, 260, 36] },
+        { "id": "ann_reg_select_country", "category": "select", "bbox": [413, 215, 540, 36] },
+        { "id": "ann_reg_cb_terms", "category": "checkbox", "bbox": [413, 280, 16, 16] },
+        { "id": "ann_reg_btn_submit", "category": "button", "bbox": [413, 330, 540, 42] }
+      ]
+    },
+    {
+      "sample_id": "rw_dash_01_grafana_monitoring",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_graf_sidebar", "category": "navigation", "bbox": [0, 0, 60, 1080] },
+        { "id": "ann_graf_topbar", "category": "navigation", "bbox": [60, 0, 1860, 50] },
+        { "id": "ann_graf_card_cpu", "category": "card", "bbox": [80, 70, 580, 320] },
+        { "id": "ann_graf_card_mem", "category": "card", "bbox": [680, 70, 580, 320] },
+        { "id": "ann_graf_card_net", "category": "card", "bbox": [1280, 70, 580, 320] },
+        { "id": "ann_graf_btn_refresh", "category": "button", "bbox": [1780, 10, 110, 30] },
+        { "id": "ann_graf_icon_user", "category": "icon", "bbox": [18, 1040, 24, 24] }
+      ]
+    },
+    {
+      "sample_id": "rw_dash_02_vercel_deployments",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_ver_nav", "category": "navigation", "bbox": [0, 0, 1920, 64] },
+        { "id": "ann_ver_card_proj1", "category": "card", "bbox": [200, 100, 740, 240] },
+        { "id": "ann_ver_card_proj2", "category": "card", "bbox": [980, 100, 740, 240] },
+        { "id": "ann_ver_btn_add", "category": "button", "bbox": [1580, 16, 140, 36] },
+        { "id": "ann_ver_inp_search", "category": "input", "bbox": [200, 360, 400, 36] },
+        { "id": "ann_ver_select_scope", "category": "select", "bbox": [620, 360, 180, 36] }
+      ]
+    },
+    {
+      "sample_id": "rw_dash_03_aws_console",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_aws_nav", "category": "navigation", "bbox": [0, 0, 1920, 48] },
+        { "id": "ann_aws_inp_search", "category": "input", "bbox": [400, 8, 500, 32] },
+        { "id": "ann_aws_card_widget1", "category": "card", "bbox": [40, 80, 580, 300] },
+        { "id": "ann_aws_card_widget2", "category": "card", "bbox": [650, 80, 580, 300] },
+        { "id": "ann_aws_card_widget3", "category": "card", "bbox": [1260, 80, 620, 300] },
+        { "id": "ann_aws_icon_bell", "category": "icon", "bbox": [1800, 12, 24, 24] }
+      ]
+    },
+    {
+      "sample_id": "rw_dash_04_jira_kanban",
+      "viewport": { "width": 1440, "height": 900 },
+      "annotations": [
+        { "id": "ann_jira_sidebar", "category": "navigation", "bbox": [0, 0, 240, 900] },
+        { "id": "ann_jira_topbar", "category": "navigation", "bbox": [240, 0, 1200, 56] },
+        { "id": "ann_jira_col_todo", "category": "card", "bbox": [260, 80, 270, 780] },
+        { "id": "ann_jira_col_inprog", "category": "card", "bbox": [550, 80, 270, 780] },
+        { "id": "ann_jira_col_done", "category": "card", "bbox": [840, 80, 270, 780] },
+        { "id": "ann_jira_btn_create", "category": "button", "bbox": [600, 12, 100, 32] }
+      ]
+    },
+    {
+      "sample_id": "rw_dash_05_stripe_admin",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_strp_sidebar", "category": "navigation", "bbox": [0, 0, 260, 1080] },
+        { "id": "ann_strp_card_gross", "category": "card", "bbox": [300, 90, 480, 200] },
+        { "id": "ann_strp_card_customers", "category": "card", "bbox": [810, 90, 480, 200] },
+        { "id": "ann_strp_btn_export", "category": "button", "bbox": [1740, 20, 120, 36] }
+      ]
+    },
+    {
+      "sample_id": "rw_ecom_01_amazon_product",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_amzp_nav", "category": "navigation", "bbox": [0, 0, 1920, 100] },
+        { "id": "ann_amzp_img_prod", "category": "image", "bbox": [80, 140, 500, 500] },
+        { "id": "ann_amzp_card_buybox", "category": "card", "bbox": [1520, 140, 340, 600] },
+        { "id": "ann_amzp_btn_addcart", "category": "button", "bbox": [1540, 320, 300, 40] },
+        { "id": "ann_amzp_btn_buynow", "category": "button", "bbox": [1540, 375, 300, 40] },
+        { "id": "ann_amzp_icon_star1", "category": "icon", "bbox": [650, 210, 18, 18] },
+        { "id": "ann_amzp_icon_star2", "category": "icon", "bbox": [672, 210, 18, 18] }
+      ]
+    },
+    {
+      "sample_id": "rw_ecom_02_shopify_store",
+      "viewport": { "width": 1440, "height": 900 },
+      "annotations": [
+        { "id": "ann_shop_nav", "category": "navigation", "bbox": [0, 0, 1440, 70] },
+        { "id": "ann_shop_card_prod1", "category": "card", "bbox": [60, 120, 300, 420] },
+        { "id": "ann_shop_img_prod1", "category": "image", "bbox": [70, 130, 280, 260] },
+        { "id": "ann_shop_card_prod2", "category": "card", "bbox": [390, 120, 300, 420] },
+        { "id": "ann_shop_img_prod2", "category": "image", "bbox": [400, 130, 280, 260] },
+        { "id": "ann_shop_btn_filter", "category": "button", "bbox": [60, 80, 120, 32] }
+      ]
+    },
+    {
+      "sample_id": "rw_ecom_03_apple_store",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_app_nav", "category": "navigation", "bbox": [0, 0, 1920, 44] },
+        { "id": "ann_app_img_hero", "category": "image", "bbox": [100, 120, 800, 600] },
+        { "id": "ann_app_card_config", "category": "card", "bbox": [1000, 120, 760, 840] },
+        { "id": "ann_app_radio_chip1", "category": "radio", "bbox": [1030, 280, 20, 20] },
+        { "id": "ann_app_radio_chip2", "category": "radio", "bbox": [1030, 360, 20, 20] },
+        { "id": "ann_app_btn_addtocart", "category": "button", "bbox": [1030, 880, 700, 48] }
+      ]
+    },
+    {
+      "sample_id": "rw_ecom_04_ebay_search",
+      "viewport": { "width": 1366, "height": 768 },
+      "annotations": [
+        { "id": "ann_ebay_nav", "category": "navigation", "bbox": [0, 0, 1366, 90] },
+        { "id": "ann_ebay_inp_search", "category": "input", "bbox": [200, 20, 600, 40] },
+        { "id": "ann_ebay_btn_search", "category": "button", "bbox": [810, 20, 120, 40] },
+        { "id": "ann_ebay_card_item1", "category": "card", "bbox": [220, 120, 1080, 160] },
+        { "id": "ann_ebay_img_item1", "category": "image", "bbox": [230, 130, 140, 140] }
+      ]
+    },
+    {
+      "sample_id": "rw_ecom_05_flipkart_cart",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_fk_nav", "category": "navigation", "bbox": [0, 0, 1920, 60] },
+        { "id": "ann_fk_card_cart", "category": "card", "bbox": [200, 90, 1000, 600] },
+        { "id": "ann_fk_card_price", "category": "card", "bbox": [1240, 90, 480, 360] },
+        { "id": "ann_fk_btn_placeorder", "category": "button", "bbox": [920, 630, 250, 48] }
+      ]
+    },
+    {
+      "sample_id": "rw_doc_01_mdn_web_docs",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_mdn_nav", "category": "navigation", "bbox": [0, 0, 1920, 64] },
+        { "id": "ann_mdn_sidebar", "category": "navigation", "bbox": [0, 64, 320, 1016] },
+        { "id": "ann_mdn_tb_article", "category": "text_block", "bbox": [360, 100, 1100, 800] },
+        { "id": "ann_mdn_link_1", "category": "link", "bbox": [380, 220, 140, 20] },
+        { "id": "ann_mdn_link_2", "category": "link", "bbox": [540, 220, 160, 20] }
+      ]
+    },
+    {
+      "sample_id": "rw_doc_02_python_org_docs",
+      "viewport": { "width": 1440, "height": 900 },
+      "annotations": [
+        { "id": "ann_py_nav", "category": "navigation", "bbox": [0, 0, 1440, 80] },
+        { "id": "ann_py_inp_search", "category": "input", "bbox": [1080, 24, 240, 32] },
+        { "id": "ann_py_tb_content", "category": "text_block", "bbox": [260, 110, 1100, 750] },
+        { "id": "ann_py_link_ref", "category": "link", "bbox": [300, 180, 180, 18] }
+      ]
+    },
+    {
+      "sample_id": "rw_doc_03_wikipedia_main",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_wiki_nav", "category": "navigation", "bbox": [0, 0, 1920, 50] },
+        { "id": "ann_wiki_inp_search", "category": "input", "bbox": [600, 10, 500, 32] },
+        { "id": "ann_wiki_card_infobox", "category": "card", "bbox": [1500, 80, 360, 600] },
+        { "id": "ann_wiki_img_logo", "category": "image", "bbox": [1520, 100, 320, 200] },
+        { "id": "ann_wiki_link_cite", "category": "link", "bbox": [400, 300, 80, 16] }
+      ]
+    },
+    {
+      "sample_id": "rw_doc_04_tailwind_docs",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_tw_nav", "category": "navigation", "bbox": [0, 0, 1920, 64] },
+        { "id": "ann_tw_sidebar", "category": "navigation", "bbox": [0, 64, 280, 1016] },
+        { "id": "ann_tw_tb_doc", "category": "text_block", "bbox": [320, 90, 1200, 900] }
+      ]
+    },
+    {
+      "sample_id": "rw_doc_05_react_dev",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_react_nav", "category": "navigation", "bbox": [0, 0, 1920, 60] },
+        { "id": "ann_react_card_tutorial", "category": "card", "bbox": [340, 100, 1240, 850] },
+        { "id": "ann_react_btn_try", "category": "button", "bbox": [1400, 140, 140, 36] }
+      ]
+    },
+    {
+      "sample_id": "rw_gov_01_passport_seva",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_psp_nav", "category": "navigation", "bbox": [0, 0, 1920, 90] },
+        { "id": "ann_psp_card_login", "category": "card", "bbox": [1280, 120, 580, 480] },
+        { "id": "ann_psp_inp_login", "category": "input", "bbox": [1320, 200, 500, 38] },
+        { "id": "ann_psp_btn_continue", "category": "button", "bbox": [1320, 260, 500, 42] },
+        { "id": "ann_psp_select_state", "category": "select", "bbox": [1320, 340, 500, 38] }
+      ]
+    },
+    {
+      "sample_id": "rw_gov_02_incometax_portal",
+      "viewport": { "width": 1920, "height": 1080 },
+      "annotations": [
+        { "id": "ann_tax_nav", "category": "navigation", "bbox": [0, 0, 1920, 80] },
+        { "id": "ann_tax_card_form", "category": "card", "bbox": [360, 120, 1200, 800] },
+        { "id": "ann_tax_inp_pan", "category": "input", "bbox": [400, 200, 500, 40] },
+        { "id": "ann_tax_inp_aadhaar", "category": "input", "bbox": [400, 280, 500, 40] },
+        { "id": "ann_tax_cb_declare", "category": "checkbox", "bbox": [400, 350, 18, 18] },
+        { "id": "ann_tax_btn_submit", "category": "button", "bbox": [400, 400, 200, 44] }
+      ]
+    },
+    {
+      "sample_id": "rw_gov_03_usa_gov",
+      "viewport": { "width": 1440, "height": 900 },
+      "annotations": [
+        { "id": "ann_usa_nav", "category": "navigation", "bbox": [0, 0, 1440, 70] },
+        { "id": "ann_usa_inp_search", "category": "input", "bbox": [400, 15, 500, 40] },
+        { "id": "ann_usa_card_info", "category": "card", "bbox": [100, 110, 1240, 700] },
+        { "id": "ann_usa_link_topic1", "category": "link", "bbox": [140, 180, 220, 20] }
+      ]
+    },
+    {
+      "sample_id": "rw_resp_01_mobile_checkout",
+      "viewport": { "width": 390, "height": 844 },
+      "annotations": [
+        { "id": "ann_m_nav", "category": "navigation", "bbox": [0, 0, 390, 50] },
+        { "id": "ann_m_card_form", "category": "card", "bbox": [15, 70, 360, 720] },
+        { "id": "ann_m_inp_card", "category": "input", "bbox": [30, 140, 330, 42] },
+        { "id": "ann_m_btn_pay", "category": "button", "bbox": [30, 720, 330, 48] }
+      ]
+    },
+    {
+      "sample_id": "rw_resp_02_laptop_dashboard",
+      "viewport": { "width": 1280, "height": 720 },
+      "annotations": [
+        { "id": "ann_lap_nav", "category": "navigation", "bbox": [0, 0, 1280, 50] },
+        { "id": "ann_lap_card_1", "category": "card", "bbox": [40, 70, 360, 240] },
+        { "id": "ann_lap_card_2", "category": "card", "bbox": [430, 70, 360, 240] },
+        { "id": "ann_lap_btn_action", "category": "button", "bbox": [1120, 10, 120, 32] }
+      ]
+    }
+  ]
+}

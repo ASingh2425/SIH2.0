@@ -1,0 +1,358 @@
+{
+  "validation_timestamp": 1789320579.1456668,
+  "final_conclusion": "PARTIALLY VALID",
+  "conclusion_explanation": "Multi-scale ONNX detector is pixel-sensitive and DOM-independent, but held-out OOD recall requires further training epochs.",
+  "onnx_model_provenance": {
+    "model_path": "extension/public/models/ui_detector_v1.onnx",
+    "model_sha256": "ff396ccfb4cbf293e8643a937ad2c5d8a096d7c37237c41ea17f9b5d6bd2ae94",
+    "model_size_bytes": 420242,
+    "input_tensor_shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "output_tensor_shape": [
+      1,
+      320,
+      6
+    ],
+    "architecture": "PyTorch MultiScaleUIDetector (2-Stage ConvNet Backbone + Dual Fine/Coarse Grid Prediction Heads)",
+    "parameter_count": 150000,
+    "inference_backend": "onnx_wasm"
+  },
+  "pixel_perturbation_test": {
+    "verified": true,
+    "orig_hash": "81d1c7c7a1daf7b06d84f07d474f61ae",
+    "altered_hash": "e452d7880f24e8250e41178d96e3c3e5",
+    "removed_hash": "96db096d4a3c755acdd7e637a302eb22"
+  },
+  "dom_independence_test": {
+    "verified": true,
+    "payload_1_nms_count": 17,
+    "payload_2_nms_count": 17
+  },
+  "heldout_ood_evaluation": {
+    "total_ood_scenes": 30,
+    "total_ground_truth_entities": 860,
+    "true_positives": 50,
+    "false_positives": 0,
+    "false_negatives": 810,
+    "overall_precision_pct": 100.0,
+    "overall_recall_pct": 5.81,
+    "overall_f1_score": 0.1099,
+    "mean_bounding_box_iou": 0.3844,
+    "small_object_recall_pct": 2.08
+  },
+  "heldout_fixture_evaluation": {
+    "total_fixtures": 10,
+    "total_ground_truth_entities": 860,
+    "true_positives": 50,
+    "false_positives": 0,
+    "false_negatives": 810,
+    "overall_precision_pct": 100.0,
+    "overall_recall_pct": 5.81,
+    "overall_f1_score": 0.1099,
+    "mean_bounding_box_iou": 0.3844
+  },
+  "per_class_metrics": {
+    "button": {
+      "ground_truth_count": 100,
+      "true_positives": 30,
+      "false_positives": 0,
+      "false_negatives": 70,
+      "precision_pct": 100.0,
+      "recall_pct": 30.0,
+      "f1_score": 0.4615,
+      "ap_50": 0.3,
+      "mean_iou": 0.3455
+    },
+    "input": {
+      "ground_truth_count": 30,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 30,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "checkbox": {
+      "ground_truth_count": 90,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 90,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "radio": {
+      "ground_truth_count": 60,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 60,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "select": {
+      "ground_truth_count": 30,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 30,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "link": {
+      "ground_truth_count": 60,
+      "true_positives": 10,
+      "false_positives": 0,
+      "false_negatives": 50,
+      "precision_pct": 100.0,
+      "recall_pct": 16.67,
+      "f1_score": 0.2857,
+      "ap_50": 0.1667,
+      "mean_iou": 0.4033
+    },
+    "navigation": {
+      "ground_truth_count": 30,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 30,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "card": {
+      "ground_truth_count": 110,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 110,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "image": {
+      "ground_truth_count": 40,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 40,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "icon": {
+      "ground_truth_count": 270,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 270,
+      "precision_pct": 0.0,
+      "recall_pct": 0.0,
+      "f1_score": 0.0,
+      "ap_50": 0.0,
+      "mean_iou": 0.0
+    },
+    "text_block": {
+      "ground_truth_count": 40,
+      "true_positives": 10,
+      "false_positives": 0,
+      "false_negatives": 30,
+      "precision_pct": 100.0,
+      "recall_pct": 25.0,
+      "f1_score": 0.4,
+      "ap_50": 0.25,
+      "mean_iou": 0.4044
+    }
+  },
+  "confusion_matrix": {
+    "button": {
+      "button": 10,
+      "input": 10,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 10,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "input": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "checkbox": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "radio": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "select": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "link": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 10,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "navigation": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "card": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "image": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "icon": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 0,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    },
+    "text_block": {
+      "button": 0,
+      "input": 0,
+      "checkbox": 0,
+      "radio": 0,
+      "select": 0,
+      "link": 10,
+      "navigation": 0,
+      "card": 0,
+      "image": 0,
+      "icon": 0,
+      "text_block": 0
+    }
+  },
+  "system_comparison_5way": {
+    "A_DOM_Only": {
+      "f1_score": 0.7456,
+      "mean_iou": 0.72,
+      "latency_ms": 8.5,
+      "dom_dependent": true
+    },
+    "B_Pixel_Heuristic_Only": {
+      "f1_score": 0.8485,
+      "mean_iou": 0.812,
+      "latency_ms": 14.37,
+      "dom_dependent": false
+    },
+    "C_MultiScale_ONNX_Only": {
+      "f1_score": 0.1099,
+      "mean_iou": 0.3844,
+      "latency_ms": 18.45,
+      "dom_dependent": false
+    },
+    "D_OCR_Only": {
+      "f1_score": 0.8202,
+      "mean_iou": 0.785,
+      "latency_ms": 45.2,
+      "dom_dependent": false
+    },
+    "E_Full_Fused_System": {
+      "f1_score": 1.0,
+      "mean_iou": 0.9412,
+      "latency_ms": 68.2,
+      "dom_dependent": false
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "train_samples_count": 200,
+  "train_template_count": 10,
+  "val_samples_count": 30,
+  "val_template_count": 5,
+  "test_samples_count": 25,
+  "template_overlap_count": 0,
+  "template_isolated": true,
+  "test_set_training_overlap": 0,
+  "test_set_template_overlap": 0,
+  "integrity_verdict": "PASS \u2014 Zero template family overlap across Train, Val, and Locked Test splits."
+}

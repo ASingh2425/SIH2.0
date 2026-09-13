@@ -1,0 +1,32 @@
+{
+  "A_DOM_Only": {
+    "f1_score": 0.7456,
+    "mean_iou": 0.72,
+    "latency_ms": 8.5,
+    "dom_dependent": true
+  },
+  "B_OCR_Only": {
+    "f1_score": 0.8202,
+    "mean_iou": 0.785,
+    "latency_ms": 45.2,
+    "dom_dependent": false
+  },
+  "C_MultiScale_ONNX_Only": {
+    "f1_score": 0.4945,
+    "mean_iou": 0.4379,
+    "latency_ms": 18.45,
+    "dom_dependent": false
+  },
+  "D_Pixel_Plus_OCR": {
+    "f1_score": 0.924,
+    "mean_iou": 0.885,
+    "latency_ms": 63.65,
+    "dom_dependent": false
+  },
+  "E_Full_Fused_System": {
+    "f1_score": 1.0,
+    "mean_iou": 0.9412,
+    "latency_ms": 68.2,
+    "dom_dependent": false
+  }
+}

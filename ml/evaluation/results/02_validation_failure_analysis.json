@@ -1,0 +1,26 @@
+{
+  "analysis_type": "Validation Root Cause Failure Breakdown",
+  "total_gt": 575,
+  "failure_modes": {
+    "localization_error_0.15_0.50_iou": {
+      "count": 364,
+      "pct": 63.3
+    },
+    "class_confusion_correct_loc": {
+      "count": 75,
+      "pct": 13.04
+    },
+    "grid_slot_spatial_collision": {
+      "count": 82,
+      "pct": 14.26
+    },
+    "low_confidence_filtering": {
+      "count": 7,
+      "pct": 1.22
+    },
+    "correct_detection": {
+      "count": 47,
+      "pct": 8.17
+    }
+  }
+}

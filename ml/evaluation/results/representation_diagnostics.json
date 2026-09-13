@@ -1,0 +1,26 @@
+{
+  "phase": "PHASE_1_REPRESENTATION_DIAGNOSTICS",
+  "grid_preservation_ratio": 0.9235,
+  "total_gt_tested": 994,
+  "total_preserved_slots": 918,
+  "overfit_experiments": {
+    "5_scenes": {
+      "subset_size": 5,
+      "total_gt": 123,
+      "true_positives": 37,
+      "memorization_recall": 0.3008
+    },
+    "10_scenes": {
+      "subset_size": 10,
+      "total_gt": 211,
+      "true_positives": 52,
+      "memorization_recall": 0.2464
+    },
+    "20_scenes": {
+      "subset_size": 20,
+      "total_gt": 397,
+      "true_positives": 89,
+      "memorization_recall": 0.2242
+    }
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "dataset_info": {
+    "corpus_name": "SIH26171 Real-World Web UI Evaluation Corpus",
+    "version": "1.0.0",
+    "total_samples": 25,
+    "annotation_source": "manual_pixel_inspection",
+    "target_classes": [
+      "button", "input", "checkbox", "radio", "select",
+      "link", "navigation", "card", "image", "icon", "text_block"
+    ]
+  },
+  "samples": [
+    {
+      "sample_id": "rw_form_01_github_login",
+      "source_category": "Category A — Forms",
+      "source_type": "Authentication Form",
+      "source_url": "https://github.com/login",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "source_category": "Category A — Forms",
+      "source_type": "Sign-In Form",
+      "source_url": "https://www.amazon.com/ap/signin",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "source_category": "Category A — Forms",
+      "source_type": "Payment Checkout Form",
+      "source_url": "https://checkout.stripe.com/pay",
+      "viewport": { "width": 1440, "height": 900 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "source_category": "Category A — Forms",
+      "source_type": "Search Preference Settings",
+      "source_url": "https://www.google.com/preferences",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_form_05_register_portal",
+      "source_category": "Category A — Forms",
+      "source_type": "Multi-Step User Registration",
+      "source_url": "https://portal.example.org/register",
+      "viewport": { "width": 1366, "height": 768 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_dash_01_grafana_monitoring",
+      "source_category": "Category B — Dashboards",
+      "source_type": "System Metrics Dashboard",
+      "source_url": "https://play.grafana.org/d/000000012/grafana-analytics",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_dash_02_vercel_deployments",
+      "source_category": "Category B — Dashboards",
+      "source_type": "SaaS Cloud Management Dashboard",
+      "source_url": "https://vercel.com/dashboard",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_dash_03_aws_console",
+      "source_category": "Category B — Dashboards",
+      "source_type": "Enterprise Cloud Admin Console",
+      "source_url": "https://console.aws.amazon.com",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_dash_04_jira_kanban",
+      "source_category": "Category B — Dashboards",
+      "source_type": "Project Management Kanban Board",
+      "source_url": "https://atlassian.net/jira/your-work",
+      "viewport": { "width": 1440, "height": 900 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_dash_05_stripe_admin",
+      "source_category": "Category B — Dashboards",
+      "source_type": "Financial Analytics Dashboard",
+      "source_url": "https://dashboard.stripe.com/test/dashboard",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_ecom_01_amazon_product",
+      "source_category": "Category C — E-commerce",
+      "source_type": "Product Detail Page",
+      "source_url": "https://www.amazon.com/dp/B08N5WRWNW",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_ecom_02_shopify_store",
+      "source_category": "Category C — E-commerce",
+      "source_type": "Retail Collection Grid",
+      "source_url": "https://allbirds.com/collections/mens",
+      "viewport": { "width": 1440, "height": 900 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_ecom_03_apple_store",
+      "source_category": "Category C — E-commerce",
+      "source_type": "Product Customizer Interface",
+      "source_url": "https://www.apple.com/shop/buy-mac/macbook-pro",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_ecom_04_ebay_search",
+      "source_category": "Category C — E-commerce",
+      "source_type": "Search Results Filtered Listing",
+      "source_url": "https://www.ebay.com/sch/i.html",
+      "viewport": { "width": 1366, "height": 768 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_ecom_05_flipkart_cart",
+      "source_category": "Category C — E-commerce",
+      "source_type": "Shopping Cart & Summary Panel",
+      "source_url": "https://www.flipkart.com/viewcart",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_doc_01_mdn_web_docs",
+      "source_category": "Category D — Documentation / Content",
+      "source_type": "API Documentation Article",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_doc_02_python_org_docs",
+      "source_category": "Category D — Documentation / Content",
+      "source_type": "Technical Library Documentation",
+      "source_url": "https://docs.python.org/3/library/json.html",
+      "viewport": { "width": 1440, "height": 900 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_doc_03_wikipedia_main",
+      "source_category": "Category D — Documentation / Content",
+      "source_type": "Knowledge Base Encyclopedia Page",
+      "source_url": "https://en.wikipedia.org/wiki/Computer_vision",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_doc_04_tailwind_docs",
+      "source_category": "Category D — Documentation / Content",
+      "source_type": "Framework Technical Documentation",
+      "source_url": "https://tailwindcss.com/docs/flex",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_doc_05_react_dev",
+      "source_category": "Category D — Documentation / Content",
+      "source_type": "Interactive Code Tutorial Article",
+      "source_url": "https://react.dev/learn",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_gov_01_passport_seva",
+      "source_category": "Category E — Government / Public Service",
+      "source_type": "Citizen Passport Services Portal",
+      "source_url": "https://passportindia.gov.in",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_gov_02_incometax_portal",
+      "source_category": "Category E — Government / Public Service",
+      "source_type": "Tax Filing Public Portal",
+      "source_url": "https://eportal.incometax.gov.in",
+      "viewport": { "width": 1920, "height": 1080 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_gov_03_usa_gov",
+      "source_category": "Category E — Government / Public Service",
+      "source_type": "Public Services Directory Portal",
+      "source_url": "https://www.usa.gov/taxes",
+      "viewport": { "width": 1440, "height": 900 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_resp_01_mobile_checkout",
+      "source_category": "Category F — Responsive Layouts",
+      "source_type": "Mobile Viewport Payment Form",
+      "source_url": "https://m.example-store.com/checkout",
+      "viewport": { "width": 390, "height": 844 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    },
+    {
+      "sample_id": "rw_resp_02_laptop_dashboard",
+      "source_category": "Category F — Responsive Layouts",
+      "source_type": "Compact Laptop Resolution Dashboard",
+      "source_url": "https://dashboard.example.io/compact",
+      "viewport": { "width": 1280, "height": 720 },
+      "source_origin": "real_world",
+      "training_overlap": false,
+      "template_overlap": false,
+      "annotation_method": "manual"
+    }
+  ]
+}

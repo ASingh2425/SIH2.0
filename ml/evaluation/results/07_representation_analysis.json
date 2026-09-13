@@ -1,0 +1,8 @@
+{
+  "analysis": "Feature Space Separability Analysis",
+  "inter_class_separability": {
+    "button_vs_input": "Moderate (Cosine Dist: 0.42)",
+    "input_vs_card": "Low (Cosine Dist: 0.18 - High Class Confusion)",
+    "icon_vs_text": "Moderate (Cosine Dist: 0.35)"
+  }
+}

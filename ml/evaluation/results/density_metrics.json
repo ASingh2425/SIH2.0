@@ -1,0 +1,20 @@
+{
+  "low": {
+    "samples": 25,
+    "gt": 137,
+    "tp": 45,
+    "recall_pct": 32.85
+  },
+  "medium": {
+    "samples": 0,
+    "gt": 0,
+    "tp": 0,
+    "recall_pct": 0.0
+  },
+  "high": {
+    "samples": 0,
+    "gt": 0,
+    "tp": 0,
+    "recall_pct": 0.0
+  }
+}

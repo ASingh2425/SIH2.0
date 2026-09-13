@@ -1,0 +1,33 @@
+{
+  "gate": "GATE_2_PREPROCESSING_AUDIT",
+  "raw_input_shape": [
+    1080,
+    1920,
+    3
+  ],
+  "target_tensor_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "channel_ordering": "RGB (NCHW)",
+  "python_pipeline": {
+    "min_val": 0.0,
+    "max_val": 1.0,
+    "mean_val": 0.9951,
+    "std_val": 0.069,
+    "interpolation": "BILINEAR"
+  },
+  "browser_typescript_pipeline": {
+    "canvas_size": [
+      256,
+      256
+    ],
+    "channel_ordering": "RGB",
+    "min_val": 0.0,
+    "max_val": 1.0,
+    "interpolation": "Canvas 2D drawImage (Bilinear)"
+  },
+  "pipeline_parity_verified": true
+}

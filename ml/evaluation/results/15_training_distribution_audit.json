@@ -1,0 +1,6 @@
+{
+  "train_mean_density": 19.52,
+  "val_mean_density": 19.17,
+  "train_small_pct": 15.53,
+  "val_small_pct": 17.39
+}

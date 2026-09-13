@@ -1,0 +1,8 @@
+{
+  "analysis": "Pre-NMS Candidate Sigmoid Logit Distribution",
+  "tp_mean_confidence": 0.524,
+  "fp_mean_confidence": 0.0,
+  "fn_candidate_presence_pct": 32.92,
+  "fn_mean_candidate_confidence": 0.142,
+  "finding": "Aggressive background negative cross-entropy loss depresses confidence logits for uncertain form controls to 0.05-0.20 range."
+}

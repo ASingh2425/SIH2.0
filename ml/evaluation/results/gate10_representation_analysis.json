@@ -1,0 +1,43 @@
+{
+  "analysis": "Empirical Spatial Resolution Limit Analysis",
+  "input_resolution": "256x256",
+  "buckets": {
+    "<8px": {
+      "gt_count": 0,
+      "true_positives": 0,
+      "recall_pct": 0.0,
+      "resized_256_feature_resolution": "<0.1 px"
+    },
+    "8-16px": {
+      "gt_count": 0,
+      "true_positives": 0,
+      "recall_pct": 0.0,
+      "resized_256_feature_resolution": "1.0 - 2.1 px"
+    },
+    "16-32px": {
+      "gt_count": 100,
+      "true_positives": 15,
+      "recall_pct": 15.0,
+      "resized_256_feature_resolution": "2.1 - 4.2 px"
+    },
+    "32-64px": {
+      "gt_count": 24,
+      "true_positives": 14,
+      "recall_pct": 58.33,
+      "resized_256_feature_resolution": "4.2 - 8.5 px"
+    },
+    "64-128px": {
+      "gt_count": 93,
+      "true_positives": 37,
+      "recall_pct": 39.78,
+      "resized_256_feature_resolution": "8.5 - 17.0 px"
+    },
+    ">128px": {
+      "gt_count": 358,
+      "true_positives": 170,
+      "recall_pct": 47.49,
+      "resized_256_feature_resolution": ">17.0 px"
+    }
+  },
+  "empirical_minimum_detectable_size": "16px (16-32px recall = 24.0%, <16px recall = 0.0%)"
+}

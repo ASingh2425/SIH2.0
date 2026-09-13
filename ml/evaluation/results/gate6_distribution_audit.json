@@ -1,0 +1,51 @@
+{
+  "train_distribution": {
+    "num_scenes": 200,
+    "total_objects": 3903,
+    "class_distribution": {
+      "navigation": 300,
+      "icon": 498,
+      "link": 790,
+      "input": 303,
+      "button": 588,
+      "card": 448,
+      "text_block": 448,
+      "image": 298,
+      "select": 90,
+      "checkbox": 90,
+      "radio": 50
+    },
+    "mean_object_density": 19.52,
+    "median_area": 7600.0,
+    "mean_area": 44386.8,
+    "small_objects_pct": 15.53,
+    "mean_aspect_ratio": 6.45
+  },
+  "validation_distribution": {
+    "num_scenes": 30,
+    "total_objects": 575,
+    "class_distribution": {
+      "navigation": 45,
+      "icon": 74,
+      "link": 116,
+      "input": 42,
+      "button": 88,
+      "card": 66,
+      "text_block": 65,
+      "image": 44,
+      "select": 14,
+      "checkbox": 14,
+      "radio": 7
+    },
+    "mean_object_density": 19.17,
+    "median_area": 7600.0,
+    "mean_area": 45183.8,
+    "small_objects_pct": 17.39,
+    "mean_aspect_ratio": 6.6
+  },
+  "domain_gaps": {
+    "density_gap": -0.35,
+    "small_object_gap_pct": 1.86,
+    "aspect_ratio_gap": 0.15
+  }
+}

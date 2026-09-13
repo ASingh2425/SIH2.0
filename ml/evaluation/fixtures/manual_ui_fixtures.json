@@ -1,0 +1,126 @@
+{
+  "dataset_name": "MANUALLY_AUTHORED_HELD_OUT_EVALUATION_FIXTURES",
+  "provenance": "HAND_CRAFTED_INDEPENDENT_DESIGNS_ZERO_GENERATOR_CONTAMINATION",
+  "total_fixtures": 10,
+  "samples": [
+    {
+      "fixture_id": "fix_01_banking_portal",
+      "image_hash": "a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f1_nav", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 64]},
+        {"id": "f1_card", "category": "card", "category_id": 7, "bbox": [200, 120, 720, 540]},
+        {"id": "f1_input1", "category": "input", "category_id": 1, "bbox": [240, 180, 640, 42]},
+        {"id": "f1_input2", "category": "input", "category_id": 1, "bbox": [240, 250, 640, 42]},
+        {"id": "f1_btn", "category": "button", "category_id": 0, "bbox": [240, 320, 180, 46]}
+      ]
+    },
+    {
+      "fixture_id": "fix_02_settings_modal",
+      "image_hash": "b2c3d4e5f6a10718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f91",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f2_modal", "category": "card", "category_id": 7, "bbox": [560, 200, 800, 600]},
+        {"id": "f2_input", "category": "input", "category_id": 1, "bbox": [600, 280, 720, 40]},
+        {"id": "f2_chk", "category": "checkbox", "category_id": 2, "bbox": [600, 350, 24, 24]},
+        {"id": "f2_rad", "category": "radio", "category_id": 3, "bbox": [600, 400, 24, 24]},
+        {"id": "f2_btn_save", "category": "button", "category_id": 0, "bbox": [600, 700, 140, 44]},
+        {"id": "f2_btn_cancel", "category": "button", "category_id": 0, "bbox": [760, 700, 120, 44]}
+      ]
+    },
+    {
+      "fixture_id": "fix_03_ecommerce_checkout",
+      "image_hash": "c3d4e5f6a1b20718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f92",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f3_header", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 80]},
+        {"id": "f3_form_card", "category": "card", "category_id": 7, "bbox": [150, 140, 1000, 800]},
+        {"id": "f3_input_name", "category": "input", "category_id": 1, "bbox": [190, 200, 440, 42]},
+        {"id": "f3_input_card", "category": "input", "category_id": 1, "bbox": [190, 280, 920, 42]},
+        {"id": "f3_select_country", "category": "select", "category_id": 4, "bbox": [190, 360, 440, 42]},
+        {"id": "f3_pay_btn", "category": "button", "category_id": 0, "bbox": [190, 850, 220, 50]}
+      ]
+    },
+    {
+      "fixture_id": "fix_04_healthcare_record",
+      "image_hash": "d4e5f6a1b2c30718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f93",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f4_nav", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 60]},
+        {"id": "f4_sidebar", "category": "card", "category_id": 7, "bbox": [0, 60, 260, 1020]},
+        {"id": "f4_main_card", "category": "card", "category_id": 7, "bbox": [290, 90, 1580, 930]},
+        {"id": "f4_input_search", "category": "input", "category_id": 1, "bbox": [320, 120, 500, 38]},
+        {"id": "f4_btn_export", "category": "button", "category_id": 0, "bbox": [1680, 120, 160, 38]}
+      ]
+    },
+    {
+      "fixture_id": "fix_05_government_tax_form",
+      "image_hash": "e5f6a1b2c3d40718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f94",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f5_header", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 70]},
+        {"id": "f5_card", "category": "card", "category_id": 7, "bbox": [360, 110, 1200, 880]},
+        {"id": "f5_in1", "category": "input", "category_id": 1, "bbox": [400, 180, 520, 40]},
+        {"id": "f5_in2", "category": "input", "category_id": 1, "bbox": [960, 180, 560, 40]},
+        {"id": "f5_chk", "category": "checkbox", "category_id": 2, "bbox": [400, 260, 20, 20]},
+        {"id": "f5_submit", "category": "button", "category_id": 0, "bbox": [400, 900, 200, 46]}
+      ]
+    },
+    {
+      "fixture_id": "fix_06_dark_analytics_dashboard",
+      "image_hash": "f6a1b2c3d4e50718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f95",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f6_top_nav", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 64]},
+        {"id": "f6_card_1", "category": "card", "category_id": 7, "bbox": [40, 94, 580, 450]},
+        {"id": "f6_card_2", "category": "card", "category_id": 7, "bbox": [670, 94, 580, 450]},
+        {"id": "f6_card_3", "category": "card", "category_id": 7, "bbox": [1300, 94, 580, 450]},
+        {"id": "f6_btn_refresh", "category": "button", "category_id": 0, "bbox": [1720, 18, 140, 36]}
+      ]
+    },
+    {
+      "fixture_id": "fix_07_glassmorphism_wallet",
+      "image_hash": "a2b3c4d5e6f10718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f96",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f7_nav", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 70]},
+        {"id": "f7_wallet_card", "category": "card", "category_id": 7, "bbox": [460, 160, 1000, 720]},
+        {"id": "f7_amount_input", "category": "input", "category_id": 1, "bbox": [500, 240, 920, 46]},
+        {"id": "f7_send_btn", "category": "button", "category_id": 0, "bbox": [500, 780, 440, 50]},
+        {"id": "f7_receive_btn", "category": "button", "category_id": 0, "bbox": [980, 780, 440, 50]}
+      ]
+    },
+    {
+      "fixture_id": "fix_08_dense_data_table",
+      "image_hash": "b3c4d5e6f1a20718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f97",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f8_nav", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 60]},
+        {"id": "f8_table_card", "category": "card", "category_id": 7, "bbox": [80, 100, 1760, 880]},
+        {"id": "f8_search", "category": "input", "category_id": 1, "bbox": [120, 130, 400, 36]},
+        {"id": "f8_filter_btn", "category": "button", "category_id": 0, "bbox": [540, 130, 120, 36]}
+      ]
+    },
+    {
+      "fixture_id": "fix_09_spacious_product_detail",
+      "image_hash": "c4d5e6f1a2b30718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f98",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f9_header", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 80]},
+        {"id": "f9_img_card", "category": "card", "category_id": 7, "bbox": [100, 140, 800, 800]},
+        {"id": "f9_info_card", "category": "card", "category_id": 7, "bbox": [960, 140, 860, 800]},
+        {"id": "f9_add_cart_btn", "category": "button", "category_id": 0, "bbox": [1000, 840, 380, 54]}
+      ]
+    },
+    {
+      "fixture_id": "fix_10_adversarial_decorative_ui",
+      "image_hash": "d5e6f1a2b3c40718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f99",
+      "viewport": {"width": 1920, "height": 1080},
+      "annotations": [
+        {"id": "f10_nav", "category": "navigation", "category_id": 6, "bbox": [0, 0, 1920, 64]},
+        {"id": "f10_card", "category": "card", "category_id": 7, "bbox": [400, 120, 1120, 840]},
+        {"id": "f10_real_btn", "category": "button", "category_id": 0, "bbox": [440, 860, 200, 48]}
+      ]
+    }
+  ]
+}

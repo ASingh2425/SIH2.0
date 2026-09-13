@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-09-13T22:21:35Z",
+  "status": "FINAL_MODEL_FROZEN",
+  "hashes": {
+    "pytorch_weights": "97b102b3ebbfce9bcfaed5c2c77d61eb6e553531bdfc596efb204c3bd1a80c98",
+    "onnx_model": "ff396ccfb4cbf293e8643a937ad2c5d8a096d7c37237c41ea17f9b5d6bd2ae94",
+    "real_world_annotations": "4eacd2da0b19a00010feba5e9118fa2133e3005fdb7f9db11113bc03d88db8b4",
+    "real_world_manifest": "00b066a1d3c8a6267ac40e12d1ea937bb63b84ebf1565d56e7aa0931bcb139d6"
+  },
+  "configuration": {
+    "input_resolution": [256, 256],
+    "candidate_slots": 640,
+    "confidence_threshold": 0.30,
+    "nms_threshold": 0.40,
+    "parameter_count": 150000,
+    "onnx_size_bytes": 420242
+  }
+}

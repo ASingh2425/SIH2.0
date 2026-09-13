@@ -1,0 +1,10 @@
+{
+  "class_counts": {
+    "button": 588,
+    "link": 790,
+    "checkbox": 90,
+    "radio": 50
+  },
+  "imbalance_ratio": "15.8 to 1 (Link vs Radio)",
+  "recommendation": "Focal Loss (gamma=2.0) with inverse class frequency weighting."
+}

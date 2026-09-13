@@ -59,7 +59,7 @@ export interface VisualFeatureRegion {
   confidence: number;
   bbox: BoundingRect;
   source: 'pixel_analysis';
-  backend: 'pixel_heuristic';
+  backend: 'pixel_heuristic' | 'onnx_wasm' | 'onnx_webgpu' | 'fallback';
   visualEvidence: VisualEvidence;
 }
 

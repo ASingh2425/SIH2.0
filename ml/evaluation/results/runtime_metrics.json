@@ -1,0 +1,7 @@
+{
+  "model_size_mb": 0.396,
+  "parameter_count": 150000,
+  "inference_p50_ms": 18.45,
+  "inference_p95_ms": 24.1,
+  "wasm_memory_mb": 42.5
+}

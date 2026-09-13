@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-09-13T21:37:15Z",
+  "status": "PERMANENTLY_LOCKED",
+  "hashes": {
+    "real_world_annotations.json": "4eacd2da0b19a00010feba5e9118fa2133e3005fdb7f9db11113bc03d88db8b4",
+    "real_world_manifest.json": "00b066a1d3c8a6267ac40e12d1ea937bb63b84ebf1565d56e7aa0931bcb139d6"
+  },
+  "contract": {
+    "samples": 25,
+    "annotations": 137,
+    "training_forbidden": true,
+    "tuning_forbidden": true
+  }
+}

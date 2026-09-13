@@ -1,0 +1,33 @@
+{
+  "dataset_name": "SIH26171 UI Object Detection Dataset Corpus",
+  "total_scenes": 250,
+  "splits": {
+    "train": {
+      "scenes": 175,
+      "bboxes": 3071,
+      "source": "synthetic_multi_category + real_world_ground_truth"
+    },
+    "val": {
+      "scenes": 30,
+      "bboxes": 575,
+      "source": "synthetic_multi_category"
+    },
+    "test": {
+      "scenes": 25,
+      "bboxes": 509,
+      "source": "synthetic_multi_category"
+    },
+    "unseen_challenge": {
+      "scenes": 20,
+      "bboxes": 387,
+      "source": "synthetic_held_out_templates"
+    },
+    "real_world_test": {
+      "scenes": 25,
+      "bboxes": 137,
+      "source": "manual_pixel_annotations"
+    }
+  },
+  "target_classes_count": 11,
+  "provenance_audit": "100% CLEAN - Verified zero image ID overlap and zero DOM ground-truth leakage."
+}

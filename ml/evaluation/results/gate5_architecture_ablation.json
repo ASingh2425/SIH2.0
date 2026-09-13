@@ -1,0 +1,25 @@
+{
+  "eval_split": "val_ui_dataset.json (Validation Set Only)",
+  "architectures": [
+    {
+      "model_name": "Model A: Baseline MultiScale (640 slots)",
+      "parameters": 99480,
+      "candidate_slots": 640,
+      "mean_latency_ms": 18.66,
+      "overall_recall": 0.3757,
+      "small_object_recall": 0.15,
+      "input_recall": 0.2857,
+      "icon_recall": 0.3108
+    },
+    {
+      "model_name": "Model C: FPNUIDetector (2688 slots - Untrained)",
+      "parameters": 329124,
+      "candidate_slots": 2688,
+      "mean_latency_ms": 153.46,
+      "overall_recall": 0.0452,
+      "small_object_recall": 0.14,
+      "input_recall": 0.0,
+      "icon_recall": 0.3514
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "existence_recall_iou_0.15": 0.817,
+  "class_recall_correct_cls": 0.428,
+  "localization_recall_iou_0.50": 0.3285
+}

@@ -1,0 +1,47 @@
+{
+  "validation_samples": 30,
+  "models": {
+    "Model A (Baseline 224x224)": {
+      "params": "0.10M",
+      "size": "0.40MB",
+      "mAP50": 0.1152,
+      "mAP50_95": 0.0984,
+      "recall": 0.12,
+      "input_recall": 0.0,
+      "small_object_recall": 0.0081,
+      "p95_latency_ms": 18.96
+    },
+    "Model B (HighRes 256x256)": {
+      "params": "0.10M",
+      "size": "0.40MB",
+      "mAP50": 0.1202,
+      "mAP50_95": 0.1027,
+      "recall": 0.1252,
+      "input_recall": 0.0238,
+      "small_object_recall": 0.0081,
+      "p95_latency_ms": 18.04
+    },
+    "Model C (MultiScale 320x320)": {
+      "params": "0.10M",
+      "size": "0.40MB",
+      "mAP50": 0.1169,
+      "mAP50_95": 0.0998,
+      "recall": 0.1217,
+      "input_recall": 0.0476,
+      "small_object_recall": 0.0081,
+      "p95_latency_ms": 19.92
+    },
+    "Model D (FPN Small-Object Aware 384x384)": {
+      "params": "0.10M",
+      "size": "0.40MB",
+      "mAP50": 0.1386,
+      "mAP50_95": 0.1184,
+      "recall": 0.1443,
+      "input_recall": 0.0238,
+      "small_object_recall": 0.0081,
+      "p95_latency_ms": 28.03
+    }
+  },
+  "selected_winner": "Model B (HighRes 256x256)",
+  "selection_rationale": "Model B provides optimal latency-recall tradeoff on local browser runtime."
+}

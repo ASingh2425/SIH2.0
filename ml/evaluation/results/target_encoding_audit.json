@@ -1,0 +1,237 @@
+{
+  "gate": "GATE_1_TARGET_ENCODING_AUDIT",
+  "num_objects_tested": 12,
+  "num_slots_assigned": 1,
+  "max_abs_coordinate_error_px": 0.0001,
+  "mathematically_consistent": true,
+  "object_records": [
+    {
+      "object_id": "top_left_1x1",
+      "category": "icon",
+      "gt_box": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "assigned_slot": 256,
+      "decoded_box": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "top_left_2x2",
+      "category": "icon",
+      "gt_box": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "assigned_slot": 256,
+      "decoded_box": [
+        0.0,
+        0.0,
+        2.0,
+        2.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "top_left_4x4",
+      "category": "icon",
+      "gt_box": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "assigned_slot": 256,
+      "decoded_box": [
+        0.0,
+        0.0,
+        4.0,
+        4.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "top_left_8x8",
+      "category": "icon",
+      "gt_box": [
+        0,
+        0,
+        8,
+        8
+      ],
+      "assigned_slot": 256,
+      "decoded_box": [
+        0.0,
+        0.0,
+        8.0,
+        8.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "top_left_16x16",
+      "category": "icon",
+      "gt_box": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "assigned_slot": 256,
+      "decoded_box": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "center_control",
+      "category": "button",
+      "gt_box": [
+        944,
+        524,
+        32,
+        32
+      ],
+      "assigned_slot": 375,
+      "decoded_box": [
+        944.0,
+        524.0,
+        32.0,
+        32.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "bottom_right_input",
+      "category": "input",
+      "gt_box": [
+        1600,
+        1020,
+        310,
+        44
+      ],
+      "assigned_slot": 253,
+      "decoded_box": [
+        1600.0,
+        1020.0,
+        310.0,
+        44.0
+      ],
+      "abs_error_px": 0.0001,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "wide_nav",
+      "category": "navigation",
+      "gt_box": [
+        0,
+        0,
+        1920,
+        64
+      ],
+      "assigned_slot": 576,
+      "decoded_box": [
+        0.0,
+        0.0,
+        1920.0,
+        64.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "tall_sidebar",
+      "category": "card",
+      "gt_box": [
+        0,
+        64,
+        240,
+        1000
+      ],
+      "assigned_slot": 512,
+      "decoded_box": [
+        0.0,
+        64.0,
+        240.0,
+        1000.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "boundary_cell_16",
+      "category": "select",
+      "gt_box": [
+        120,
+        120,
+        40,
+        40
+      ],
+      "assigned_slot": 273,
+      "decoded_box": [
+        120.0,
+        120.0,
+        40.0,
+        40.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "overlapping_a",
+      "category": "card",
+      "gt_box": [
+        800,
+        300,
+        200,
+        100
+      ],
+      "assigned_slot": 531,
+      "decoded_box": [
+        800.0,
+        300.0,
+        200.0,
+        100.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    },
+    {
+      "object_id": "overlapping_b_nested",
+      "category": "input",
+      "gt_box": [
+        820,
+        320,
+        160,
+        40
+      ],
+      "assigned_slot": 70,
+      "decoded_box": [
+        820.0,
+        320.0,
+        160.0,
+        40.0
+      ],
+      "abs_error_px": 0.0,
+      "rel_error": 0.0
+    }
+  ]
+}

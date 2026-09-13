@@ -1,0 +1,9 @@
+{
+  "oracle_decoder_test": "Theoretical Upper Bound of Dual-Anchor 640-Slot Target Encoding",
+  "total_validation_gt_objects": 575,
+  "oracle_true_positives": 512,
+  "oracle_false_positives": 0,
+  "oracle_max_possible_recall_pct": 89.04,
+  "oracle_max_possible_precision_pct": 100.0,
+  "finding": "Dual-anchor 640-slot target encoding can theoretically represent up to 89.04% of all GT objects without architectural modification."
+}

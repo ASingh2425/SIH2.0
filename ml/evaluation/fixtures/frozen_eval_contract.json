@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-09-13T21:07:00Z",
+  "hashes": {
+    "evaluate_real_world_generalization.py": "801d370dcb2d14d51799963a1da2c0ed540b98aeb686a5c9ee8184ea412bdd0c",
+    "real_world_manifest.json": "00b066a1d3c8a6267ac40e12d1ea937bb63b84ebf1565d56e7aa0931bcb139d6",
+    "real_world_annotations.json": "4eacd2da0b19a00010feba5e9118fa2133e3005fdb7f9db11113bc03d88db8b4"
+  },
+  "locked_test_set": {
+    "total_samples": 25,
+    "total_ground_truth_objects": 137,
+    "immutable": true
+  }
+}

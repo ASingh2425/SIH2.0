@@ -1,0 +1,92 @@
+{
+  "execution_timestamp": 1789320580.4805002,
+  "total_scenarios": 3,
+  "scenarios_passed": 3,
+  "scenarios": [
+    {
+      "scenario_id": "scenario_01_dom_pixel_discrepancy",
+      "name": "DOM / Pixel Discrepancy Protection",
+      "dom_metadata": {
+        "text": "ALICE@EXAMPLE.COM"
+      },
+      "pixel_ocr_text": "BOB@EXAMPLE.COM",
+      "local_perception_output": {
+        "fused_text": "BOB@EXAMPLE.COM",
+        "source": "pixel_ocr_primacy"
+      },
+      "sanitized_context_dispatched": true,
+      "proposed_action": {
+        "type": "TYPE",
+        "value": "BOB@EXAMPLE.COM",
+        "targetBBox": {
+          "x": 50,
+          "y": 135,
+          "w": 200,
+          "h": 30
+        }
+      },
+      "local_action_firewall": {
+        "target_existence_verified": true,
+        "visual_grounding": "VERIFIED (Drift 0.0px <= 35.0px)",
+        "dom_revalidation": "VERIFIED_STABLE",
+        "action_executed": true,
+        "status": "ACTION_EXECUTED_SUCCESSFULLY"
+      }
+    },
+    {
+      "scenario_id": "scenario_02_private_visual_redaction",
+      "name": "Private Visual Information Masking & Egress Attestation",
+      "raw_viewport_pii": [
+        "CREDIT_CARD_4532_xxxx_xxxx_8891"
+      ],
+      "local_perception_output": {
+        "visual_pii_detected": 1,
+        "redaction_applied": "2px_tight_padded_solid_fill_#020617",
+        "image_egress_attestation": "VERIFIED_SANITIZED"
+      },
+      "sanitized_context_dispatched": true,
+      "proposed_action": {
+        "type": "CLICK",
+        "targetId": "btn_confirm_payment",
+        "targetBBox": {
+          "x": 300,
+          "y": 135,
+          "w": 120,
+          "h": 45
+        }
+      },
+      "local_action_firewall": {
+        "target_existence_verified": true,
+        "visual_grounding": "VERIFIED (Drift 2.1px <= 35.0px)",
+        "dom_revalidation": "VERIFIED_STABLE",
+        "action_executed": true,
+        "status": "ACTION_EXECUTED_SUCCESSFULLY"
+      }
+    },
+    {
+      "scenario_id": "scenario_03_invalid_action_containment",
+      "name": "Adversarial Untrusted Remote Action Containment",
+      "proposed_action": {
+        "type": "CLICK",
+        "targetBBox": {
+          "x": 40,
+          "y": 120,
+          "w": 220,
+          "h": 55
+        },
+        "proposedCoordinates": {
+          "x": 200,
+          "y": 300
+        }
+      },
+      "local_action_firewall": {
+        "target_existence_verified": true,
+        "visual_grounding": "FAILED_VISUAL_GROUNDING (Drift 123.8px > 35.0px limit)",
+        "dom_revalidation": "ABORTED",
+        "action_executed": false,
+        "status": "ACTION_BLOCKED_BY_FIREWALL"
+      }
+    }
+  ],
+  "trace_verdict": "All 3 E2E agent scenarios passed: Pixel OCR primacy verified, private visual redaction attested, invalid drifted action blocked by firewall."
+}

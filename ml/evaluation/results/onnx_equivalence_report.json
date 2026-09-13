@@ -1,0 +1,9 @@
+{
+  "gate": "GATE_3_PYTORCH_ONNX_EQUIVALENCE",
+  "num_test_images": 20,
+  "overall_max_abs_diff": 9.5e-05,
+  "overall_mean_abs_diff": 4e-06,
+  "mean_cosine_similarity": 1.0,
+  "detection_match_rate": 1.0,
+  "onnx_equivalence_verified": true
+}

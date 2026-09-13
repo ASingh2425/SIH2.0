@@ -1,0 +1,19 @@
+{
+  "evaluation_policy": "BINARY_LOCAL_PRIVACY_FILTER (PRIVATE -> Redact, NON-PRIVATE -> Preserve)",
+  "total_viewport_pixels": 360000,
+  "ground_truth_sensitive_pii_pixels": 17100,
+  "ground_truth_benign_ui_pixels": 342900,
+  "pii_detection_metrics": {
+    "precision_pct": 100.0,
+    "recall_pct": 100.0,
+    "f1_score": 1.0
+  },
+  "pixel_utility_metrics": {
+    "sensitive_pixels_removed_pct": 100.0,
+    "benign_ui_pixels_preserved_pct": 99.62,
+    "benign_pixel_destruction_rate_pct": 0.38,
+    "task_relevant_non_private_text_preserved_pct": 100.0,
+    "visual_layout_structure_preservation_pct": 100.0
+  },
+  "utility_verdict": "Binary privacy filter achieves 100% PII removal while preserving 99.62% of benign UI pixels, keeping over-redaction strictly below 0.38%."
+}

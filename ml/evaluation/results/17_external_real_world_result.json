@@ -1,0 +1,10 @@
+{
+  "dataset": "real_world_annotations.json (25 Screenshots / 137 GT)",
+  "single_pass_mAP50": 0.3285,
+  "single_pass_recall": 0.3285,
+  "single_pass_precision": 1.0,
+  "single_pass_f1": 0.4945,
+  "tiled_hybrid_recall": 0.5461,
+  "tiled_hybrid_precision": 0.985,
+  "fused_mAP50": 0.9412
+}

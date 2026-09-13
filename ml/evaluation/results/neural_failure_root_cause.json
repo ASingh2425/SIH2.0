@@ -1,0 +1,636 @@
+{
+  "analysis_timestamp": "2026-09-13T21:07:00Z",
+  "total_ground_truth_objects": 137,
+  "true_positives": 42,
+  "false_negatives": 95,
+  "overall_recall": 0.3066,
+  "slot_collisions_total": 12,
+  "failure_categories_breakdown": {
+    "missed_completely": {
+      "count": 39,
+      "pct": 41.05
+    },
+    "confidence_below_threshold": {
+      "count": 22,
+      "pct": 23.16
+    },
+    "wrong_class": {
+      "count": 3,
+      "pct": 3.16
+    },
+    "localization_failure": {
+      "count": 5,
+      "pct": 5.26
+    },
+    "duplicate_suppression": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "candidate_slot_limitation": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "small_object_loss": {
+      "count": 12,
+      "pct": 12.63
+    },
+    "text_rendering_failure": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "low_contrast_failure": {
+      "count": 11,
+      "pct": 11.58
+    },
+    "visually_similar_class_confusion": {
+      "count": 3,
+      "pct": 3.16
+    },
+    "dense_layout_failure": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "preprocessing_failure": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "other": {
+      "count": 0,
+      "pct": 0.0
+    }
+  },
+  "size_bucket_recall": {
+    "< 8x8": {
+      "gt": 0,
+      "tp": 0,
+      "recall_pct": 0.0
+    },
+    "8x8\u201316x16": {
+      "gt": 0,
+      "tp": 0,
+      "recall_pct": 0.0
+    },
+    "16x16\u201332x32": {
+      "gt": 12,
+      "tp": 0,
+      "recall_pct": 0.0
+    },
+    "32x32\u201364x64": {
+      "gt": 1,
+      "tp": 0,
+      "recall_pct": 0.0
+    },
+    "64x64\u2013128x128": {
+      "gt": 12,
+      "tp": 3,
+      "recall_pct": 25.0
+    },
+    ">128x128": {
+      "gt": 112,
+      "tp": 39,
+      "recall_pct": 34.82
+    }
+  },
+  "sample_failure_cases": [
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_nav",
+      "category": "navigation",
+      "bbox": [
+        0,
+        0,
+        1920,
+        64
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0084,
+      "best_raw_iou": 0.0084,
+      "best_raw_confidence": 0.9673,
+      "best_raw_predicted_class": "image",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_logo",
+      "category": "icon",
+      "bbox": [
+        944,
+        16,
+        32,
+        32
+      ],
+      "size_bucket": "32x32\u201364x64",
+      "is_tp": false,
+      "best_nms_iou": 0.0,
+      "best_raw_iou": 0.0,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "none",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_inp_user",
+      "category": "input",
+      "bbox": [
+        805,
+        195,
+        310,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0434,
+      "best_raw_iou": 0.0434,
+      "best_raw_confidence": 0.9938,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "low_contrast_failure"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_inp_pass",
+      "category": "input",
+      "bbox": [
+        805,
+        275,
+        310,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0434,
+      "best_raw_iou": 0.0603,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "image",
+      "primary_failure_mode": "low_contrast_failure"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_btn_signin",
+      "category": "button",
+      "bbox": [
+        805,
+        340,
+        310,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0434,
+      "best_raw_iou": 0.0603,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "image",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_link_forgot",
+      "category": "link",
+      "bbox": [
+        1010,
+        255,
+        105,
+        16
+      ],
+      "size_bucket": "64x64\u2013128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0065,
+      "best_raw_iou": 0.0145,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_card_create",
+      "category": "card",
+      "bbox": [
+        785,
+        500,
+        350,
+        60
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.217,
+      "best_raw_iou": 0.217,
+      "best_raw_confidence": 0.9756,
+      "best_raw_predicted_class": "icon",
+      "primary_failure_mode": "wrong_class"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_link_create",
+      "category": "link",
+      "bbox": [
+        965,
+        520,
+        120,
+        20
+      ],
+      "size_bucket": "64x64\u2013128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0045,
+      "best_raw_iou": 0.0071,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_logo",
+      "category": "image",
+      "bbox": [
+        908,
+        20,
+        104,
+        32
+      ],
+      "size_bucket": "64x64\u2013128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0,
+      "best_raw_iou": 0.0389,
+      "best_raw_confidence": 0.0009,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_tb_title",
+      "category": "text_block",
+      "bbox": [
+        810,
+        95,
+        200,
+        28
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0127,
+      "best_raw_iou": 0.0178,
+      "best_raw_confidence": 0.0004,
+      "best_raw_predicted_class": "select",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_inp_email",
+      "category": "input",
+      "bbox": [
+        810,
+        165,
+        300,
+        32
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0389,
+      "best_raw_iou": 0.0672,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "link",
+      "primary_failure_mode": "low_contrast_failure"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_btn_continue",
+      "category": "button",
+      "bbox": [
+        810,
+        215,
+        300,
+        32
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0543,
+      "best_raw_iou": 0.1323,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "button",
+      "primary_failure_mode": "confidence_below_threshold"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_link_help",
+      "category": "link",
+      "bbox": [
+        810,
+        320,
+        110,
+        18
+      ],
+      "size_bucket": "64x64\u2013128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.008,
+      "best_raw_iou": 0.008,
+      "best_raw_confidence": 0.9986,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_email",
+      "category": "input",
+      "bbox": [
+        750,
+        160,
+        480,
+        42
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.1369,
+      "best_raw_iou": 0.1369,
+      "best_raw_confidence": 0.9977,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "visually_similar_class_confusion"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_cardnum",
+      "category": "input",
+      "bbox": [
+        750,
+        240,
+        480,
+        42
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.1369,
+      "best_raw_iou": 0.1514,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "navigation",
+      "primary_failure_mode": "confidence_below_threshold"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_exp",
+      "category": "input",
+      "bbox": [
+        750,
+        290,
+        230,
+        42
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.071,
+      "best_raw_iou": 0.071,
+      "best_raw_confidence": 0.9984,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "low_contrast_failure"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_cvc",
+      "category": "input",
+      "bbox": [
+        1000,
+        290,
+        230,
+        42
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0694,
+      "best_raw_iou": 0.1784,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "confidence_below_threshold"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_cb_remember",
+      "category": "checkbox",
+      "bbox": [
+        750,
+        355,
+        18,
+        18
+      ],
+      "size_bucket": "16x16\u201332x32",
+      "is_tp": false,
+      "best_nms_iou": 0.0024,
+      "best_raw_iou": 0.0461,
+      "best_raw_confidence": 0.0041,
+      "best_raw_predicted_class": "radio",
+      "primary_failure_mode": "small_object_loss"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_btn_pay",
+      "category": "button",
+      "bbox": [
+        750,
+        420,
+        480,
+        46
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0,
+      "best_raw_iou": 0.1819,
+      "best_raw_confidence": 0.0002,
+      "best_raw_predicted_class": "input",
+      "primary_failure_mode": "confidence_below_threshold"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_nav",
+      "category": "navigation",
+      "bbox": [
+        0,
+        0,
+        1920,
+        60
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0089,
+      "best_raw_iou": 0.0089,
+      "best_raw_confidence": 0.9614,
+      "best_raw_predicted_class": "icon",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_card_main",
+      "category": "card",
+      "bbox": [
+        320,
+        90,
+        1280,
+        900
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.2392,
+      "best_raw_iou": 0.4611,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "image",
+      "primary_failure_mode": "confidence_below_threshold"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_radio_1",
+      "category": "radio",
+      "bbox": [
+        360,
+        160,
+        18,
+        18
+      ],
+      "size_bucket": "16x16\u201332x32",
+      "is_tp": false,
+      "best_nms_iou": 0.0089,
+      "best_raw_iou": 0.0089,
+      "best_raw_confidence": 0.9776,
+      "best_raw_predicted_class": "link",
+      "primary_failure_mode": "small_object_loss"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_radio_2",
+      "category": "radio",
+      "bbox": [
+        360,
+        200,
+        18,
+        18
+      ],
+      "size_bucket": "16x16\u201332x32",
+      "is_tp": false,
+      "best_nms_iou": 0.0012,
+      "best_raw_iou": 0.0038,
+      "best_raw_confidence": 0.0001,
+      "best_raw_predicted_class": "radio",
+      "primary_failure_mode": "small_object_loss"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_select_lang",
+      "category": "select",
+      "bbox": [
+        360,
+        280,
+        280,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.036,
+      "best_raw_iou": 0.0591,
+      "best_raw_confidence": 0.0001,
+      "best_raw_predicted_class": "radio",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_cb_explicit",
+      "category": "checkbox",
+      "bbox": [
+        360,
+        360,
+        18,
+        18
+      ],
+      "size_bucket": "16x16\u201332x32",
+      "is_tp": false,
+      "best_nms_iou": 0.0089,
+      "best_raw_iou": 0.0089,
+      "best_raw_confidence": 0.9776,
+      "best_raw_predicted_class": "link",
+      "primary_failure_mode": "small_object_loss"
+    },
+    {
+      "sample_id": "rw_form_04_google_search_settings",
+      "gt_id": "ann_goog_btn_save",
+      "category": "button",
+      "bbox": [
+        360,
+        820,
+        120,
+        40
+      ],
+      "size_bucket": "64x64\u2013128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.2592,
+      "best_raw_iou": 0.2592,
+      "best_raw_confidence": 0.3756,
+      "best_raw_predicted_class": "button",
+      "primary_failure_mode": "localization_failure"
+    },
+    {
+      "sample_id": "rw_form_05_register_portal",
+      "gt_id": "ann_reg_nav",
+      "category": "navigation",
+      "bbox": [
+        0,
+        0,
+        1366,
+        55
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0106,
+      "best_raw_iou": 0.0106,
+      "best_raw_confidence": 0.9642,
+      "best_raw_predicted_class": "icon",
+      "primary_failure_mode": "missed_completely"
+    },
+    {
+      "sample_id": "rw_form_05_register_portal",
+      "gt_id": "ann_reg_inp_fname",
+      "category": "input",
+      "bbox": [
+        413,
+        150,
+        260,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0563,
+      "best_raw_iou": 0.0747,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "low_contrast_failure"
+    },
+    {
+      "sample_id": "rw_form_05_register_portal",
+      "gt_id": "ann_reg_inp_lname",
+      "category": "input",
+      "bbox": [
+        693,
+        150,
+        260,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.0523,
+      "best_raw_iou": 0.1056,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "confidence_below_threshold"
+    },
+    {
+      "sample_id": "rw_form_05_register_portal",
+      "gt_id": "ann_reg_select_country",
+      "category": "select",
+      "bbox": [
+        413,
+        215,
+        540,
+        36
+      ],
+      "size_bucket": ">128x128",
+      "is_tp": false,
+      "best_nms_iou": 0.109,
+      "best_raw_iou": 0.2078,
+      "best_raw_confidence": 0.0,
+      "best_raw_predicted_class": "card",
+      "primary_failure_mode": "confidence_below_threshold"
+    }
+  ]
+}

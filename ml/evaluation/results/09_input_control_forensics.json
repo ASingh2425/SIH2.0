@@ -1,0 +1,6 @@
+{
+  "total_validation_inputs": 42,
+  "single_pass_recall": 38.1,
+  "tiled_pass_recall": 47.62,
+  "primary_cause_of_failure": "Hairline input borders (#CBD5E1) blurred into white background during 256x256 resizing."
+}

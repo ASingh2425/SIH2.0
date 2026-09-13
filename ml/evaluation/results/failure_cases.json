@@ -1,0 +1,245 @@
+{
+  "total_failures": 92,
+  "cases": [
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_nav",
+      "category": "navigation",
+      "bbox": [
+        0,
+        0,
+        1920,
+        64
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_logo",
+      "category": "icon",
+      "bbox": [
+        944,
+        16,
+        32,
+        32
+      ],
+      "failure_type": "SMALL_OBJECT"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_card",
+      "category": "card",
+      "bbox": [
+        785,
+        140,
+        350,
+        340
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_inp_user",
+      "category": "input",
+      "bbox": [
+        805,
+        195,
+        310,
+        36
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_inp_pass",
+      "category": "input",
+      "bbox": [
+        805,
+        275,
+        310,
+        36
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_btn_signin",
+      "category": "button",
+      "bbox": [
+        805,
+        340,
+        310,
+        36
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_link_forgot",
+      "category": "link",
+      "bbox": [
+        1010,
+        255,
+        105,
+        16
+      ],
+      "failure_type": "SMALL_OBJECT"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_card_create",
+      "category": "card",
+      "bbox": [
+        785,
+        500,
+        350,
+        60
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_01_github_login",
+      "gt_id": "ann_gh_link_create",
+      "category": "link",
+      "bbox": [
+        965,
+        520,
+        120,
+        20
+      ],
+      "failure_type": "SMALL_OBJECT"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_logo",
+      "category": "image",
+      "bbox": [
+        908,
+        20,
+        104,
+        32
+      ],
+      "failure_type": "SMALL_OBJECT"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_card",
+      "category": "card",
+      "bbox": [
+        785,
+        70,
+        350,
+        310
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_tb_title",
+      "category": "text_block",
+      "bbox": [
+        810,
+        95,
+        200,
+        28
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_inp_email",
+      "category": "input",
+      "bbox": [
+        810,
+        165,
+        300,
+        32
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_btn_continue",
+      "category": "button",
+      "bbox": [
+        810,
+        215,
+        300,
+        32
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_02_amazon_signin",
+      "gt_id": "ann_amz_link_help",
+      "category": "link",
+      "bbox": [
+        810,
+        320,
+        110,
+        18
+      ],
+      "failure_type": "SMALL_OBJECT"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_card_right",
+      "category": "card",
+      "bbox": [
+        720,
+        80,
+        540,
+        740
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_email",
+      "category": "input",
+      "bbox": [
+        750,
+        160,
+        480,
+        42
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_cardnum",
+      "category": "input",
+      "bbox": [
+        750,
+        240,
+        480,
+        42
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_exp",
+      "category": "input",
+      "bbox": [
+        750,
+        290,
+        230,
+        42
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    },
+    {
+      "sample_id": "rw_form_03_stripe_checkout",
+      "gt_id": "ann_str_inp_cvc",
+      "category": "input",
+      "bbox": [
+        1000,
+        290,
+        230,
+        42
+      ],
+      "failure_type": "BOUNDING_BOX_ERROR"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "train_distribution": {
+    "dataset_path": "C:\\Users\\Anvesha\\OneDrive\\Desktop\\SIH_2.0\\ml\\dataset\\train_ui_dataset.json",
+    "total_samples": 175,
+    "total_objects": 3071,
+    "objects_per_sample_mean": 17.55,
+    "class_distribution": {
+      "button": {
+        "count": 464,
+        "pct": 15.11
+      },
+      "input": {
+        "count": 244,
+        "pct": 7.95
+      },
+      "checkbox": {
+        "count": 72,
+        "pct": 2.34
+      },
+      "radio": {
+        "count": 41,
+        "pct": 1.34
+      },
+      "select": {
+        "count": 72,
+        "pct": 2.34
+      },
+      "link": {
+        "count": 598,
+        "pct": 19.47
+      },
+      "navigation": {
+        "count": 252,
+        "pct": 8.21
+      },
+      "card": {
+        "count": 373,
+        "pct": 12.15
+      },
+      "image": {
+        "count": 233,
+        "pct": 7.59
+      },
+      "icon": {
+        "count": 381,
+        "pct": 12.41
+      },
+      "text_block": {
+        "count": 341,
+        "pct": 11.1
+      }
+    },
+    "mean_object_area_px": 48515.67,
+    "median_object_area_px": 8160.0,
+    "mean_aspect_ratio": 6.55
+  },
+  "val_distribution": {
+    "dataset_path": "C:\\Users\\Anvesha\\OneDrive\\Desktop\\SIH_2.0\\ml\\dataset\\val_ui_dataset.json",
+    "total_samples": 30,
+    "total_objects": 575,
+    "objects_per_sample_mean": 19.17,
+    "class_distribution": {
+      "button": {
+        "count": 88,
+        "pct": 15.3
+      },
+      "input": {
+        "count": 42,
+        "pct": 7.3
+      },
+      "checkbox": {
+        "count": 14,
+        "pct": 2.43
+      },
+      "radio": {
+        "count": 7,
+        "pct": 1.22
+      },
+      "select": {
+        "count": 14,
+        "pct": 2.43
+      },
+      "link": {
+        "count": 116,
+        "pct": 20.17
+      },
+      "navigation": {
+        "count": 45,
+        "pct": 7.83
+      },
+      "card": {
+        "count": 66,
+        "pct": 11.48
+      },
+      "image": {
+        "count": 44,
+        "pct": 7.65
+      },
+      "icon": {
+        "count": 74,
+        "pct": 12.87
+      },
+      "text_block": {
+        "count": 65,
+        "pct": 11.3
+      }
+    },
+    "mean_object_area_px": 45183.81,
+    "median_object_area_px": 7600.0,
+    "mean_aspect_ratio": 6.6
+  },
+  "locked_test_distribution": {
+    "dataset_path": "C:\\Users\\Anvesha\\OneDrive\\Desktop\\SIH_2.0\\ml\\evaluation\\fixtures\\real_world_annotations.json",
+    "total_samples": 25,
+    "total_objects": 137,
+    "objects_per_sample_mean": 5.48,
+    "class_distribution": {
+      "button": {
+        "count": 20,
+        "pct": 14.6
+      },
+      "input": {
+        "count": 19,
+        "pct": 13.87
+      },
+      "checkbox": {
+        "count": 4,
+        "pct": 2.92
+      },
+      "radio": {
+        "count": 4,
+        "pct": 2.92
+      },
+      "select": {
+        "count": 4,
+        "pct": 2.92
+      },
+      "link": {
+        "count": 8,
+        "pct": 5.84
+      },
+      "navigation": {
+        "count": 27,
+        "pct": 19.71
+      },
+      "card": {
+        "count": 35,
+        "pct": 25.55
+      },
+      "image": {
+        "count": 7,
+        "pct": 5.11
+      },
+      "icon": {
+        "count": 5,
+        "pct": 3.65
+      },
+      "text_block": {
+        "count": 4,
+        "pct": 2.92
+      }
+    },
+    "mean_object_area_px": 135423.34,
+    "median_object_area_px": 33600.0,
+    "mean_aspect_ratio": 8.15
+  },
+  "key_divergence_findings": [
+    "1. Real web page input controls have hairline borders and placeholder text, unlike synthetic flat white boxes.",
+    "2. Grid slot density: Real web pages have dense header bars with up to 5 links/icons in <100px vertical space.",
+    "3. Aspect ratios: Real buttons and inputs vary from 2.5:1 to 15:1 aspect ratios."
+  ]
+}

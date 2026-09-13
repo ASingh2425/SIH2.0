@@ -1,0 +1,45 @@
+{
+  "eval_split": "val_ui_dataset.json (Validation Set Only)",
+  "inference_ablations": [
+    {
+      "mode": "full_256",
+      "mean_latency_ms": 17.97,
+      "overall_recall": 0.3757,
+      "small_object_recall": 0.15,
+      "input_recall": 0.2857,
+      "icon_recall": 0.3108
+    },
+    {
+      "mode": "full_384",
+      "mean_latency_ms": 22.19,
+      "overall_recall": 0.3809,
+      "small_object_recall": 0.14,
+      "input_recall": 0.381,
+      "icon_recall": 0.3108
+    },
+    {
+      "mode": "tiled_256",
+      "mean_latency_ms": 55.36,
+      "overall_recall": 0.3009,
+      "small_object_recall": 0.12,
+      "input_recall": 0.4048,
+      "icon_recall": 0.1486
+    },
+    {
+      "mode": "tiled_320",
+      "mean_latency_ms": 65.08,
+      "overall_recall": 0.2957,
+      "small_object_recall": 0.09,
+      "input_recall": 0.381,
+      "icon_recall": 0.1081
+    },
+    {
+      "mode": "hybrid_global_tiles",
+      "mean_latency_ms": 76.3,
+      "overall_recall": 0.5461,
+      "small_object_recall": 0.25,
+      "input_recall": 0.4762,
+      "icon_recall": 0.4324
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-09-13T22:31:00Z",
+  "gate": "GATE_0_BASELINE_FREEZE",
+  "hashes": {
+    "train_script": "3e8a35108fcf53bca5d45151d02ed004b2fadf47e21ad2838a64ac2cf143450e",
+    "pytorch_weights": "2b722d9cf0064c2ea8913917cc118416859cfe8c1c57ef1c37c99378a1bcec0e",
+    "onnx_model": "ff396ccfb4cbf293e8643a937ad2c5d8a096d7c37237c41ea17f9b5d6bd2ae94",
+    "train_dataset": "a28c7d8bea9dc6986c622aaf08ac65527df815281b766d9b8debed8d113ba913",
+    "val_dataset": "9e4a5bf3f1a34474d36bac1fa36f6b6bf826f52973fd4bfca1bacd906e250283",
+    "real_world_annotations": "4eacd2da0b19a00010feba5e9118fa2133e3005fdb7f9db11113bc03d88db8b4",
+    "real_world_manifest": "00b066a1d3c8a6267ac40e12d1ea937bb63b84ebf1565d56e7aa0931bcb139d6"
+  },
+  "environment": {
+    "python_version": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "pytorch_version": "2.9.1+cpu",
+    "onnxruntime_version": "1.30.0"
+  },
+  "baseline_configuration": {
+    "input_resolution": [
+      256,
+      256
+    ],
+    "candidate_slots": 640,
+    "confidence_threshold": 0.3,
+    "nms_threshold": 0.4,
+    "model_architecture": "MultiScaleUIDetector (Dual-Anchor 16x16 + 8x8)",
+    "parameter_count": 150000,
+    "onnx_size_bytes": 420242
+  }
+}

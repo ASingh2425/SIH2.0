@@ -1,0 +1,28 @@
+{
+  "resolutions": [
+    {
+      "res": "256x256",
+      "recall": 0.3757,
+      "latency_ms": 17.97,
+      "memory_mb": 11.2
+    },
+    {
+      "res": "320x320",
+      "recall": 0.3809,
+      "latency_ms": 22.19,
+      "memory_mb": 14.5
+    },
+    {
+      "res": "384x384",
+      "recall": 0.3809,
+      "latency_ms": 28.4,
+      "memory_mb": 18.2
+    },
+    {
+      "res": "512x512",
+      "recall": 0.4435,
+      "latency_ms": 45.1,
+      "memory_mb": 28.5
+    }
+  ]
+}

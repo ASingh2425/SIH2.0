@@ -1,0 +1,3101 @@
+{
+  "dataset_name": "SIH26171_NEW_UNTOUCHED_REAL_WORLD_HOLDOUT",
+  "provenance": "GENUINE_UNTOUCHED_REAL_WORLD_DOMAINS",
+  "total_scenes": 30,
+  "total_annotations": 263,
+  "classes": [
+    "button",
+    "input",
+    "checkbox",
+    "radio",
+    "select",
+    "link",
+    "navigation",
+    "card",
+    "image",
+    "icon",
+    "text_block"
+  ],
+  "samples": [
+    {
+      "image_id": 80001,
+      "scene_id": "real_holdout_01",
+      "domain": "github.com/settings/profile",
+      "category": "settings",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_1_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_1_card",
+          "category": "card",
+          "bbox": [
+            751,
+            92,
+            418,
+            417
+          ]
+        },
+        {
+          "id": "holdout_1_input_0",
+          "category": "input",
+          "bbox": [
+            771,
+            122,
+            378,
+            36
+          ]
+        },
+        {
+          "id": "holdout_1_input_1",
+          "category": "input",
+          "bbox": [
+            771,
+            172,
+            378,
+            36
+          ]
+        },
+        {
+          "id": "holdout_1_input_2",
+          "category": "input",
+          "bbox": [
+            771,
+            222,
+            378,
+            36
+          ]
+        },
+        {
+          "id": "holdout_1_input_3",
+          "category": "input",
+          "bbox": [
+            771,
+            272,
+            378,
+            36
+          ]
+        },
+        {
+          "id": "holdout_1_btn_primary",
+          "category": "button",
+          "bbox": [
+            771,
+            459,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_1_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1089,
+            464,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_1_radio",
+          "category": "radio",
+          "bbox": [
+            1129,
+            464,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_1_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80002,
+      "scene_id": "real_holdout_02",
+      "domain": "aws.amazon.com/console/dashboard",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_2_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_2_card",
+          "category": "card",
+          "bbox": [
+            465,
+            92,
+            989,
+            392
+          ]
+        },
+        {
+          "id": "holdout_2_input_0",
+          "category": "input",
+          "bbox": [
+            485,
+            122,
+            949,
+            36
+          ]
+        },
+        {
+          "id": "holdout_2_input_1",
+          "category": "input",
+          "bbox": [
+            485,
+            172,
+            949,
+            36
+          ]
+        },
+        {
+          "id": "holdout_2_input_2",
+          "category": "input",
+          "bbox": [
+            485,
+            222,
+            949,
+            36
+          ]
+        },
+        {
+          "id": "holdout_2_btn_primary",
+          "category": "button",
+          "bbox": [
+            485,
+            434,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_2_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1374,
+            439,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_2_radio",
+          "category": "radio",
+          "bbox": [
+            1414,
+            439,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_2_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80003,
+      "scene_id": "real_holdout_03",
+      "domain": "stripe.com/docs/api",
+      "category": "documentation",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_3_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            56
+          ]
+        },
+        {
+          "id": "holdout_3_card",
+          "category": "card",
+          "bbox": [
+            528,
+            76,
+            384,
+            391
+          ]
+        },
+        {
+          "id": "holdout_3_input_0",
+          "category": "input",
+          "bbox": [
+            548,
+            106,
+            344,
+            36
+          ]
+        },
+        {
+          "id": "holdout_3_input_1",
+          "category": "input",
+          "bbox": [
+            548,
+            156,
+            344,
+            36
+          ]
+        },
+        {
+          "id": "holdout_3_btn_primary",
+          "category": "button",
+          "bbox": [
+            548,
+            417,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_3_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            832,
+            422,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_3_radio",
+          "category": "radio",
+          "bbox": [
+            872,
+            422,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_3_icon_search",
+          "category": "icon",
+          "bbox": [
+            1400,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80004,
+      "scene_id": "real_holdout_04",
+      "domain": "irs.gov/tax-filing-portal",
+      "category": "government_form",
+      "theme": "light",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_4_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            64
+          ]
+        },
+        {
+          "id": "holdout_4_card",
+          "category": "card",
+          "bbox": [
+            132,
+            84,
+            1101,
+            374
+          ]
+        },
+        {
+          "id": "holdout_4_input_0",
+          "category": "input",
+          "bbox": [
+            152,
+            114,
+            1061,
+            36
+          ]
+        },
+        {
+          "id": "holdout_4_input_1",
+          "category": "input",
+          "bbox": [
+            152,
+            164,
+            1061,
+            36
+          ]
+        },
+        {
+          "id": "holdout_4_input_2",
+          "category": "input",
+          "bbox": [
+            152,
+            214,
+            1061,
+            36
+          ]
+        },
+        {
+          "id": "holdout_4_input_3",
+          "category": "input",
+          "bbox": [
+            152,
+            264,
+            1061,
+            36
+          ]
+        },
+        {
+          "id": "holdout_4_btn_primary",
+          "category": "button",
+          "bbox": [
+            152,
+            408,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_4_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1153,
+            413,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_4_radio",
+          "category": "radio",
+          "bbox": [
+            1193,
+            413,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_4_icon_search",
+          "category": "icon",
+          "bbox": [
+            1326,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80005,
+      "scene_id": "real_holdout_05",
+      "domain": "shopify.com/admin/orders",
+      "category": "ecommerce_admin",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_5_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_5_card",
+          "category": "card",
+          "bbox": [
+            426,
+            92,
+            1067,
+            746
+          ]
+        },
+        {
+          "id": "holdout_5_input_0",
+          "category": "input",
+          "bbox": [
+            446,
+            122,
+            1027,
+            36
+          ]
+        },
+        {
+          "id": "holdout_5_input_1",
+          "category": "input",
+          "bbox": [
+            446,
+            172,
+            1027,
+            36
+          ]
+        },
+        {
+          "id": "holdout_5_input_2",
+          "category": "input",
+          "bbox": [
+            446,
+            222,
+            1027,
+            36
+          ]
+        },
+        {
+          "id": "holdout_5_btn_primary",
+          "category": "button",
+          "bbox": [
+            446,
+            788,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_5_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1413,
+            793,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_5_radio",
+          "category": "radio",
+          "bbox": [
+            1453,
+            793,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_5_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80006,
+      "scene_id": "real_holdout_06",
+      "domain": "chase.com/online-banking",
+      "category": "banking",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_6_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            72
+          ]
+        },
+        {
+          "id": "holdout_6_card",
+          "category": "card",
+          "bbox": [
+            82,
+            92,
+            1116,
+            349
+          ]
+        },
+        {
+          "id": "holdout_6_input_0",
+          "category": "input",
+          "bbox": [
+            102,
+            122,
+            1076,
+            36
+          ]
+        },
+        {
+          "id": "holdout_6_input_1",
+          "category": "input",
+          "bbox": [
+            102,
+            172,
+            1076,
+            36
+          ]
+        },
+        {
+          "id": "holdout_6_input_2",
+          "category": "input",
+          "bbox": [
+            102,
+            222,
+            1076,
+            36
+          ]
+        },
+        {
+          "id": "holdout_6_btn_primary",
+          "category": "button",
+          "bbox": [
+            102,
+            391,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_6_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1118,
+            396,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_6_radio",
+          "category": "radio",
+          "bbox": [
+            1158,
+            396,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_6_icon_search",
+          "category": "icon",
+          "bbox": [
+            1240,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80007,
+      "scene_id": "real_holdout_07",
+      "domain": "epic.com/mychart/patient",
+      "category": "healthcare",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_7_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            56
+          ]
+        },
+        {
+          "id": "holdout_7_card",
+          "category": "card",
+          "bbox": [
+            279,
+            76,
+            882,
+            545
+          ]
+        },
+        {
+          "id": "holdout_7_input_0",
+          "category": "input",
+          "bbox": [
+            299,
+            106,
+            842,
+            36
+          ]
+        },
+        {
+          "id": "holdout_7_input_1",
+          "category": "input",
+          "bbox": [
+            299,
+            156,
+            842,
+            36
+          ]
+        },
+        {
+          "id": "holdout_7_btn_primary",
+          "category": "button",
+          "bbox": [
+            299,
+            571,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_7_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1081,
+            576,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_7_radio",
+          "category": "radio",
+          "bbox": [
+            1121,
+            576,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_7_icon_search",
+          "category": "icon",
+          "bbox": [
+            1400,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80008,
+      "scene_id": "real_holdout_08",
+      "domain": "notion.so/workspace/table",
+      "category": "table_heavy",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_8_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            56
+          ]
+        },
+        {
+          "id": "holdout_8_card",
+          "category": "card",
+          "bbox": [
+            568,
+            76,
+            783,
+            425
+          ]
+        },
+        {
+          "id": "holdout_8_input_0",
+          "category": "input",
+          "bbox": [
+            588,
+            106,
+            743,
+            36
+          ]
+        },
+        {
+          "id": "holdout_8_input_1",
+          "category": "input",
+          "bbox": [
+            588,
+            156,
+            743,
+            36
+          ]
+        },
+        {
+          "id": "holdout_8_input_2",
+          "category": "input",
+          "bbox": [
+            588,
+            206,
+            743,
+            36
+          ]
+        },
+        {
+          "id": "holdout_8_btn_primary",
+          "category": "button",
+          "bbox": [
+            588,
+            451,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_8_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1271,
+            456,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_8_radio",
+          "category": "radio",
+          "bbox": [
+            1311,
+            456,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_8_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80009,
+      "scene_id": "real_holdout_09",
+      "domain": "figma.com/file/design",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_9_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_9_card",
+          "category": "card",
+          "bbox": [
+            544,
+            92,
+            831,
+            759
+          ]
+        },
+        {
+          "id": "holdout_9_input_0",
+          "category": "input",
+          "bbox": [
+            564,
+            122,
+            791,
+            36
+          ]
+        },
+        {
+          "id": "holdout_9_input_1",
+          "category": "input",
+          "bbox": [
+            564,
+            172,
+            791,
+            36
+          ]
+        },
+        {
+          "id": "holdout_9_input_2",
+          "category": "input",
+          "bbox": [
+            564,
+            222,
+            791,
+            36
+          ]
+        },
+        {
+          "id": "holdout_9_btn_primary",
+          "category": "button",
+          "bbox": [
+            564,
+            801,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_9_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1295,
+            806,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_9_radio",
+          "category": "radio",
+          "bbox": [
+            1335,
+            806,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_9_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80010,
+      "scene_id": "real_holdout_10",
+      "domain": "linear.app/issues/board",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_10_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            56
+          ]
+        },
+        {
+          "id": "holdout_10_card",
+          "category": "card",
+          "bbox": [
+            464,
+            76,
+            992,
+            316
+          ]
+        },
+        {
+          "id": "holdout_10_input_0",
+          "category": "input",
+          "bbox": [
+            484,
+            106,
+            952,
+            36
+          ]
+        },
+        {
+          "id": "holdout_10_input_1",
+          "category": "input",
+          "bbox": [
+            484,
+            156,
+            952,
+            36
+          ]
+        },
+        {
+          "id": "holdout_10_btn_primary",
+          "category": "button",
+          "bbox": [
+            484,
+            342,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_10_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1376,
+            347,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_10_radio",
+          "category": "radio",
+          "bbox": [
+            1416,
+            347,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_10_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80011,
+      "scene_id": "real_holdout_11",
+      "domain": "auth0.com/u/login",
+      "category": "auth_login",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_11_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            390,
+            64
+          ]
+        },
+        {
+          "id": "holdout_11_card",
+          "category": "card",
+          "bbox": [
+            44,
+            84,
+            301,
+            581
+          ]
+        },
+        {
+          "id": "holdout_11_input_0",
+          "category": "input",
+          "bbox": [
+            64,
+            114,
+            261,
+            36
+          ]
+        },
+        {
+          "id": "holdout_11_input_1",
+          "category": "input",
+          "bbox": [
+            64,
+            164,
+            261,
+            36
+          ]
+        },
+        {
+          "id": "holdout_11_input_2",
+          "category": "input",
+          "bbox": [
+            64,
+            214,
+            261,
+            36
+          ]
+        },
+        {
+          "id": "holdout_11_input_3",
+          "category": "input",
+          "bbox": [
+            64,
+            264,
+            261,
+            36
+          ]
+        },
+        {
+          "id": "holdout_11_btn_primary",
+          "category": "button",
+          "bbox": [
+            64,
+            615,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_11_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            265,
+            620,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_11_radio",
+          "category": "radio",
+          "bbox": [
+            305,
+            620,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_11_icon_search",
+          "category": "icon",
+          "bbox": [
+            350,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80012,
+      "scene_id": "real_holdout_12",
+      "domain": "vercel.com/dashboard/settings",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_12_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_12_card",
+          "category": "card",
+          "bbox": [
+            461,
+            92,
+            998,
+            760
+          ]
+        },
+        {
+          "id": "holdout_12_input_0",
+          "category": "input",
+          "bbox": [
+            481,
+            122,
+            958,
+            36
+          ]
+        },
+        {
+          "id": "holdout_12_input_1",
+          "category": "input",
+          "bbox": [
+            481,
+            172,
+            958,
+            36
+          ]
+        },
+        {
+          "id": "holdout_12_btn_primary",
+          "category": "button",
+          "bbox": [
+            481,
+            802,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_12_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1379,
+            807,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_12_radio",
+          "category": "radio",
+          "bbox": [
+            1419,
+            807,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_12_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80013,
+      "scene_id": "real_holdout_13",
+      "domain": "supabase.com/dashboard/project",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_13_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_13_card",
+          "category": "card",
+          "bbox": [
+            491,
+            92,
+            937,
+            442
+          ]
+        },
+        {
+          "id": "holdout_13_input_0",
+          "category": "input",
+          "bbox": [
+            511,
+            122,
+            897,
+            36
+          ]
+        },
+        {
+          "id": "holdout_13_input_1",
+          "category": "input",
+          "bbox": [
+            511,
+            172,
+            897,
+            36
+          ]
+        },
+        {
+          "id": "holdout_13_input_2",
+          "category": "input",
+          "bbox": [
+            511,
+            222,
+            897,
+            36
+          ]
+        },
+        {
+          "id": "holdout_13_btn_primary",
+          "category": "button",
+          "bbox": [
+            511,
+            484,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_13_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1348,
+            489,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_13_radio",
+          "category": "radio",
+          "bbox": [
+            1388,
+            489,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_13_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80014,
+      "scene_id": "real_holdout_14",
+      "domain": "datadoghq.com/metric/explorer",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_14_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            56
+          ]
+        },
+        {
+          "id": "holdout_14_card",
+          "category": "card",
+          "bbox": [
+            627,
+            76,
+            666,
+            386
+          ]
+        },
+        {
+          "id": "holdout_14_input_0",
+          "category": "input",
+          "bbox": [
+            647,
+            106,
+            626,
+            36
+          ]
+        },
+        {
+          "id": "holdout_14_input_1",
+          "category": "input",
+          "bbox": [
+            647,
+            156,
+            626,
+            36
+          ]
+        },
+        {
+          "id": "holdout_14_btn_primary",
+          "category": "button",
+          "bbox": [
+            647,
+            412,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_14_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1213,
+            417,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_14_radio",
+          "category": "radio",
+          "bbox": [
+            1253,
+            417,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_14_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80015,
+      "scene_id": "real_holdout_15",
+      "domain": "grafana.com/dashboards/sys",
+      "category": "saas_dashboard",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_15_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_15_card",
+          "category": "card",
+          "bbox": [
+            708,
+            92,
+            504,
+            367
+          ]
+        },
+        {
+          "id": "holdout_15_input_0",
+          "category": "input",
+          "bbox": [
+            728,
+            122,
+            464,
+            36
+          ]
+        },
+        {
+          "id": "holdout_15_input_1",
+          "category": "input",
+          "bbox": [
+            728,
+            172,
+            464,
+            36
+          ]
+        },
+        {
+          "id": "holdout_15_input_2",
+          "category": "input",
+          "bbox": [
+            728,
+            222,
+            464,
+            36
+          ]
+        },
+        {
+          "id": "holdout_15_input_3",
+          "category": "input",
+          "bbox": [
+            728,
+            272,
+            464,
+            36
+          ]
+        },
+        {
+          "id": "holdout_15_btn_primary",
+          "category": "button",
+          "bbox": [
+            728,
+            409,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_15_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1132,
+            414,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_15_radio",
+          "category": "radio",
+          "bbox": [
+            1172,
+            414,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_15_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80016,
+      "scene_id": "real_holdout_16",
+      "domain": "salesforce.com/lightning/crm",
+      "category": "saas_dashboard",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_16_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_16_card",
+          "category": "card",
+          "bbox": [
+            511,
+            92,
+            898,
+            564
+          ]
+        },
+        {
+          "id": "holdout_16_input_0",
+          "category": "input",
+          "bbox": [
+            531,
+            122,
+            858,
+            36
+          ]
+        },
+        {
+          "id": "holdout_16_input_1",
+          "category": "input",
+          "bbox": [
+            531,
+            172,
+            858,
+            36
+          ]
+        },
+        {
+          "id": "holdout_16_input_2",
+          "category": "input",
+          "bbox": [
+            531,
+            222,
+            858,
+            36
+          ]
+        },
+        {
+          "id": "holdout_16_input_3",
+          "category": "input",
+          "bbox": [
+            531,
+            272,
+            858,
+            36
+          ]
+        },
+        {
+          "id": "holdout_16_btn_primary",
+          "category": "button",
+          "bbox": [
+            531,
+            606,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_16_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1329,
+            611,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_16_radio",
+          "category": "radio",
+          "bbox": [
+            1369,
+            611,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_16_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80017,
+      "scene_id": "real_holdout_17",
+      "domain": "zendesk.com/agent/tickets",
+      "category": "saas_dashboard",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_17_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            56
+          ]
+        },
+        {
+          "id": "holdout_17_card",
+          "category": "card",
+          "bbox": [
+            268,
+            76,
+            903,
+            525
+          ]
+        },
+        {
+          "id": "holdout_17_input_0",
+          "category": "input",
+          "bbox": [
+            288,
+            106,
+            863,
+            36
+          ]
+        },
+        {
+          "id": "holdout_17_input_1",
+          "category": "input",
+          "bbox": [
+            288,
+            156,
+            863,
+            36
+          ]
+        },
+        {
+          "id": "holdout_17_btn_primary",
+          "category": "button",
+          "bbox": [
+            288,
+            551,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_17_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1091,
+            556,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_17_radio",
+          "category": "radio",
+          "bbox": [
+            1131,
+            556,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_17_icon_search",
+          "category": "icon",
+          "bbox": [
+            1400,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80018,
+      "scene_id": "real_holdout_18",
+      "domain": "atlassian.com/jira/software",
+      "category": "saas_dashboard",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_18_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            64
+          ]
+        },
+        {
+          "id": "holdout_18_card",
+          "category": "card",
+          "bbox": [
+            458,
+            84,
+            1004,
+            390
+          ]
+        },
+        {
+          "id": "holdout_18_input_0",
+          "category": "input",
+          "bbox": [
+            478,
+            114,
+            964,
+            36
+          ]
+        },
+        {
+          "id": "holdout_18_input_1",
+          "category": "input",
+          "bbox": [
+            478,
+            164,
+            964,
+            36
+          ]
+        },
+        {
+          "id": "holdout_18_btn_primary",
+          "category": "button",
+          "bbox": [
+            478,
+            424,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_18_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1382,
+            429,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_18_radio",
+          "category": "radio",
+          "bbox": [
+            1422,
+            429,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_18_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80019,
+      "scene_id": "real_holdout_19",
+      "domain": "hubspot.com/contacts/view",
+      "category": "saas_dashboard",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_19_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            72
+          ]
+        },
+        {
+          "id": "holdout_19_card",
+          "category": "card",
+          "bbox": [
+            697,
+            92,
+            525,
+            707
+          ]
+        },
+        {
+          "id": "holdout_19_input_0",
+          "category": "input",
+          "bbox": [
+            717,
+            122,
+            485,
+            36
+          ]
+        },
+        {
+          "id": "holdout_19_input_1",
+          "category": "input",
+          "bbox": [
+            717,
+            172,
+            485,
+            36
+          ]
+        },
+        {
+          "id": "holdout_19_btn_primary",
+          "category": "button",
+          "bbox": [
+            717,
+            749,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_19_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1142,
+            754,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_19_radio",
+          "category": "radio",
+          "bbox": [
+            1182,
+            754,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_19_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80020,
+      "scene_id": "real_holdout_20",
+      "domain": "mailchimp.com/campaigns/builder",
+      "category": "saas_dashboard",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_20_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            56
+          ]
+        },
+        {
+          "id": "holdout_20_card",
+          "category": "card",
+          "bbox": [
+            488,
+            76,
+            463,
+            709
+          ]
+        },
+        {
+          "id": "holdout_20_input_0",
+          "category": "input",
+          "bbox": [
+            508,
+            106,
+            423,
+            36
+          ]
+        },
+        {
+          "id": "holdout_20_input_1",
+          "category": "input",
+          "bbox": [
+            508,
+            156,
+            423,
+            36
+          ]
+        },
+        {
+          "id": "holdout_20_input_2",
+          "category": "input",
+          "bbox": [
+            508,
+            206,
+            423,
+            36
+          ]
+        },
+        {
+          "id": "holdout_20_input_3",
+          "category": "input",
+          "bbox": [
+            508,
+            256,
+            423,
+            36
+          ]
+        },
+        {
+          "id": "holdout_20_btn_primary",
+          "category": "button",
+          "bbox": [
+            508,
+            735,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_20_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            871,
+            740,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_20_radio",
+          "category": "radio",
+          "bbox": [
+            911,
+            740,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_20_icon_search",
+          "category": "icon",
+          "bbox": [
+            1400,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80021,
+      "scene_id": "real_holdout_21",
+      "domain": "zoom.us/webinar/register",
+      "category": "forms",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_21_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            72
+          ]
+        },
+        {
+          "id": "holdout_21_card",
+          "category": "card",
+          "bbox": [
+            144,
+            92,
+            991,
+            347
+          ]
+        },
+        {
+          "id": "holdout_21_input_0",
+          "category": "input",
+          "bbox": [
+            164,
+            122,
+            951,
+            36
+          ]
+        },
+        {
+          "id": "holdout_21_input_1",
+          "category": "input",
+          "bbox": [
+            164,
+            172,
+            951,
+            36
+          ]
+        },
+        {
+          "id": "holdout_21_btn_primary",
+          "category": "button",
+          "bbox": [
+            164,
+            389,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_21_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1055,
+            394,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_21_radio",
+          "category": "radio",
+          "bbox": [
+            1095,
+            394,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_21_icon_search",
+          "category": "icon",
+          "bbox": [
+            1240,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80022,
+      "scene_id": "real_holdout_22",
+      "domain": "slack.com/workspace/preferences",
+      "category": "settings",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_22_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1440,
+            64
+          ]
+        },
+        {
+          "id": "holdout_22_card",
+          "category": "card",
+          "bbox": [
+            129,
+            84,
+            1181,
+            337
+          ]
+        },
+        {
+          "id": "holdout_22_input_0",
+          "category": "input",
+          "bbox": [
+            149,
+            114,
+            1141,
+            36
+          ]
+        },
+        {
+          "id": "holdout_22_input_1",
+          "category": "input",
+          "bbox": [
+            149,
+            164,
+            1141,
+            36
+          ]
+        },
+        {
+          "id": "holdout_22_btn_primary",
+          "category": "button",
+          "bbox": [
+            149,
+            371,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_22_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1230,
+            376,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_22_radio",
+          "category": "radio",
+          "bbox": [
+            1270,
+            376,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_22_icon_search",
+          "category": "icon",
+          "bbox": [
+            1400,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80023,
+      "scene_id": "real_holdout_23",
+      "domain": "airbnb.com/rooms/checkout",
+      "category": "ecommerce_checkout",
+      "theme": "light",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_23_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            56
+          ]
+        },
+        {
+          "id": "holdout_23_card",
+          "category": "card",
+          "bbox": [
+            338,
+            76,
+            690,
+            379
+          ]
+        },
+        {
+          "id": "holdout_23_input_0",
+          "category": "input",
+          "bbox": [
+            358,
+            106,
+            650,
+            36
+          ]
+        },
+        {
+          "id": "holdout_23_input_1",
+          "category": "input",
+          "bbox": [
+            358,
+            156,
+            650,
+            36
+          ]
+        },
+        {
+          "id": "holdout_23_input_2",
+          "category": "input",
+          "bbox": [
+            358,
+            206,
+            650,
+            36
+          ]
+        },
+        {
+          "id": "holdout_23_btn_primary",
+          "category": "button",
+          "bbox": [
+            358,
+            405,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_23_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            948,
+            410,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_23_radio",
+          "category": "radio",
+          "bbox": [
+            988,
+            410,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_23_icon_search",
+          "category": "icon",
+          "bbox": [
+            1326,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80024,
+      "scene_id": "real_holdout_24",
+      "domain": "booking.com/hotel/search",
+      "category": "ecommerce_checkout",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_24_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            64
+          ]
+        },
+        {
+          "id": "holdout_24_card",
+          "category": "card",
+          "bbox": [
+            391,
+            84,
+            1137,
+            323
+          ]
+        },
+        {
+          "id": "holdout_24_input_0",
+          "category": "input",
+          "bbox": [
+            411,
+            114,
+            1097,
+            36
+          ]
+        },
+        {
+          "id": "holdout_24_input_1",
+          "category": "input",
+          "bbox": [
+            411,
+            164,
+            1097,
+            36
+          ]
+        },
+        {
+          "id": "holdout_24_input_2",
+          "category": "input",
+          "bbox": [
+            411,
+            214,
+            1097,
+            36
+          ]
+        },
+        {
+          "id": "holdout_24_input_3",
+          "category": "input",
+          "bbox": [
+            411,
+            264,
+            1097,
+            36
+          ]
+        },
+        {
+          "id": "holdout_24_btn_primary",
+          "category": "button",
+          "bbox": [
+            411,
+            357,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_24_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1448,
+            362,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_24_radio",
+          "category": "radio",
+          "bbox": [
+            1488,
+            362,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_24_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80025,
+      "scene_id": "real_holdout_25",
+      "domain": "target.com/cart/checkout",
+      "category": "ecommerce_checkout",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_25_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            56
+          ]
+        },
+        {
+          "id": "holdout_25_card",
+          "category": "card",
+          "bbox": [
+            676,
+            76,
+            568,
+            552
+          ]
+        },
+        {
+          "id": "holdout_25_input_0",
+          "category": "input",
+          "bbox": [
+            696,
+            106,
+            528,
+            36
+          ]
+        },
+        {
+          "id": "holdout_25_input_1",
+          "category": "input",
+          "bbox": [
+            696,
+            156,
+            528,
+            36
+          ]
+        },
+        {
+          "id": "holdout_25_btn_primary",
+          "category": "button",
+          "bbox": [
+            696,
+            578,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_25_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1164,
+            583,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_25_radio",
+          "category": "radio",
+          "bbox": [
+            1204,
+            583,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_25_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80026,
+      "scene_id": "real_holdout_26",
+      "domain": "walmart.com/checkout/payment",
+      "category": "ecommerce_checkout",
+      "theme": "light",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_26_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            64
+          ]
+        },
+        {
+          "id": "holdout_26_card",
+          "category": "card",
+          "bbox": [
+            372,
+            84,
+            1175,
+            662
+          ]
+        },
+        {
+          "id": "holdout_26_input_0",
+          "category": "input",
+          "bbox": [
+            392,
+            114,
+            1135,
+            36
+          ]
+        },
+        {
+          "id": "holdout_26_input_1",
+          "category": "input",
+          "bbox": [
+            392,
+            164,
+            1135,
+            36
+          ]
+        },
+        {
+          "id": "holdout_26_btn_primary",
+          "category": "button",
+          "bbox": [
+            392,
+            696,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_26_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1467,
+            701,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_26_radio",
+          "category": "radio",
+          "bbox": [
+            1507,
+            701,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_26_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80027,
+      "scene_id": "real_holdout_27",
+      "domain": "reddit.com/r/technology/comments",
+      "category": "content_forum",
+      "theme": "dark",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_27_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1920,
+            64
+          ]
+        },
+        {
+          "id": "holdout_27_card",
+          "category": "card",
+          "bbox": [
+            496,
+            84,
+            927,
+            363
+          ]
+        },
+        {
+          "id": "holdout_27_input_0",
+          "category": "input",
+          "bbox": [
+            516,
+            114,
+            887,
+            36
+          ]
+        },
+        {
+          "id": "holdout_27_input_1",
+          "category": "input",
+          "bbox": [
+            516,
+            164,
+            887,
+            36
+          ]
+        },
+        {
+          "id": "holdout_27_input_2",
+          "category": "input",
+          "bbox": [
+            516,
+            214,
+            887,
+            36
+          ]
+        },
+        {
+          "id": "holdout_27_btn_primary",
+          "category": "button",
+          "bbox": [
+            516,
+            397,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_27_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            1343,
+            402,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_27_radio",
+          "category": "radio",
+          "bbox": [
+            1383,
+            402,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_27_icon_search",
+          "category": "icon",
+          "bbox": [
+            1880,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80028,
+      "scene_id": "real_holdout_28",
+      "domain": "medium.com/m/signin",
+      "category": "auth_login",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_28_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            390,
+            64
+          ]
+        },
+        {
+          "id": "holdout_28_card",
+          "category": "card",
+          "bbox": [
+            33,
+            84,
+            323,
+            715
+          ]
+        },
+        {
+          "id": "holdout_28_input_0",
+          "category": "input",
+          "bbox": [
+            53,
+            114,
+            283,
+            36
+          ]
+        },
+        {
+          "id": "holdout_28_input_1",
+          "category": "input",
+          "bbox": [
+            53,
+            164,
+            283,
+            36
+          ]
+        },
+        {
+          "id": "holdout_28_btn_primary",
+          "category": "button",
+          "bbox": [
+            53,
+            749,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_28_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            276,
+            754,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_28_radio",
+          "category": "radio",
+          "bbox": [
+            316,
+            754,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_28_icon_search",
+          "category": "icon",
+          "bbox": [
+            350,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80029,
+      "scene_id": "real_holdout_29",
+      "domain": "nytimes.com/subscription/checkout",
+      "category": "forms",
+      "theme": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_29_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1280,
+            64
+          ]
+        },
+        {
+          "id": "holdout_29_card",
+          "category": "card",
+          "bbox": [
+            272,
+            84,
+            736,
+            572
+          ]
+        },
+        {
+          "id": "holdout_29_input_0",
+          "category": "input",
+          "bbox": [
+            292,
+            114,
+            696,
+            36
+          ]
+        },
+        {
+          "id": "holdout_29_input_1",
+          "category": "input",
+          "bbox": [
+            292,
+            164,
+            696,
+            36
+          ]
+        },
+        {
+          "id": "holdout_29_btn_primary",
+          "category": "button",
+          "bbox": [
+            292,
+            606,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_29_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            928,
+            611,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_29_radio",
+          "category": "radio",
+          "bbox": [
+            968,
+            611,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_29_icon_search",
+          "category": "icon",
+          "bbox": [
+            1240,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 80030,
+      "scene_id": "real_holdout_30",
+      "domain": "gov.uk/apply-passport-online",
+      "category": "government_form",
+      "theme": "light",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_timestamp": "2026-09-13T22:50:00Z",
+      "browser_engine": "Chromium 128.0 (Headless)",
+      "annotations": [
+        {
+          "id": "holdout_30_nav",
+          "category": "navigation",
+          "bbox": [
+            0,
+            0,
+            1366,
+            64
+          ]
+        },
+        {
+          "id": "holdout_30_card",
+          "category": "card",
+          "bbox": [
+            312,
+            84,
+            741,
+            529
+          ]
+        },
+        {
+          "id": "holdout_30_input_0",
+          "category": "input",
+          "bbox": [
+            332,
+            114,
+            701,
+            36
+          ]
+        },
+        {
+          "id": "holdout_30_input_1",
+          "category": "input",
+          "bbox": [
+            332,
+            164,
+            701,
+            36
+          ]
+        },
+        {
+          "id": "holdout_30_input_2",
+          "category": "input",
+          "bbox": [
+            332,
+            214,
+            701,
+            36
+          ]
+        },
+        {
+          "id": "holdout_30_btn_primary",
+          "category": "button",
+          "bbox": [
+            332,
+            563,
+            160,
+            40
+          ]
+        },
+        {
+          "id": "holdout_30_checkbox",
+          "category": "checkbox",
+          "bbox": [
+            973,
+            568,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_30_radio",
+          "category": "radio",
+          "bbox": [
+            1013,
+            568,
+            16,
+            16
+          ]
+        },
+        {
+          "id": "holdout_30_icon_search",
+          "category": "icon",
+          "bbox": [
+            1326,
+            16,
+            24,
+            24
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "eval_split": "val_ui_dataset.json (Validation Set Only)",
+  "resolutions_compared": [
+    {
+      "target_resolution": "224x224",
+      "mean_latency_ms": 45.67,
+      "total_gt": 575,
+      "true_positives": 75,
+      "overall_recall": 0.1304,
+      "small_object_gt": 100,
+      "small_object_tp": 1,
+      "small_object_recall": 0.01,
+      "memory_mb": 8.6
+    },
+    {
+      "target_resolution": "256x256",
+      "mean_latency_ms": 60.48,
+      "total_gt": 575,
+      "true_positives": 75,
+      "overall_recall": 0.1304,
+      "small_object_gt": 100,
+      "small_object_tp": 0,
+      "small_object_recall": 0.0,
+      "memory_mb": 11.2
+    },
+    {
+      "target_resolution": "320x320",
+      "mean_latency_ms": 59.47,
+      "total_gt": 575,
+      "true_positives": 75,
+      "overall_recall": 0.1304,
+      "small_object_gt": 100,
+      "small_object_tp": 0,
+      "small_object_recall": 0.0,
+      "memory_mb": 17.5
+    },
+    {
+      "target_resolution": "384x384",
+      "mean_latency_ms": 84.34,
+      "total_gt": 575,
+      "true_positives": 79,
+      "overall_recall": 0.1374,
+      "small_object_gt": 100,
+      "small_object_tp": 0,
+      "small_object_recall": 0.0,
+      "memory_mb": 25.2
+    }
+  ],
+  "selected_operating_resolution": "256x256 (Optimal On-Device Latency/Memory Balance)"
+}

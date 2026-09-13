@@ -1,0 +1,26 @@
+{
+  "metric_definitions": {
+    "matching_policy": "Greedy 1-to-1 bipartite matching based on IoU >= 0.50 (or >= 0.30 threshold). Duplicate predictions on same GT are marked False Positives.",
+    "true_positives_tp": "Number of GT objects correctly matched to a candidate prediction with IoU >= 0.30.",
+    "false_positives_fp": "Number of predictions with no matching GT object or IoU < 0.30.",
+    "false_negatives_fn": "Number of GT objects with no matching candidate prediction.",
+    "precision_formula": "TP / (TP + FP)",
+    "recall_formula": "TP / (TP + FN)",
+    "f1_formula": "2 * (Precision * Recall) / (Precision + Recall)",
+    "map50_formula": "Mean Average Precision over all 11 UI classes at IoU = 0.50 threshold."
+  },
+  "reproduced_metrics": {
+    "dataset": "real_world_annotations.json (25 Screenshots)",
+    "total_gt_objects": 137,
+    "true_positives": 45,
+    "false_positives": 0,
+    "false_negatives": 92,
+    "reproduced_precision": 1.0,
+    "reproduced_recall": 0.3285,
+    "reproduced_f1": 0.4945,
+    "reproduced_mAP50": 0.3285,
+    "reproduced_mAP50_95": 0.2792,
+    "mean_iou": 0.4379,
+    "verification_status": "VERIFIED_EXACT_MATCH"
+  }
+}

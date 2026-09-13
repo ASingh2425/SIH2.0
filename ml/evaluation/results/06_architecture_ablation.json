@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    {
+      "name": "Model A: Baseline MultiScale (640 slots)",
+      "params": 150000,
+      "onnx_mb": 0.4,
+      "recall": 0.3757
+    },
+    {
+      "name": "Model C: FPNUIDetector (2688 slots)",
+      "params": 329124,
+      "onnx_mb": 1.35,
+      "recall": 0.4435
+    },
+    {
+      "name": "Model E: Hybrid Global + Tiled",
+      "params": 150000,
+      "onnx_mb": 0.4,
+      "recall": 0.5461
+    }
+  ]
+}

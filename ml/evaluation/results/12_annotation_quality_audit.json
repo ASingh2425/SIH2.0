@@ -1,0 +1,9 @@
+{
+  "audited_annotations": 200,
+  "padding_consistency": "High",
+  "iou_threshold_sensitivity": {
+    "iou_0.25": 0.4435,
+    "iou_0.50": 0.3285,
+    "iou_0.75": 0.182
+  }
+}

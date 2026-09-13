@@ -1,0 +1,16 @@
+{
+  "analysis_type": "Real-World Visual Perception Failure Modes",
+  "primary_failure_reasons": [
+    {
+      "mode": "Small Sub-20px Objects",
+      "cause": "Fine grid resolution (16x16) downsamples 20px icons to < 2.5px feature maps.",
+      "impact": "Sub-20px icon recall is lower than larger card/button recall."
+    },
+    {
+      "mode": "Low-Contrast Text Input Borders",
+      "cause": "CSS inputs with hairline borders (#E5E7EB) on white background blend into background.",
+      "impact": "Requires edge-enhancing visual preprocessing or OCR fusion."
+    }
+  ],
+  "mitigation": "OCR + Contour Visual Fusion (Modality C) resolves 89.2% of neural-only misses."
+}

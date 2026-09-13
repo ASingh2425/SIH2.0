@@ -1,0 +1,83 @@
+{
+  "gate": "GATE_4_OVERFIT_SANITY_TEST",
+  "epochs": 120,
+  "mini_subset_size": 15,
+  "initial_loss": 2.575,
+  "final_loss": 0.0183,
+  "total_ground_truth": 299,
+  "total_true_positives": 86,
+  "precision": 0.282,
+  "recall": 0.2876,
+  "f1_score": 0.2848,
+  "mAP50": 0.2761,
+  "mean_iou": 0.4536,
+  "memorization_passed": false,
+  "per_class_recall": {
+    "button": {
+      "gt_count": 45,
+      "true_positives": 8,
+      "recall": 0.1778,
+      "mean_iou": 0.476
+    },
+    "input": {
+      "gt_count": 22,
+      "true_positives": 5,
+      "recall": 0.2273,
+      "mean_iou": 0.3618
+    },
+    "checkbox": {
+      "gt_count": 6,
+      "true_positives": 0,
+      "recall": 0.0,
+      "mean_iou": 0.0
+    },
+    "radio": {
+      "gt_count": 3,
+      "true_positives": 0,
+      "recall": 0.0,
+      "mean_iou": 0.0
+    },
+    "select": {
+      "gt_count": 6,
+      "true_positives": 0,
+      "recall": 0.0,
+      "mean_iou": 0.0
+    },
+    "link": {
+      "gt_count": 61,
+      "true_positives": 15,
+      "recall": 0.2459,
+      "mean_iou": 0.4644
+    },
+    "navigation": {
+      "gt_count": 23,
+      "true_positives": 16,
+      "recall": 0.6957,
+      "mean_iou": 0.4683
+    },
+    "card": {
+      "gt_count": 35,
+      "true_positives": 20,
+      "recall": 0.5714,
+      "mean_iou": 0.5031
+    },
+    "image": {
+      "gt_count": 24,
+      "true_positives": 9,
+      "recall": 0.375,
+      "mean_iou": 0.4253
+    },
+    "icon": {
+      "gt_count": 39,
+      "true_positives": 3,
+      "recall": 0.0769,
+      "mean_iou": 0.4359
+    },
+    "text_block": {
+      "gt_count": 35,
+      "true_positives": 10,
+      "recall": 0.2857,
+      "mean_iou": 0.3741
+    }
+  }
+}

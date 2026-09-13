@@ -1,0 +1,16 @@
+{
+  "total_evidence_images": 6,
+  "evidence_directory": "ml/evaluation/evidence/",
+  "sample_overlays": [
+    "evidence_rw_dash_01_grafana_monitoring.png",
+    "evidence_rw_form_01_github_login.png",
+    "evidence_rw_form_02_amazon_signin.png",
+    "evidence_rw_form_03_stripe_checkout.png",
+    "evidence_rw_form_04_google_search_settings.png",
+    "evidence_rw_form_05_register_portal.png"
+  ],
+  "color_legend": {
+    "green_boxes": "Ground Truth Annotations",
+    "red_boxes": "Predicted Neural Object Bounding Boxes"
+  }
+}

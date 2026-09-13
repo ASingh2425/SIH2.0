@@ -1,0 +1,22 @@
+{
+  "tiny": {
+    "gt": 12,
+    "tp": 0,
+    "recall_pct": 0.0
+  },
+  "small": {
+    "gt": 13,
+    "tp": 2,
+    "recall_pct": 15.38
+  },
+  "medium": {
+    "gt": 28,
+    "tp": 7,
+    "recall_pct": 25.0
+  },
+  "large": {
+    "gt": 84,
+    "tp": 36,
+    "recall_pct": 42.86
+  }
+}

@@ -1,0 +1,1311 @@
+{
+  "dataset_type": "HELD_OUT_TEST",
+  "total_samples": 15,
+  "samples": [
+    {
+      "image_id": 21,
+      "template": "banking_dashboard_glass",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s21_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s21_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s21_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s21_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s21_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s21_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s21_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "image_id": 22,
+      "template": "health_portal_dense",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s22_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s22_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s22_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s22_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s22_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s22_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s22_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        }
+      ]
+    },
+    {
+      "image_id": 23,
+      "template": "government_form_table",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s23_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s23_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s23_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s23_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s23_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s23_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s23_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        }
+      ]
+    },
+    {
+      "image_id": 24,
+      "template": "banking_dashboard_glass",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s24_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s24_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s24_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s24_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s24_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s24_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s24_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "image_id": 25,
+      "template": "health_portal_dense",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s25_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s25_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s25_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s25_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s25_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s25_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s25_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 26,
+      "template": "government_form_table",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s26_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s26_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s26_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s26_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s26_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s26_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s26_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        }
+      ]
+    },
+    {
+      "image_id": 27,
+      "template": "banking_dashboard_glass",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s27_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s27_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s27_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s27_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s27_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s27_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s27_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 28,
+      "template": "health_portal_dense",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s28_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s28_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s28_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s28_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s28_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s28_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s28_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        }
+      ]
+    },
+    {
+      "image_id": 29,
+      "template": "government_form_table",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s29_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s29_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s29_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s29_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s29_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s29_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s29_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "image_id": 30,
+      "template": "banking_dashboard_glass",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s30_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s30_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s30_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s30_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s30_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s30_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s30_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "image_id": 31,
+      "template": "health_portal_dense",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s31_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s31_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s31_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s31_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s31_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s31_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s31_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        }
+      ]
+    },
+    {
+      "image_id": 32,
+      "template": "government_form_table",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s32_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s32_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s32_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s32_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s32_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        },
+        {
+          "id": "s32_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s32_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "image_id": 33,
+      "template": "banking_dashboard_glass",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s33_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s33_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s33_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s33_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s33_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s33_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s33_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "image_id": 34,
+      "template": "health_portal_dense",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s34_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s34_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s34_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s34_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "s34_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s34_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s34_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    {
+      "image_id": 35,
+      "template": "government_form_table",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "annotations": [
+        {
+          "id": "s35_nav",
+          "category": "NAVIGATION",
+          "bbox": [
+            0,
+            0,
+            1920,
+            60
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "s35_card",
+          "category": "CARD",
+          "bbox": [
+            300,
+            120,
+            1320,
+            840
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "s35_input_0",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            200,
+            400,
+            45
+          ],
+          "confidence": 0.93
+        },
+        {
+          "id": "s35_input_1",
+          "category": "INPUT",
+          "bbox": [
+            350,
+            290,
+            400,
+            45
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "s35_dropdown_2",
+          "category": "DROPDOWN",
+          "bbox": [
+            350,
+            380,
+            400,
+            45
+          ],
+          "confidence": 0.91
+        },
+        {
+          "id": "s35_checkbox_3",
+          "category": "CHECKBOX",
+          "bbox": [
+            350,
+            470,
+            400,
+            45
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "s35_button_4",
+          "category": "BUTTON",
+          "bbox": [
+            350,
+            560,
+            400,
+            45
+          ],
+          "confidence": 0.96
+        }
+      ]
+    }
+  ]
+}
